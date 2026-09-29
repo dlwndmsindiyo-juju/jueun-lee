@@ -1,11 +1,583 @@
-*{
+/* ---------- Site header ---------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(252, 249, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.site-header__inner {
+  max-width: var(--inner-width);
+  margin: 0 auto;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+
+.site-header__logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--main-color);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.site-header__nav ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-li{
-  list-style: none;
-}
-a{
+
+.site-header__nav a {
+  color: var(--main-color);
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-header__nav a:hover,
+.site-header__nav a.is-active {
+  color: var(--main-color);
+}
+
+.site-header__toggle {
+  display: none;
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-bar {
+  background: transparent;
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-bar::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-bar::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hero-bottom-section {
+  position: relative;
+  max-width: var(--inner-width);
+  margin: 0 auto;
+  padding: 40px 3rem 100px;
+  text-align: center;
+}
+
+/* 1. 플로팅 태그 그룹 (Frontend Developer, UI Design 등) */
+.hero-bottom-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 80px;
+}
+
+.hero-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--gray-200);
+  border-radius: 9999px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-pill-tag:hover {
+  transform: translateY(-3px);
+  border-color: var(--gray-400);
+}
+
+.hero-pill-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-pill-row .hero-pill-tag {
+  font-size: 1.25rem;
+  padding: 0.9rem 2.2rem;
+}
+
+/* 2. 소개 텍스트 및 프로필 영역 */
+.hero-profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--gray-200);
+  border-radius: 24px;
+  padding: 4rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-profile-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--main-color);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.hero-profile-desc-top {
+  font-size: 1.25rem;
+  color: var(--text-secondray-color);
+  margin-bottom: 2rem;
+}
+
+.hero-profile-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.03em;
+}
+
+.hero-profile-desc-main {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondray-color);
+  margin-bottom: 2.5rem;
+}
+
+.hero-profile-meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+  color: var(--text-tertiary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.hero-profile-meta span strong {
+  color: var(--text-primary-color);
+}
+
+/* 3. 하단 기술 스택 칩 리스트 */
+.hero-tech-chips {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tech-chip {
+  padding: 0.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--gray-300);
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondray-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .site-header__toggle {
+    display: block;
+  }
+
+  .site-header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fcf9f7;
+    border-bottom: 1px solid #ede4de;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  .site-header__nav.is-open {
+    max-height: 320px;
+  }
+
+  .site-header__nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 20px;
+  }
+
+  .site-header__nav a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1e9e4;
+  }
+
+  .hero-bottom-section {
+    padding: 20px 1.5rem 60px;
+  }
+
+  .hero-pill-tag {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .hero-pill-row .hero-pill-tag {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .hero-profile-container {
+    padding: 2rem;
+  }
+
+  .hero-profile-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-profile-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.block-hero-homepage {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-homepage {
+  position: relative;
+  padding: 64px 0 40px;
+}
+
+.hero-homepage__title {
+  position: absolute;
+  z-index: 2;
+  top: 38%;
+  left: 50%;
+  width: 96%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font: 400 clamp(34px, 7.4vw, 120px)/1.07 Georgia, serif;
+  letter-spacing: -.035em;
+  pointer-events: none;
+}
+
+.hero-homepage__title span {
+  display: block;
+}
+
+/* JS 사용 시에만 인트로를 적용해 로딩 실패 때도 제목을 보여줍니다. */
+.is-ready .hero-homepage__title span {
+  animation: title-in 1.2s both, title-out .4s 1.95s forwards;
+}
+
+.is-ready .hero-homepage__title span:nth-child(2) {
+  animation-delay: .1s, 1.89s;
+}
+
+.is-ready .hero-homepage__title span:nth-child(3) {
+  animation-delay: .2s, 1.83s;
+}
+
+.hero-homepage__stage {
+  position: relative;
+  height: clamp(420px, 52vw, 720px);
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
+}
+
+.hero-homepage__stage.is-dragging {
+  cursor: grabbing;
+}
+
+.hero-homepage__canvas {
+  position: absolute;
+  inset: 0;
+  perspective: var(--perspective, 1400px);
+  perspective-origin: 50% 50%;
+}
+
+.is-ready .hero-homepage__canvas {
+  opacity: 0; /* 인트로가 끝날 때까지 숨김 */
+}
+
+.intro-done .is-ready .hero-homepage__canvas {
+  animation: stage-in 1.2s .5s both; /* 헤더 등장 후 */
+}
+
+.hero-homepage__tilt,
+.hero-homepage__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.hero-homepage__tilt {
+  transform: translateY(var(--drop, 150px)) rotateX(13deg);
+}
+
+.hero-homepage__ring {
+  will-change: transform;
+}
+
+.hero-homepage__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--card-size, 240px);
+  height: var(--card-size, 240px);
+  margin-left: calc(var(--card-size, 240px) / -2);
+  margin-top: calc(var(--card-size, 240px) / -2);
+  border-radius: 5%;
+  overflow: hidden;
+  background: #eee6e1;
+  color: #222;
+  text-decoration: none;
+  backface-visibility: visible;
+}
+
+.hero-homepage__card img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero-homepage__card .fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  font-size: 24px;
+  background: linear-gradient(135deg, #f5d9c7, #d3bdd7);
+}
+
+.hero-homepage__labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 30px;
+  list-style: none;
+  margin: 32px auto 0;
+  padding: 0 24px;
+  max-width: 1500px;
+}
+
+.hero-homepage__labels button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  font-size: 14px;
+}
+
+.hero-homepage__labels button span {
+  font-size: 23px;
+  line-height: 1;
+  transition: color .2s;
+}
+
+.hero-homepage__labels button[aria-pressed="true"] span,
+.hero-homepage__labels button:hover span {
+  color: #ff5435;
+}
+
+.hero-homepage__labels button[aria-pressed="true"] span {
+  animation: bounce .4s ease-out;
+}
+
+.hero-homepage__controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.hero-homepage__controls button {
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 1px solid #ded6d0;
+  border-radius: 30px;
+  background: transparent;
+  font-size: 12px;
+}
+
+.is-ready .hero-homepage__labels,
+.is-ready .hero-homepage__controls {
+  opacity: 0;
+}
+
+.intro-done .is-ready .hero-homepage__labels,
+.intro-done .is-ready .hero-homepage__controls {
+  animation: controls-in .6s 1.5s both; /* 캐러셀 등장 후 */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes title-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes title-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes controls-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-homepage {
+    padding-top: 32px;
+  }
+
+  .hero-homepage__stage {
+    height: clamp(360px, 90vw, 520px);
+  }
+
+  .hero-homepage__labels {
+    gap: 8px 18px;
+    margin-top: 20px;
+  }
+
+  .hero-homepage__labels button {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .is-ready .hero-homepage__title {
+    opacity: 0;
+  }
+}
+
+/* ---------- Intro sequence: 인트로 → 헤더 → 히어로 → 스크롤 등장 ---------- */
+html.intro-playing {
+  overflow: hidden; /* 인트로 중 스크롤 잠금 */
+}
+
+.site-header {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.intro-done .site-header {
+  animation: header-in .7s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    opacity: 1;
+    transform: none;
+  }
+
+  .is-ready .hero-homepage__canvas,
+  .is-ready .hero-homepage__labels,
+  .is-ready .hero-homepage__controls,
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
 }
