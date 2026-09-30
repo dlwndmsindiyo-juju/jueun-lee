@@ -3,9 +3,9 @@ import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
-import "./common.css";
-import HeroSection from "./hero/HeroSection";
-import Header from "./header/header";
+import "./index.css";
+import Header from './components/Header'
+import HeroSection from "./components/HeroSection";
 import useIntro from './hooks/useIntro';
 import useReveal from './hooks/useReveal';
 
