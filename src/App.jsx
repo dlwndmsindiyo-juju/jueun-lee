@@ -11,9 +11,9 @@ import useReveal from './hooks/useReveal';
 
 function App() {
   // 인트로 종료 감지 → <html>에 intro-done 클래스 (헤더/히어로 등장 트리거)
-    const introDone = useIntro();
-    // 인트로 이후 스크롤 시 [data-reveal] 요소 순차 등장
-    useReveal(introDone);
+  const introDone = useIntro();
+  // 인트로 이후 스크롤 시 [data-reveal] 요소 순차 등장
+  useReveal(introDone);
   return (
     <>
       <Header />

@@ -314,11 +314,13 @@
 }
 
 .is-ready .hero-homepage__canvas {
-  opacity: 0; /* 인트로가 끝날 때까지 숨김 */
+  opacity: 0;
+  /* 인트로가 끝날 때까지 숨김 */
 }
 
 .intro-done .is-ready .hero-homepage__canvas {
-  animation: stage-in 1.2s .5s both; /* 헤더 등장 후 */
+  animation: stage-in 1.2s .5s both;
+  /* 헤더 등장 후 */
 }
 
 .hero-homepage__tilt,
@@ -435,7 +437,8 @@
 
 .intro-done .is-ready .hero-homepage__labels,
 .intro-done .is-ready .hero-homepage__controls {
-  animation: controls-in .6s 1.5s both; /* 캐러셀 등장 후 */
+  animation: controls-in .6s 1.5s both;
+  /* 캐러셀 등장 후 */
 }
 
 .sr-only {
@@ -531,7 +534,8 @@
 
 /* ---------- Intro sequence: 인트로 → 헤더 → 히어로 → 스크롤 등장 ---------- */
 html.intro-playing {
-  overflow: hidden; /* 인트로 중 스크롤 잠금 */
+  overflow: hidden;
+  /* 인트로 중 스크롤 잠금 */
 }
 
 .site-header {
