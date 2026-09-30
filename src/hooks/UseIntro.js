@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 /**
  * 인트로(타이틀 애니메이션)가 끝나는 시점을 감지합니다.
@@ -11,7 +11,7 @@ export default function useIntro() {
 
   useEffect(() => {
     const html = document.documentElement;
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let done = false;
     let fallback;
 
@@ -21,24 +21,31 @@ export default function useIntro() {
       if (done) return;
       done = true;
       clearTimeout(fallback);
-      html.classList.remove('intro-playing');
-      html.classList.add('intro-done');
+      html.classList.remove("intro-playing");
+      html.classList.add("intro-done");
       setIntroDone(true);
     };
 
     // 모션 최소화 환경: 애니메이션이 없으므로 즉시 종료
-    if (reduced) { finish(); return; }
+    if (reduced) {
+      finish();
+      return;
+    }
 
-    html.classList.add('intro-playing');
-    const target = document.querySelector('.hero-homepage__title span:first-child');
-    const onEnd = (e) => { if (e.animationName === 'title-out') finish(); };
-    target?.addEventListener('animationend', onEnd);
+    html.classList.add("intro-playing");
+    const target = document.querySelector(
+      ".hero-homepage__title span:first-child",
+    );
+    const onEnd = (e) => {
+      if (e.animationName === "title-out") finish();
+    };
+    target?.addEventListener("animationend", onEnd);
     fallback = setTimeout(finish, 4000); // 안전장치
 
     return () => {
       clearTimeout(fallback);
-      target?.removeEventListener('animationend', onEnd);
-      html.classList.remove('intro-playing', 'intro-done');
+      target?.removeEventListener("animationend", onEnd);
+      html.classList.remove("intro-playing", "intro-done");
     };
   }, []);
 

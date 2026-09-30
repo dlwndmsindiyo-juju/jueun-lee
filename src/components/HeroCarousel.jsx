@@ -175,7 +175,7 @@ export default function HeroCarousel({ children }) {
       const now = performance.now();
       const dx = event.clientX - lastX;
       if (!moved && Math.abs(event.clientY - downY) > 8 &&
-          Math.abs(event.clientY - downY) > Math.abs(event.clientX - downX)) {
+        Math.abs(event.clientY - downY) > Math.abs(event.clientX - downX)) {
         // 세로 스와이프는 페이지 스크롤로 남겨둡니다.
         release({ pointerId: pointer, type: 'pointercancel' });
         return;

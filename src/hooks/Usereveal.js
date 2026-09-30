@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 /**
  * [data-reveal] 요소를 스크롤로 화면에 들어올 때 순서대로 나타냅니다.
@@ -11,15 +11,21 @@ export default function useReveal(enabled, startDelay = 1800) {
     let io;
     const timer = setTimeout(() => {
       io = new IntersectionObserver(
-        (entries) => entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-revealed');
-          io.unobserve(entry.target);
-        }),
-        { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+        (entries) =>
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-revealed");
+            io.unobserve(entry.target);
+          }),
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
       );
-      document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => io.observe(el));
     }, startDelay);
-    return () => { clearTimeout(timer); io?.disconnect(); };
+    return () => {
+      clearTimeout(timer);
+      io?.disconnect();
+    };
   }, [enabled, startDelay]);
 }
