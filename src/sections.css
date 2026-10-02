@@ -156,6 +156,10 @@ html {
   color: var(--text-tertiary-color);
 }
 
+.skills-group {
+  margin-top: 1.5rem;
+}
+
 .skills-group__title {
   margin: 0 0 .9rem;
   font-size: .95rem;

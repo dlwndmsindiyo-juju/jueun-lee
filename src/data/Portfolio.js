@@ -17,8 +17,10 @@ import swiperIcon from '../assets/skills/swiper.svg';
 import openaiIcon from '../assets/skills/openAi.svg';
 import notionIcon from '../assets/skills/notion.svg';
 import slackIcon from '../assets/skills/slack.svg';
+import firebaseIcon from '../assets/skills/firebase.svg';
+import zustandIcon from '../assets/skills/zustand.svg'
 
-const STACK = ['HTML', 'React', 'OpenAI', 'CSS', 'TypeScript', 'Figma', 'JavaScript', 'Node.js', 'Photoshop', 'Swiper', 'GSAP', 'Illustrator'];
+const STACK = ['HTML', 'React', 'OpenAI', 'CSS', 'TypeScript', 'Figma', 'JavaScript', 'Node.js', 'Photoshop', 'Swiper', 'GSAP', 'Illustrator', 'Firebase', 'Zustand',];
 
 export const skills = {
   title: 'Skills Ability',
@@ -37,6 +39,8 @@ export const skills = {
         { name: 'Scss', icon: sassIcon },
         { name: 'Tailwind css', icon: twIcon },
         { name: 'Git', icon: gitIcon },
+        { name: 'Firebase', icon: firebaseIcon },
+        { name: 'Zustand', icon: zustandIcon },
       ],
     },
     {
