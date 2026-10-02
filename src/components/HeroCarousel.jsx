@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 // 이미지와 링크를 자신의 프로젝트에 맞게 변경하세요.
-const BASE = 'https://weichie.com/wp-content/uploads/2026/05/';
+const BASE = 'https://pagliaccoi.github.io/balenciaga/';
 const SERVICES = [
-  { name: 'Web development', slug: 'web-development', image: 'website-service-cover.jpg' },
-  { name: 'eCommerce', slug: 'ecommerce', image: 'ecommerce-service-cover.jpg' },
-  { name: 'Application development', slug: 'applications', image: 'application-service-cover-1024x1024.jpg' },
-  { name: 'Artificial intelligence', slug: 'artificial-intelligence', image: 'ai-service-cover-1024x1024.jpg' },
-  { name: 'Blockchain', slug: 'blockchain', image: 'blockchain-service-cover-1024x1024.jpg' },
+  { name: 'Balenciaga', slug: 'balenciaga', image: './images/main-slide/main-slide3.jpg' },
+  { name: 'Balenciaga-women', slug: 'balenciaga-women', image: './images/sns-banner/dress-go-to-img.png' },
+  { name: 'Apple-TV', slug: 'apple-tv', image: 'application-service-cover-1024x1024.jpg' },
+  { name: 'Apple-TV-Sports', slug: 'apple-tv-sports', image: 'ai-service-cover-1024x1024.jpg' },
+  { name: 'Mypage', slug: 'mypage', image: 'blockchain-service-cover-1024x1024.jpg' },
 ];
 const COUNT = SERVICES.length * 3; // 5개 서비스를 3번 반복해 원형으로 배치
 const CARDS = Array.from({ length: COUNT }, (_, i) => SERVICES[i % SERVICES.length]);

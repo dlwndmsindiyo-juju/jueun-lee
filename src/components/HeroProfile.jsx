@@ -1,6 +1,6 @@
 import { delay } from '../hooks/reveal';
 
-const CHIPS = ['HTML', 'CSS', 'JavaScript', 'React', 'Open AI'];
+const CHIPS = ['HTML', 'CSS', 'Scss ', 'Tailwind css', 'JavaScript', 'React', 'Open AI'];
 
 // 키워드 알약: 스크롤로 보이면 d초 간격으로 하나씩 등장
 const Pill = ({ d, children }) => (

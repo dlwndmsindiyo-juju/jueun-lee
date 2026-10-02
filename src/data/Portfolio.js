@@ -1,3 +1,23 @@
+import htmlIcon from '../assets/skills/html.svg';
+import cssIcon from '../assets/skills/css.svg';
+import jsIcon from '../assets/skills/javascript.svg';
+import tsIcon from '../assets/skills/typescript.svg';
+import reactIcon from '../assets/skills/react.svg';
+import nextIcon from '../assets/skills/nextjs.svg';
+import nodeIcon from '../assets/skills/node-js.svg';
+import sassIcon from '../assets/skills/sass.svg';
+import twIcon from '../assets/skills/tailwindcss.svg';
+import gitIcon from '../assets/skills/git.svg';
+import figmaIcon from '../assets/skills/figma.svg';
+import psIcon from '../assets/skills/photoshop.svg';
+import aiIcon from '../assets/skills/illustrator.svg';
+import ghIcon from '../assets/skills/github.svg';
+import gsapIcon from '../assets/skills/gsap.svg';
+import swiperIcon from '../assets/skills/swiper.svg';
+import openaiIcon from '../assets/skills/openAi.svg';
+import notionIcon from '../assets/skills/notion.svg';
+import slackIcon from '../assets/skills/slack.svg';
+
 const STACK = ['HTML', 'React', 'OpenAI', 'CSS', 'TypeScript', 'Figma', 'JavaScript', 'Node.js', 'Photoshop', 'Swiper', 'GSAP', 'Illustrator'];
 
 export const skills = {
@@ -7,30 +27,30 @@ export const skills = {
     {
       label: 'Language/Framework/Library',
       items: [
-        { name: 'HTML', color: '#e44d26', strong: true },
-        { name: 'CSS', color: '#2965f1', strong: true },
-        { name: 'JavaScript', color: '#f7df1e', strong: true },
-        { name: 'TypeScript', color: '#3178c6' },
-        { name: 'React.js', color: '#61dafb', strong: true },
-        { name: 'Next.js', color: '#111111' },
-        { name: 'Node.js', color: '#339933' },
-        { name: 'Scss', color: '#cc6699' },
-        { name: 'Tailwind css', color: '#38bdf8' },
-        { name: 'Git', color: '#f05032' },
+        { name: 'HTML', icon: htmlIcon, strong: true },
+        { name: 'CSS', icon: cssIcon, strong: true },
+        { name: 'JavaScript', icon: jsIcon, strong: true },
+        { name: 'TypeScript', icon: tsIcon },
+        { name: 'React.js', icon: reactIcon, strong: true },
+        { name: 'Next.js', icon: nextIcon },
+        { name: 'Node.js', icon: nodeIcon },
+        { name: 'Scss', icon: sassIcon },
+        { name: 'Tailwind css', icon: twIcon },
+        { name: 'Git', icon: gitIcon },
       ],
     },
     {
       label: 'Tools/Analytics/Plugins',
       items: [
-        { name: 'Figma', color: '#a259ff' },
-        { name: 'Photoshop', color: '#31a8ff' },
-        { name: 'Illustrator', color: '#ff9a00' },
-        { name: 'GitHub', color: '#111111' },
-        { name: 'GSAP', color: '#88ce02' },
-        { name: 'Swiper', color: '#6332f6' },
-        { name: 'OpenAI', color: '#10a37f' },
-        { name: 'Notion', color: '#555555' },
-        { name: 'Slack', color: '#e01e5a' },
+        { name: 'Figma', icon: figmaIcon },
+        { name: 'Photoshop', icon: psIcon },
+        { name: 'Illustrator', icon: aiIcon },
+        { name: 'GitHub', icon: ghIcon },
+        { name: 'GSAP', icon: gsapIcon },
+        { name: 'Swiper', icon: swiperIcon },
+        { name: 'OpenAI', icon: openaiIcon },
+        { name: 'Notion', icon: notionIcon },
+        { name: 'Slack', icon: slackIcon },
       ],
     },
   ],

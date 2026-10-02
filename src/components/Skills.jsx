@@ -17,10 +17,9 @@ export default function Skills() {
                 <li
                   key={it.name}
                   className={`skill${it.strong ? ' is-strong' : ''}`}
-                  data-reveal
                   style={delay(0.25 + i * 0.05)}
                 >
-                  <i style={{ background: it.color }} aria-hidden="true" />
+                  <img src={it.icon} alt="" width="22" height="22" />
                   {it.name}
                 </li>
               ))}

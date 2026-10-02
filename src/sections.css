@@ -13,18 +13,21 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   [data-reveal="left"], [data-reveal="right"] { transform: none; }
 }
 
-/* ---------- 모바일 메뉴 버튼 막대 ---------- */
-.site-header__toggle { position: relative; width: 40px; height: 40px; border: 0; background: none; }
-.site-header__toggle-bar,
-.site-header__toggle-bar::before,
-.site-header__toggle-bar::after {
-  position: absolute; left: 50%; width: 22px; height: 2px; margin-left: -11px;
-  background: var(--main-color); transition: transform .3s, background .3s;
+/* ---------- 햄버거 메뉴 (1024px 이하) ---------- */
+.site-header__toggle { width: 40px; height: 40px; padding: 0; border: 0; border-radius: 10px; background: var(--main-color); }
+.site-header__toggle img, .site-header__toggle svg { display: block; width: 21px; height: 21px; }
+@media (max-width: 1024px) {
+  .site-header__inner { padding: 0 1.5rem; }
+  .site-header__toggle { display: grid; place-items: center; }
+  .site-header__nav {
+    position: absolute; top: 100%; left: 0; right: 0; max-height: 0; overflow: hidden;
+    background: #fcf9f7; border-bottom: 1px solid #ede4de;
+    visibility: hidden; transition: max-height .3s ease, visibility 0s .3s;
+  }
+  .site-header__nav.is-open { max-height: 320px; visibility: visible; transition: max-height .3s ease; }
+  .site-header__nav ul { flex-direction: column; gap: 0; padding: 8px 24px 20px; }
+  .site-header__nav a { display: block; padding: 12px 0; border-bottom: 1px solid #f1e9e4; }
 }
-.site-header__toggle-bar { top: 50%; }
-.site-header__toggle-bar::before, .site-header__toggle-bar::after { content: ""; left: 0; margin: 0; }
-.site-header__toggle-bar::before { top: -8px; }
-.site-header__toggle-bar::after { top: 8px; }
 
 /* ---------- 공통 섹션 ---------- */
 .section { max-width: var(--inner-width); margin: 0 auto; padding: 120px 3rem; }
@@ -41,8 +44,16 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .skills-group__title { margin: 0 0 .9rem; font-size: .95rem; font-weight: 600; color: var(--text-secondray-color); }
 .skill-list { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2rem; padding: 0; list-style: none; }
 .skill-list:last-child { margin-bottom: 0; }
-.skill { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem; border: 1px solid var(--gray-200); border-radius: 9999px; font-size: .9rem; background: #fff; }
-.skill i { width: 10px; height: 10px; border-radius: 50%; }
+.skill {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem;
+  border: 1px solid var(--gray-200); border-radius: 9999px; font-size: .9rem; background: #fff;
+  /* 카드가 나타나면(.is-revealed) 항목이 순서대로 올라옵니다 */
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.skills-card.is-revealed .skill { opacity: 1; transform: none; }
+.skill img { display: block; width: 22px; height: 22px; }
 .skill.is-strong { border-color: var(--primary-color); box-shadow: 0 0 0 1px var(--primary-color); }
 
 /* ---------- Education ---------- */

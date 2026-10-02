@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import hamIcon from '../assets/ham.svg';
 
 const MENUS = [
   ['home', 'Home'],
@@ -56,8 +57,14 @@ export default function Header() {
           aria-controls="site-nav-menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="sr-only">메뉴 열기</span>
-          <span className="site-header__toggle-bar" />
+          <span className="sr-only">{open ? '메뉴 닫기' : '메뉴 열기'}</span>
+          {open ? (
+            <svg viewBox="0 0 21 21" fill="none" aria-hidden="true">
+              <path d="M5.5 5.5l10 10M15.5 5.5l-10 10" stroke="white" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <img src={hamIcon} alt="" />
+          )}
         </button>
       </div>
     </header>
