@@ -81,14 +81,14 @@ export const projects = {
     {
       label: '01 / TEAM PROJECT',
       items: [
-        { subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼', title: 'BALENCIAGA', period: '2026.07 - 2026.09', members: '4인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
-        { subtitle: 'OTT 리뉴얼 프로젝트', title: 'Apple TV', period: '2026.10 - 2026.12', members: '6인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
+        { subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼', id: 'balenciaga', title: 'BALENCIAGA', period: '2026.07 - 2026.09', members: '4인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
+        { subtitle: 'OTT 리뉴얼 프로젝트', id: 'apple-tv', title: 'Apple TV', period: '2026.10 - 2026.12', members: '6인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
       ],
     },
     {
       label: '02 / PERSONAL PROJECT',
       items: [
-        { subtitle: '나의 모든 것이 담긴 포트폴리오', title: 'PORTFOLIO', period: '2026.09 - 2026.10', members: '1인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
+        { subtitle: '나의 모든 것이 담긴 포트폴리오', id: 'portfolio', title: 'PORTFOLIO', period: '2026.09 - 2026.10', members: '1인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
       ],
     },
   ],

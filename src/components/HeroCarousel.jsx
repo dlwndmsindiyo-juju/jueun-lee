@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
-// 이미지와 링크를 자신의 프로젝트에 맞게 변경하세요.
-const BASE = 'https://pagliaccoi.github.io/balenciaga/';
+// 이미지는 public/images/carousel/ 에 넣고, href는 이동할 섹션의 id(#...)로 지정하세요.
 const SERVICES = [
-  { name: 'Balenciaga', slug: 'balenciaga', image: './images/main-slide/main-slide3.jpg' },
-  { name: 'Balenciaga-women', slug: 'balenciaga-women', image: './images/sns-banner/dress-go-to-img.png' },
-  { name: 'Apple-TV', slug: 'apple-tv', image: 'application-service-cover-1024x1024.jpg' },
-  { name: 'Apple-TV-Sports', slug: 'apple-tv-sports', image: 'ai-service-cover-1024x1024.jpg' },
-  { name: 'Mypage', slug: 'mypage', image: 'blockchain-service-cover-1024x1024.jpg' },
+  { name: 'Balenciaga', href: '#balenciaga', image: '/images/carousel/balenciaga.jpg' },
+  { name: 'Balenciaga-women', href: '#balenciaga', image: '/images/carousel/balenciaga-women.jpg' },
+  { name: 'Apple-TV', href: '#apple-tv', image: '/images/carousel/apple-tv.jpg' },
+  { name: 'Apple-TV-Sports', href: '#apple-tv', image: '/images/carousel/apple-tv-sports.jpg' },
+  { name: 'Mypage', href: '#portfolio', image: '/images/carousel/mypage.jpg' },
 ];
 const COUNT = SERVICES.length * 3; // 5개 서비스를 3번 반복해 원형으로 배치
 const CARDS = Array.from({ length: COUNT }, (_, i) => SERVICES[i % SERVICES.length]);
@@ -311,14 +310,14 @@ export default function HeroCarousel({ children }) {
                     key={i}
                     ref={(el) => (cardRefs.current[i] = el)}
                     className="hero-homepage__card"
-                    href={`https://weichie.com/service/${service.slug}/`}
+                    href={service.href}
                     aria-label={service.name}
                     draggable={false}
                     tabIndex={-1}
                   >
                     <span className="fallback" aria-hidden="true">{service.name}</span>
                     <img
-                      src={BASE + service.image}
+                      src={service.image}
                       alt=""
                       draggable={false}
                       onError={(e) => { e.currentTarget.style.display = 'none'; }}

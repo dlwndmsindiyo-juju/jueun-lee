@@ -6,7 +6,7 @@ function ProjectRow({ item, reverse }) {
   // 이미지/본문이 서로 반대 방향에서 들어옵니다.
   const [mediaSide, bodySide] = reverse ? ['right', 'left'] : ['left', 'right'];
   return (
-    <article className={`project-row${reverse ? ' is-reverse' : ''}`}>
+    <article id={item.id} className={`project-row${reverse ? ' is-reverse' : ''}`}>
       <div className="project-row__media" data-reveal={mediaSide}>
         {item.image && <img src={item.image} alt={item.imageAlt || ''} loading="lazy" />}
         <a className="project-detail" href={item.detailHref}>
