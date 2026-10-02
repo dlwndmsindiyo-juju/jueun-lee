@@ -1,5 +1,4 @@
-import Icon from './Icon';
-import { delay } from '..hooks/reveal';
+import { delay } from '../hooks/reveal';
 import { connect } from '../data/portfolio';
 
 export default function Connect() {
@@ -20,10 +19,6 @@ export default function Connect() {
           ))}
         </ul>
       </div>
-
-      <a className="to-top" href="#home" aria-label="맨 위로 이동">
-        <Icon name="up" size={24} />
-      </a>
     </section>
   );
 }

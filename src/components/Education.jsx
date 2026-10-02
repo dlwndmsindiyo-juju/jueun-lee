@@ -1,6 +1,6 @@
 import SectionHead from './SectionHead';
 import Icon from './Icon';
-import { delay } from '..hooks/reveal';
+import { delay } from '../hooks/reveal';
 import { education as edu } from '../data/portfolio';
 
 export default function Education() {

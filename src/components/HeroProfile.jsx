@@ -1,20 +1,27 @@
+import { delay } from '../hooks/reveal';
+
 const CHIPS = ['HTML', 'CSS', 'JavaScript', 'React', 'Open AI'];
+
+// 키워드 알약: 스크롤로 보이면 d초 간격으로 하나씩 등장
+const Pill = ({ d, children }) => (
+  <div data-reveal style={delay(d)}>
+    <div className="hero-pill-tag">{children}</div>
+  </div>
+);
 
 export default function HeroProfile() {
   return (
     <section className="hero-bottom-section">
-      {/* 둥근 플로팅 알약 태그들 */}
       <div className="hero-bottom-tags">
-        <div className="hero-pill-tag">Frontend Developer</div>
+        <Pill d={0}>Frontend Developer</Pill>
         <div className="hero-pill-row">
-          <div className="hero-pill-tag">UI Design</div>
-          <div className="hero-pill-tag">UX Research</div>
+          <Pill d={0.2}>UI Design</Pill>
+          <Pill d={0.4}>UX Research</Pill>
         </div>
-        <div className="hero-pill-tag">Publishing</div>
+        <Pill d={0.6}>Publishing</Pill>
       </div>
 
-      {/* 프로필 소개 카드 영역 */}
-      <div className="hero-profile-container">
+      <div className="hero-profile-container" data-reveal style={delay(0)}>
         <div className="hero-profile-subtitle">PORTFOLIO / 2026</div>
         <div className="hero-profile-desc-top">
           관찰하고 분석하여 사용자의 니즈를 파악합니다.
