@@ -8,8 +8,12 @@ function ProjectRow({ item, reverse }) {
   return (
     <article id={item.id} className={`project-row${reverse ? ' is-reverse' : ''}`}>
       <div className="project-row__media" data-reveal={mediaSide}>
-        {item.image && <img src={item.image} alt={item.imageAlt || ''} loading="lazy" />}
-        <a className="project-detail" href={item.detailHref}>
+        {item.video ? (
+          <video src={item.video} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
+        ) : (
+          item.image && <img src={item.image} alt={item.imageAlt || ''} loading="lazy" />
+        )}
+        <a className={`project-detail${item.video ? ' on-media' : ''}`} href={item.detailHref}>
           <span>Detail</span>
           <svg viewBox="0 0 300 14" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
             <path d="M0 1H298L284 13" />

@@ -17,10 +17,8 @@ import swiperIcon from '../assets/skills/swiper.svg';
 import openaiIcon from '../assets/skills/openAi.svg';
 import notionIcon from '../assets/skills/notion.svg';
 import slackIcon from '../assets/skills/slack.svg';
-import firebaseIcon from '../assets/skills/firebase.svg';
-import zustandIcon from '../assets/skills/zustand.svg'
 
-const STACK = ['HTML', 'React', 'OpenAI', 'CSS', 'TypeScript', 'Figma', 'JavaScript', 'Node.js', 'Photoshop', 'Swiper', 'GSAP', 'Illustrator', 'Firebase', 'Zustand',];
+const STACK = ['HTML', 'React', 'OpenAI', 'CSS', 'TypeScript', 'Figma', 'JavaScript', 'Node.js', 'Photoshop', 'Swiper', 'GSAP', 'Illustrator'];
 
 export const skills = {
   title: 'Skills Ability',
@@ -39,8 +37,6 @@ export const skills = {
         { name: 'Scss', icon: sassIcon },
         { name: 'Tailwind css', icon: twIcon },
         { name: 'Git', icon: gitIcon },
-        { name: 'Firebase', icon: firebaseIcon },
-        { name: 'Zustand', icon: zustandIcon },
       ],
     },
     {
@@ -85,7 +81,7 @@ export const projects = {
     {
       label: '01 / TEAM PROJECT',
       items: [
-        { subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼', id: 'balenciaga', title: 'BALENCIAGA', period: '2026.07 - 2026.09', members: '4인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
+        { subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼', id: 'balenciaga', video: '/videos/balenciaga.mp4', title: 'BALENCIAGA', period: '2026.07 - 2026.09', members: '4인', stack: STACK, image: null, imageAlt: '', detailHref: '?project=balenciaga', link: { label: '홈페이지 보러가기', href: '#' } },
         { subtitle: 'OTT 리뉴얼 프로젝트', id: 'apple-tv', title: 'Apple TV', period: '2026.10 - 2026.12', members: '6인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
       ],
     },
