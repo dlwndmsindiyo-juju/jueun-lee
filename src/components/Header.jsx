@@ -9,9 +9,11 @@ const MENUS = [
   ['connect', 'Connect'],
 ];
 
-export default function Header() {
+export default function Header({ base = '' }) {
   const [open, setOpen] = useState(false);
-  const [activeId, setActiveId] = useState('home');
+  const [activeId, setActiveId] = useState(base ? 'project' : 'home');
+  // 서브페이지(base 있음)에서는 홈/로고가 쿼리·해시 없는 메인 주소로 이동
+  const homeHref = base || '#home';
 
   // 각 섹션이 화면에 보이면 해당 메뉴에 is-active 표시
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="site-header__logo" href="#home">JUEUN LEE</a>
+        <a className="site-header__logo" href={homeHref}>JUEUN LEE</a>
 
         <nav
           className={`site-header__nav${open ? ' is-open' : ''}`}
@@ -39,7 +41,7 @@ export default function Header() {
             {MENUS.map(([id, label]) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
+                  href={id === 'home' ? homeHref : `${base}#${id}`}
                   className={activeId === id ? 'is-active' : undefined}
                   onClick={() => setOpen(false)}
                 >
