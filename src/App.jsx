@@ -1,6 +1,5 @@
 import "./App.css";
 import "./index.css";
-import "./sections.css";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Skills from "./components/Skills";
@@ -9,15 +8,13 @@ import Project from "./components/Project";
 import Connect from "./components/Connect";
 import ToTop from "./components/ToTop";
 import Footer from "./components/Footer";
+import ProjectDetail from "./pages/ProjectDetail";
 import useIntro from "./hooks/useIntro";
 import useReveal from "./hooks/useReveal";
 
-function App() {
-  // 인트로(3초) 종료 감지 → <html>에 intro-done → 헤더/히어로 등장
+function Home() {
   const introDone = useIntro();
-  // 인트로 이후 스크롤 시 [data-reveal] 요소 등장
   useReveal(introDone);
-
   return (
     <>
       <Header />
@@ -27,7 +24,6 @@ function App() {
         <Education />
         <Project />
         <Connect />
-        {/* 반드시 main의 마지막 자식 */}
         <ToTop />
       </main>
       <Footer />
@@ -35,4 +31,8 @@ function App() {
   );
 }
 
-export default App;
+// 서브페이지는 ?project=balenciaga 형태 (라우터 설치 불필요, 정적 호스팅에서도 동작)
+export default function App() {
+  const slug = new URLSearchParams(window.location.search).get("project");
+  return slug ? <ProjectDetail slug={slug} /> : <Home />;
+}
