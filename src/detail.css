@@ -3,7 +3,7 @@
 }
 
 .detail-hero__img {
-  height: min(52vh, 560px);
+  height: 80vh;
   margin-top: 90px;
   background: #d9d9d9;
 }
@@ -432,7 +432,7 @@
   }
 
   .detail-hero__img {
-    height: 36vh;
+    height: 50vh;
   }
 }
 

@@ -59,7 +59,7 @@ export default function ProjectDetail({ slug }) {
       <main className="detail" id="home">
         <div className="detail-hero__img">
           {d.video ? (
-            <video src={d.video} autoPlay muted loop playsInline preload="metadata" aria-label={`${d.title} 소개 영상`} />
+            <video src={d.video} poster={d.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${d.title} 소개 영상`} />
           ) : (
             d.hero && <img src={d.hero} alt="" />
           )}

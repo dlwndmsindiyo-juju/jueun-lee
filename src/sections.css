@@ -303,10 +303,9 @@ html {
 }
 
 .project-row {
-  display: grid;
+  display: grid; 
   grid-template-columns: 1fr 1fr;
   min-height: max(560px, 100vh);
-  min-height: max(560px, 100svh);
   /* 한 화면에 꽉 차게 */
   scroll-margin-top: -90px;
   /* 앵커 이동 시 행이 화면 맨 위(헤더 뒤)부터 시작 */

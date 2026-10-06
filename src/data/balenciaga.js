@@ -4,7 +4,9 @@ export const balenciaga = {
   stack: ['HTML', 'CSS', 'JavaScript', 'OpenAI', 'Swiper', 'Figma', 'Happy Horse', 'Git', 'GitHub'],
   link: { label: '홈페이지 보러가기', href: 'https://pagliaccoi.github.io/balenciaga/' },
   hero: null, // 대표 이미지 경로 (video가 있으면 영상이 우선)
-  video: '/videos/balenciaga.mp4',
+  video: '/videos/balenciaga.mp4', // public/videos/balenciaga.mp4
+  poster: '/videos/balenciaga-poster.jpg',
+  cardImage: '/images/balenciaga-card.jpg', // 홈 프로젝트 카드용 이미지 (public/images/)
   role: 'UI/UX 기획 및 프론트엔드 개발',
   parts: ['메인페이지 헤더, SNS 배너', '서브페이지: 여성 상의 전체보기', '캠페인 메뉴: 뉴욕(New York) 페이지'],
   featuresTitle: '주요 UI 개선 및 기능 개발',

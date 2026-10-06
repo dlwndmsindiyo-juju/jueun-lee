@@ -1,19 +1,23 @@
 import Icon from './Icon';
 import SectionHead from './SectionHead';
 import { projects } from '../data/portfolio';
+import { projectDetails } from '../data/balenciaga';
+
+// detailHref(?project=slug)로 상세 데이터를 찾아 홈 카드용 이미지(cardImage)를 가져옵니다.
+function getImage(item) {
+  const slug = new URLSearchParams((item.detailHref || '').split('?')[1] || '').get('project');
+  return projectDetails[slug]?.cardImage || item.image;
+}
 
 function ProjectRow({ item, reverse }) {
   // 이미지/본문이 서로 반대 방향에서 들어옵니다.
   const [mediaSide, bodySide] = reverse ? ['right', 'left'] : ['left', 'right'];
+  const image = getImage(item);
   return (
     <article id={item.id} className={`project-row${reverse ? ' is-reverse' : ''}`}>
       <div className="project-row__media" data-reveal={mediaSide}>
-        {item.video ? (
-          <video src={item.video} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
-        ) : (
-          item.image && <img src={item.image} alt={item.imageAlt || ''} loading="lazy" />
-        )}
-        <a className={`project-detail${item.video ? ' on-media' : ''}`} href={item.detailHref}>
+        {image && <img src={image} alt={item.imageAlt || ''} loading="lazy" />}
+        <a className={`project-detail${image ? ' on-media' : ''}`} href={item.detailHref}>
           <span>Detail</span>
           <svg viewBox="0 0 300 14" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
             <path d="M0 1H298L284 13" />
