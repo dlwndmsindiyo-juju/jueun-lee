@@ -690,6 +690,10 @@ html {
   color: var(--text-tertiary-color);
 }
 
+.skills-group {
+  margin: 10px 0;
+}
+
 .skills-group__title {
   margin: 0 0 .9rem;
   font-size: .95rem;
@@ -702,7 +706,7 @@ html {
   flex-wrap: wrap;
   gap: .6rem;
   margin: 0 0 2rem;
-  padding: 0;
+  padding: 10px 0;
   list-style: none;
 }
 
