@@ -943,7 +943,7 @@ html {
 }
 
 .project-detail svg {
-  width: 100%;
+  width: 300px;
   height: 14px;
   overflow: visible;
 }

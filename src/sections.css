@@ -303,7 +303,7 @@ html {
 }
 
 .project-row {
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: max(560px, 100vh);
   /* 한 화면에 꽉 차게 */
@@ -399,7 +399,7 @@ html {
 }
 
 .project-detail svg {
-  width: 100%;
+  width: 300px;
   height: 14px;
   overflow: visible;
 }
