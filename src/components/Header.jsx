@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import hamIcon from '../assets/ham.svg';
 
 const MENUS = [
@@ -9,14 +10,16 @@ const MENUS = [
   ['connect', 'Connect'],
 ];
 
-export default function Header({ base = '' }) {
+export default function Header() {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
   const [open, setOpen] = useState(false);
-  const [activeId, setActiveId] = useState(base ? 'project' : 'home');
-  // 서브페이지(base 있음)에서는 홈/로고가 쿼리·해시 없는 메인 주소로 이동
-  const homeHref = base || '#home';
+  // 상세 페이지에서는 Project 메뉴를 활성화
+  const [activeId, setActiveId] = useState(isHome ? 'home' : 'project');
 
-  // 각 섹션이 화면에 보이면 해당 메뉴에 is-active 표시
+  // 홈에서만: 각 섹션이 화면에 보이면 해당 메뉴에 is-active 표시
   useEffect(() => {
+    if (!isHome) return;
     const sections = MENUS.map(([id]) => document.getElementById(id)).filter(Boolean);
     if (!sections.length) return;
     const io = new IntersectionObserver(
@@ -25,12 +28,12 @@ export default function Header({ base = '' }) {
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
-  }, []);
+  }, [isHome]);
 
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="site-header__logo" href={homeHref}>JUEUN LEE</a>
+        <Link className="site-header__logo" to="/">JUEUN LEE</Link>
 
         <nav
           className={`site-header__nav${open ? ' is-open' : ''}`}
@@ -40,13 +43,13 @@ export default function Header({ base = '' }) {
           <ul>
             {MENUS.map(([id, label]) => (
               <li key={id}>
-                <a
-                  href={id === 'home' ? homeHref : `${base}#${id}`}
+                <Link
+                  to={id === 'home' ? '/' : `/#${id}`}
                   className={activeId === id ? 'is-active' : undefined}
                   onClick={() => setOpen(false)}
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

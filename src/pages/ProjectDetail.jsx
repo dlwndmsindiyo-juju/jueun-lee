@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import '../detail.css';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ToTop from '../components/ToTop';
@@ -32,12 +32,11 @@ function Compare({ m, i }) {
 
 export default function ProjectDetail({ slug }) {
   const d = projectDetails[slug];
-  const base = window.location.pathname;
 
   useEffect(() => {
     const html = document.documentElement;
     html.classList.add('intro-done'); // 헤더 등장 (인트로 없음)
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); // CSS의 smooth 스크롤을 무시하고 즉시 맨 위로
     return () => html.classList.remove('intro-done');
   }, []);
   useReveal(true, 100);
@@ -45,9 +44,9 @@ export default function ProjectDetail({ slug }) {
   if (!d) {
     return (
       <>
-        <Header base={base} />
-        <main className="detail"><p className="detail__empty">프로젝트를 찾을 수 없습니다. <a href={base}>홈으로</a></p></main>
-        <Footer base={base} />
+        <Header />
+        <main className="detail"><p className="detail__empty">프로젝트를 찾을 수 없습니다. <Link to="/">홈으로</Link></p></main>
+        <Footer />
       </>
     );
   }
@@ -55,7 +54,7 @@ export default function ProjectDetail({ slug }) {
 
   return (
     <>
-      <Header base={base} />
+      <Header />
       <main className="detail" id="home">
         <div className="detail-hero__img">
           {d.video ? (
@@ -66,7 +65,7 @@ export default function ProjectDetail({ slug }) {
         </div>
 
         <section className="dsec detail-intro">
-          <nav className="crumb" aria-label="현재 위치" data-reveal><a href={base}>Home</a> / <a href={`${base}#project`}>Project</a></nav>
+          <nav className="crumb" aria-label="현재 위치" data-reveal><Link to="/">Home</Link> / <Link to="/#project">Project</Link></nav>
           <h1 data-reveal style={delay(0.1)}>{d.title}</h1>
           <p className="detail-intro__sum" data-reveal style={delay(0.2)}>{d.summary}</p>
           <ul className="chip-list" data-reveal style={delay(0.3)}>{d.stack.map((s) => <li className="chip" key={s}>{s}</li>)}</ul>
@@ -106,7 +105,7 @@ export default function ProjectDetail({ slug }) {
           <div className="problem" data-reveal><h3>{t.problemTitle}</h3><p>{t.problem}</p></div>
 
           <div className="cmp-grid">{t.metrics.map((m, i) => <Compare key={m.label} m={m} i={i} />)}</div>
-          <p className="cmp-note">막대는 기존 값을 100으로 둔 상대 길이입니다.</p>
+          <p className="cmp-note" data-reveal>막대는 기존 값을 100으로 둔 상대 길이입니다.</p>
 
           <h3 className="dh dh--md" data-reveal>{t.flowTitle}</h3>
           <div className="flows" data-reveal>
@@ -125,7 +124,7 @@ export default function ProjectDetail({ slug }) {
 
         <ToTop />
       </main>
-      <Footer base={base} />
+      <Footer />
     </>
   );
 }
