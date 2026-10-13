@@ -1,0 +1,146 @@
+/* 프로젝트 상세: 섹션 목차 + 읽기 진행률 (헤더 바로 아래에 붙어 따라다님) */
+.detail-nav {
+  position: sticky;
+  top: 90px;            /* 고정 헤더 높이 */
+  z-index: 800;         /* 헤더(1000)보다 아래, 본문보다 위 */
+  background: rgba(252, 249, 247, .9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.detail-nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: .6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* 탭 묶음 + 활성 탭 뒤에서 미끄러지는 알약 */
+.detail-nav__tabs {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: #f1ece8;
+}
+
+.detail-nav__pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px -4px rgba(0, 0, 0, .3);
+  transition: transform .45s cubic-bezier(.34, 1.45, .64, 1), width .45s cubic-bezier(.34, 1.45, .64, 1);
+}
+
+.detail-nav__tabs button {
+  position: relative;
+  height: 36px;
+  padding: 0 1.1rem;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  font-size: .9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text-tertiary-color);
+  transition: color .3s;
+}
+
+.detail-nav__tabs button[aria-current="true"] {
+  color: var(--text-primary-color);
+}
+
+/* 하단 진행 바 */
+.detail-nav__bar {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background: var(--main-color);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+}
+
+/* 우측 진행 링 (100%가 되면 체크 표시) */
+.detail-nav__ring {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 40px;
+}
+
+.detail-nav__ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.detail-nav__ring circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+.detail-nav__ring .t {
+  stroke: var(--gray-200);
+}
+
+.detail-nav__ring .p {
+  stroke: var(--main-color);
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 - var(--p, 0) * 100);
+  transition: stroke .4s;
+}
+
+.detail-nav__ring > span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  transition: opacity .3s, transform .4s cubic-bezier(.34, 1.45, .64, 1);
+}
+
+.detail-nav__ring > i {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #1a8a3a;
+  opacity: 0;
+  transform: scale(.4);
+  transition: opacity .3s, transform .5s cubic-bezier(.34, 1.45, .64, 1);
+}
+
+.detail-nav__ring > i svg {
+  width: 20px;
+  height: 20px;
+  transform: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.detail-nav__ring.is-done .p { stroke: #1a8a3a; }
+.detail-nav__ring.is-done > span { opacity: 0; transform: scale(.4); }
+.detail-nav__ring.is-done > i { opacity: 1; transform: none; }
+
+@media (max-width: 768px) {
+  .detail-nav__inner { padding: .5rem 1rem; gap: .6rem; }
+  .detail-nav__tabs { flex: 1; min-width: 0; }
+  .detail-nav__tabs button { flex: 1; padding: 0 .25rem; font-size: .78rem; }
+  .detail-nav__ring { width: 36px; height: 36px; }
+}

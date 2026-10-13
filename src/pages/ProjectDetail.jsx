@@ -3,10 +3,19 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ToTop from '../components/ToTop';
+import DetailNav from '../components/DetailNav';
 import Icon from '../components/Icon';
 import useReveal from '../hooks/useReveal';
 import { delay } from '../hooks/reveal';
 import { projectDetails } from '../data/balenciaga';
+
+// 상세 페이지 섹션 목차 (id는 아래 각 <section>의 id와 같아야 합니다)
+const NAV_ITEMS = [
+  { id: 'detail-intro', label: '소개' },
+  { id: 'detail-facts', label: '역할' },
+  { id: 'detail-features', label: '주요 기능' },
+  { id: 'detail-trouble', label: '트러블슈팅' },
+];
 
 const Flow = ({ steps, kind }) => (
   <ol className={`flow flow--${kind}`}>
@@ -64,7 +73,9 @@ export default function ProjectDetail({ slug }) {
           )}
         </div>
 
-        <section className="dsec detail-intro">
+        <DetailNav items={NAV_ITEMS} />
+
+        <section className="dsec detail-intro" id="detail-intro">
           <nav className="crumb" aria-label="현재 위치" data-reveal><Link to="/">Home</Link> / <Link to="/#project">Project</Link></nav>
           <h1 data-reveal style={delay(0.1)}>{d.title}</h1>
           <p className="detail-intro__sum" data-reveal style={delay(0.2)}>{d.summary}</p>
@@ -74,12 +85,12 @@ export default function ProjectDetail({ slug }) {
           </a>
         </section>
 
-        <section className="dsec facts">
+        <section className="dsec facts" id="detail-facts">
           <div data-reveal><h2 className="dh">담당 역할</h2><p>{d.role}</p></div>
           <div data-reveal style={delay(0.1)}><h2 className="dh">담당 파트</h2><ul>{d.parts.map((p) => <li key={p}>{p}</li>)}</ul></div>
         </section>
 
-        <section className="dsec">
+        <section className="dsec" id="detail-features">
           <h2 className="dh dh--lg" data-reveal>{d.featuresTitle}</h2>
           <div className="feat-grid">
             {d.features.map((f, i) => (
@@ -92,7 +103,7 @@ export default function ProjectDetail({ slug }) {
           </div>
         </section>
 
-        <section className="dsec">
+        <section className="dsec" id="detail-trouble">
           <h2 className="dh dh--lg" data-reveal>{t.title}</h2>
           <p className="detail__sub" data-reveal style={delay(0.1)}>{t.subtitle}</p>
 
