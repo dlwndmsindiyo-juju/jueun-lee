@@ -24,6 +24,8 @@ function ProjectRow({ item, reverse }) {
   const [mediaSide, bodySide] = reverse ? ['right', 'left'] : ['left', 'right'];
   const image = getImage(item);
   const slug = getSlug(item);
+  // 주소가 없거나 '#'이면 '홈페이지 보러가기' 버튼을 숨깁니다.
+  const hasLink = Boolean(item.link?.href) && item.link.href !== '#';
   return (
     <article id={item.id} className={`project-row${reverse ? ' is-reverse' : ''}`}>
       <div className="project-row__media" data-reveal={mediaSide}>
@@ -45,14 +47,18 @@ function ProjectRow({ item, reverse }) {
           <div><dt>참여 기간</dt><dd>{item.period}</dd></div>
           <div><dt>제작 인원</dt><dd>{item.members}</dd></div>
         </dl>
-        <ul className="chip-list project-row__chips">
-          {item.stack.map((s) => <li className="chip" key={s}>{s}</li>)}
-        </ul>
-        <div>
-          <a className="project-row__link" href={item.link.href} target="_blank" rel="noreferrer">
-            <Icon name="link" size={16} />{item.link.label}
-          </a>
-        </div>
+        {item.stack?.length > 0 && (
+          <ul className="chip-list project-row__chips">
+            {item.stack.map((s) => <li className="chip" key={s}>{s}</li>)}
+          </ul>
+        )}
+        {hasLink && (
+          <div>
+            <a className="project-row__link" href={item.link.href} target="_blank" rel="noreferrer">
+              <Icon name="link" size={16} />{item.link.label}
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );

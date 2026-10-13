@@ -17,8 +17,7 @@ import swiperIcon from '../assets/skills/swiper.svg';
 import openaiIcon from '../assets/skills/openAi.svg';
 import notionIcon from '../assets/skills/notion.svg';
 import slackIcon from '../assets/skills/slack.svg';
-
-const STACK = ['HTML', 'React', 'OpenAI', 'CSS', 'TypeScript', 'Figma', 'JavaScript', 'Node.js', 'Photoshop', 'Swiper', 'GSAP', 'Illustrator'];
+import { balenciaga } from './balenciaga';
 
 export const skills = {
   title: 'Skills Ability',
@@ -75,20 +74,59 @@ export const education = {
   skills: ['HTML', 'Scss', 'CSS', 'Git', 'JavaScript', 'GitHub', 'TypeScript', 'Figma', 'Swiper', 'React', 'GSAP', 'Next.js', 'Open AI', 'Node.js'],
 };
 
+/*
+ * 프로젝트별로 stack(사용 기술)과 link(홈페이지 보러가기)를 각각 수정하세요.
+ *  - stack : 칩으로 표시될 기술 이름 배열
+ *  - link  : { label: '버튼 글자', href: '주소' }  (href가 비어 있거나 '#'이면 버튼이 숨겨집니다)
+ *  - detailHref : '?project=슬러그' (상세 데이터가 있는 프로젝트만. 없으면 '#')
+ */
 export const projects = {
   title: 'Project',
   groups: [
     {
       label: '01 / TEAM PROJECT',
       items: [
-        { subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼', id: 'balenciaga', video: '/videos/balenciaga.mp4', title: 'BALENCIAGA', period: '2026.07 - 2026.09', members: '4인', stack: STACK, image: null, imageAlt: '', detailHref: '?project=balenciaga', link: { label: '홈페이지 보러가기', href: '#' } },
-        { subtitle: 'OTT 리뉴얼 프로젝트', id: 'apple-tv', title: 'Apple TV', period: '2026.10 - 2026.12', members: '6인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
+        {
+          subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼',
+          id: 'balenciaga',
+          video: '/videos/balenciaga.mp4',
+          title: 'BALENCIAGA',
+          period: '2026.07 - 2026.09',
+          members: '4인',
+          stack: balenciaga.stack,
+          image: null,
+          imageAlt: '',
+          detailHref: '?project=balenciaga',
+          link: balenciaga.link,
+        },
+        {
+          subtitle: 'OTT 리뉴얼 프로젝트',
+          id: 'apple-tv',
+          title: 'Apple TV',
+          period: '2026.10 - 2026.12',
+          members: '6인',
+          stack: ['React', 'CSS', 'Scss', 'JavaScript', 'Figma', 'Open AI', 'Git', 'GitHub', 'GSAP', 'Swiper'],
+          image: null,
+          imageAlt: '',
+          detailHref: '#',
+          link: { label: '홈페이지 보러가기', href: '#' },
+        },
       ],
     },
     {
       label: '02 / PERSONAL PROJECT',
       items: [
-        { subtitle: '나의 모든 것이 담긴 포트폴리오', id: 'portfolio', title: 'PORTFOLIO', period: '2026.09 - 2026.10', members: '1인', stack: STACK, image: null, imageAlt: '', detailHref: '#', link: { label: '홈페이지 보러가기', href: '#' } },
+        {
+          subtitle: '나의 모든 것이 담긴 포트폴리오',
+          id: 'portfolio',
+          title: 'PORTFOLIO',
+          period: '2026.09 - 2026.10',
+          members: '1인',
+          stack: ['React', 'CSS', 'Scss', 'Figma', 'JavaScript', 'Open AI', 'Git', 'GitHub'],
+          image: null,
+          imageAlt: '',
+          detailHref: '#',
+        },
       ],
     },
   ],
