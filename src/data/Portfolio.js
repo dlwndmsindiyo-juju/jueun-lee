@@ -17,6 +17,8 @@ import swiperIcon from '../assets/skills/swiper.svg';
 import openaiIcon from '../assets/skills/openAi.svg';
 import notionIcon from '../assets/skills/notion.svg';
 import slackIcon from '../assets/skills/slack.svg';
+import firebaseIcon from '../assets/skills/firebase.svg';
+import zustandIcon from '../assets/skills/zustand.svg';
 import balenciagaCard from '../assets/balenciaga-card.jpg';
 import { balenciaga } from './balenciaga';
 
@@ -37,6 +39,8 @@ export const skills = {
         { name: 'Scss', icon: sassIcon, strong: true },
         { name: 'Tailwind css', icon: twIcon, strong: true },
         { name: 'Git', icon: gitIcon },
+        { name: 'Firebase', icon: firebaseIcon },
+        { name: 'Zustand', icon: zustandIcon },
       ],
     },
     {
