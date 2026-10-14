@@ -27,8 +27,8 @@ export default function Footer() {
           <Links items={footer.menu} />
         </nav>
         <div className="site-footer__col site-footer__col--right">
-          <h2>{footer.contactTitle}</h2>
-          <Links items={footer.contact} />
+          <h2>{footer.connectTitle}</h2>
+          <Links items={footer.connect} />
         </div>
       </div>
 

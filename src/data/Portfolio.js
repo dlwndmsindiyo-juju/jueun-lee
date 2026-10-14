@@ -149,8 +149,8 @@ export const footer = {
     { label: 'Skill', href: '#skills' },
     { label: 'About', href: '#education' },
   ],
-  contactTitle: 'CONTACT',
-  contact: [
+  connectTitle: 'CONNECT',
+  connect: [
     { label: 'Email', href: 'mailto:dlwndmsindiyo@gmail.com' },
     { label: 'GitHub', href: 'https://github.com/dlwndmsindiyo-juju', external: true },
   ],
