@@ -17,6 +17,7 @@ import swiperIcon from '../assets/skills/swiper.svg';
 import openaiIcon from '../assets/skills/openAi.svg';
 import notionIcon from '../assets/skills/notion.svg';
 import slackIcon from '../assets/skills/slack.svg';
+import balenciagaCard from '../assets/balenciaga-card.jpg';
 import { balenciaga } from './balenciaga';
 
 export const skills = {
@@ -94,8 +95,8 @@ export const projects = {
           period: '2026.07 - 2026.09',
           members: '4인',
           stack: balenciaga.stack,
-          image: null,
-          imageAlt: '',
+          image: balenciagaCard,
+          imageAlt: 'BALENCIAGA 공식 온라인 사이트 메인 화면',
           detailHref: '?project=balenciaga',
           link: balenciaga.link,
         },

@@ -1,0 +1,246 @@
+/* =====================================================
+   Project — 카드뉴스형 2x2 카드
+   카드마다 한 가지 색 바탕(--bg) + 글자색(--fg)
+   정보는 처음부터 보이고, 호버하면 이미지만 살짝 커집니다.
+   ===================================================== */
+.section.project.project--cards {
+  max-width: var(--inner-width);
+  padding: 120px 3rem;
+  overflow-x: visible;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.pcard-wrap {
+  min-width: 0;
+}
+
+/* ---------- 그룹 제목 (1. TEAM PROJECT / 2. PERSONAL PROJECT) ---------- */
+.section.project.project--cards .project-group + .project-group {
+  margin-top: 5rem;
+}
+
+.project-group__title {
+  margin: 0 0 1.5rem;
+  padding: 0 0 .9rem;
+  border-bottom: 1px solid var(--gray-200, #e5e0dc);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--text-tertiary-color, #8a8580);
+}
+
+/* ---------- 카드 ---------- */
+.pcard {
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  min-height: 680px;
+  padding: 26px 26px 24px;
+  border-radius: 6px;
+  overflow: hidden;
+  color: var(--fg);
+  background: var(--bg);
+  scroll-margin-top: 110px;
+}
+
+/* ---------- 헤드라인 ---------- */
+.pcard__title {
+  margin: 0;
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -.045em;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- 이미지 프레임: 남는 높이를 모두 차지 ---------- */
+.pcard__art {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 160px;
+  margin-top: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--fg) 9%, var(--bg));
+}
+
+.pcard__art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1);
+  transition: transform .9s var(--ease);
+}
+
+.pcard:hover .pcard__art img {
+  transform: scale(1.06);
+}
+
+/* 이미지가 없을 때: 프로젝트 이름을 크게 깔아둠 */
+.pcard__ghost {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 8px;
+  font-size: clamp(3.4rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.05em;
+  color: color-mix(in srgb, var(--fg) 14%, transparent);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- 하단 정보 (항상 표시) ---------- */
+.pcard__body {
+  flex: none;
+  margin-top: 18px;
+}
+
+.pcard__k {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: .75;
+}
+
+.pcard__sum {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+.pcard__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pcard__chips li {
+  padding: 3px 10px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pcard__chips li.is-more {
+  border-style: dashed;
+  opacity: .7;
+}
+
+.pcard__foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pcard__ext {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .3s, color .3s;
+}
+
+.pcard__ext:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.pcard__cta {
+  margin-left: auto;
+  height: 40px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .35s var(--ease);
+}
+
+.pcard__cta:hover {
+  transform: translateX(2px);
+}
+
+.pcard__cta:active {
+  transform: scale(.95);
+}
+
+.pcard__cta svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pcard__ext:focus-visible,
+.pcard__cta:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.pcard__soon {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: .65;
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 768px) {
+  .section.project.project--cards {
+    padding: 80px 1.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pcard {
+    aspect-ratio: auto;
+    height: 640px;
+    min-height: 0;
+    padding: 22px 20px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard,
+  .pcard * {
+    transition-duration: .001ms !important;
+    transition-delay: 0s !important;
+  }
+}
