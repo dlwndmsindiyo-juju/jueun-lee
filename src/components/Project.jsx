@@ -16,25 +16,16 @@ function getSlug(item) {
 
 const MAX_CHIPS = 6;
 
-// 카드뉴스처럼 카드마다 한 가지 색 바탕 + 글자색 (bg: 배경, fg: 글자)
-const PALETTE = [
-  { bg: '#141414', fg: '#f4f0ea' },
-  { bg: '#d9e4f7', fg: '#14213d' },
-  { bg: '#f6d5c3', fg: '#3a1d12' },
-  { bg: '#e4ebd0', fg: '#1f2a12' },
-];
-
-function ProjectCard({ item, index, order }) {
+function ProjectCard({ item, order }) {
   const slug = getSlug(item);
   const hasLink = Boolean(item.link?.href) && item.link.href !== '#';
   const stack = item.stack || [];
   const shown = stack.slice(0, MAX_CHIPS);
   const rest = stack.length - shown.length;
-  const color = PALETTE[index % PALETTE.length];
 
   return (
     <div className="pcard-wrap" data-reveal style={delay((order % 2) * 0.12)}>
-      <article id={item.id} className="pcard" style={{ '--bg': color.bg, '--fg': color.fg }}>
+      <article id={item.id} className="pcard">
         <h4 className="pcard__title">{item.title}</h4>
 
         {/* 호버하면 이미지만 살짝 커집니다 */}
@@ -85,7 +76,6 @@ function groupTitle(label) {
 }
 
 export default function Project() {
-  let n = 0; // 전체 카드 순서 (색상 배정용)
   return (
     <section className="section project project--cards" id="project" aria-labelledby="project-title">
       <SectionHead id="project-title" title={projects.title} />
@@ -97,7 +87,7 @@ export default function Project() {
           </h3>
           <div className="project-grid">
             {group.items.map((item, i) => (
-              <ProjectCard key={item.id || item.title} item={item} index={n++} order={i} />
+              <ProjectCard key={item.id || item.title} item={item} order={i} />
             ))}
           </div>
         </div>

@@ -1,6 +1,6 @@
 /* =====================================================
    Project — 카드뉴스형 2x2 카드
-   카드마다 한 가지 색 바탕(--bg) + 글자색(--fg)
+   배경 없이 메인 컬러(#0043C4) 스트로크만 사용합니다.
    정보는 처음부터 보이고, 호버하면 이미지만 살짝 커집니다.
    ===================================================== */
 .section.project.project--cards {
@@ -37,6 +37,7 @@
 /* ---------- 카드 ---------- */
 .pcard {
   --ease: cubic-bezier(.2, .8, .2, 1);
+  --pc-main: #0043c4;   /* 메인 컬러 */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -46,8 +47,9 @@
   padding: 26px 26px 24px;
   border-radius: 6px;
   overflow: hidden;
-  color: var(--fg);
-  background: var(--bg);
+  color: var(--text-primary-color, #1a1a1a);
+  background: transparent;
+  border: 1.5px solid var(--pc-main);
   scroll-margin-top: 110px;
 }
 
@@ -69,7 +71,7 @@
   margin-top: 20px;
   border-radius: 4px;
   overflow: hidden;
-  background: color-mix(in srgb, var(--fg) 9%, var(--bg));
+  background: rgba(0, 67, 196, .06);
 }
 
 .pcard__art img {
@@ -97,7 +99,7 @@
   font-weight: 800;
   line-height: .9;
   letter-spacing: -.05em;
-  color: color-mix(in srgb, var(--fg) 14%, transparent);
+  color: rgba(0, 67, 196, .14);
   overflow-wrap: anywhere;
 }
 
@@ -111,7 +113,7 @@
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  opacity: .75;
+  color: var(--text-tertiary-color, #8a8580);
 }
 
 .pcard__sum {
@@ -133,7 +135,7 @@
 
 .pcard__chips li {
   padding: 3px 10px;
-  border: 1.5px solid currentColor;
+  border: 1px solid var(--gray-200, #e5e0dc);
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
@@ -158,18 +160,18 @@
   gap: 6px;
   height: 40px;
   padding: 0 14px;
-  border: 1.5px solid currentColor;
+  border: 1.5px solid var(--pc-main);
   border-radius: 999px;
   font-size: 13px;
   font-weight: 700;
-  color: inherit;
+  color: var(--pc-main);
   text-decoration: none;
   transition: background-color .3s, color .3s;
 }
 
 .pcard__ext:hover {
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--pc-main);
+  color: #fff;
 }
 
 .pcard__cta {
@@ -180,8 +182,8 @@
   align-items: center;
   gap: 6px;
   border-radius: 999px;
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--pc-main);
+  color: #fff;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
@@ -208,7 +210,7 @@
 
 .pcard__ext:focus-visible,
 .pcard__cta:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--pc-main);
   outline-offset: 3px;
 }
 
@@ -216,7 +218,7 @@
   margin-left: auto;
   font-size: 13px;
   font-weight: 600;
-  opacity: .65;
+  color: var(--text-tertiary-color, #8a8580);
 }
 
 /* ---------- 반응형 ---------- */
