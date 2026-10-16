@@ -23,8 +23,8 @@ import balenciagaCard from '../assets/balenciaga-card.jpg';
 import { balenciaga } from './balenciaga';
 
 export const skills = {
-  title: 'Skills Ability',
-  description: '숫자로 된 숙련도 대신, 실제로 프로젝트에서 사용해본 기술을 정리했습니다.\n테두리가 진하게 표시된 항목이 가장 자신 있는 영역입니다.',
+  title: 'Skills',
+  description: '숫자로 된 숙련도 대신, 실제로 프로젝트에서 사용해본 기술을 정리했습니다.',
   groups: [
     {
       label: 'Language/Framework/Library',
@@ -71,14 +71,17 @@ export const education = {
   achievementsTitle: '주요 활동 및 성과',
   achievements: [
     'HTML, CSS, Javascript, React, TypeScript 등을 이용한 웹 프로그래밍 교육 과정 이수',
-    '팀 프로젝트에서 프로젝트 기획서 작성을 주도하며, 타겟 사용자 정의, 주요 기능 우선순위 설정 등 요구사항 정의를 담당',
-    '간단한 사용성 테스트(인터뷰/설문)를 설계하고 결과를 분석해, 네비게이션 구조와 카테고리 명칭을 개선',
-    '웹사이트 리뉴얼 프로젝트에서 사이트 분석과 주제 선정을 주도하고, 팀원별 담당 파트에 대해 적극적인 의견을 제시하며 피드백 반영',
+    'Figma와 OpenAI를 활용한 UI/UX 디자인 및 서비스 기획 교육 과정 이수',
+    '사용성 테스트를 직접 설계하고 결과를 분석해 웹사이트의 네비게이션 구조와 카테고리 개선',
+    '팀 프로젝트의 기획서 작성과 방향성 설정을 주도하며 프로젝트 기획 역량 강화',
+    '팀원들과 적극적으로 의견을 나누고 피드백을 반영하며 협업 및 커뮤니케이션 역량 향상',
+    'Git과 GitHub를 활용해 소스 코드를 관리하고 프로젝트 변경 사항을 기록',
+    'GitHub를 통해 프로젝트 코드를 공유하고 팀원들과 협업하는 개발 환경 경험',
+    'Vercel 및 GitHub Pages를 활용해 제작한 웹사이트를 배포하고 실제 서비스 환경에서 동작 확인',
+    '배포 과정에서 발생하는 경로 및 화면 표시 문제를 점검하고 수정하며 웹사이트 안정성 개선',
+    'README와 Markdown 문서를 작성해 프로젝트의 주요 기능, 개발 과정 및 실행 방법 정리',
   ],
-  skillsTitle: '습득 역량',
-  skills: ['HTML', 'Scss', 'CSS', 'Git', 'JavaScript', 'GitHub', 'TypeScript', 'Figma', 'Swiper', 'React', 'GSAP', 'Next.js', 'Open AI', 'Node.js'],
 };
-
 /*
  * 프로젝트별로 stack(사용 기술)과 link(홈페이지 보러가기)를 각각 수정하세요.
  *  - stack : 칩으로 표시될 기술 이름 배열

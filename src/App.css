@@ -54,158 +54,169 @@
   display: none;
 }
 
+/* ---------- Hero 하단 프로필: 왼쪽 이미지 / 오른쪽 소개 ---------- */
 .hero-bottom-section {
-  position: relative;
   max-width: var(--inner-width);
   margin: 0 auto;
-  padding: 40px 3rem 100px;
-  text-align: center;
+  padding: 120px 3rem;
 }
 
-/* 1. 플로팅 태그 그룹 (Frontend Developer, UI Design 등) */
-.hero-bottom-tags {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 80px;
-}
-
-.hero-pill-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--gray-200);
-  border-radius: 9999px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary-color);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.hero-pill-tag:hover {
-  transform: translateY(-3px);
-  border-color: var(--gray-400);
-}
-
-.hero-pill-row {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.hero-pill-row .hero-pill-tag {
-  font-size: 1.25rem;
-  padding: 0.9rem 2.2rem;
-}
-
-/* 2. 소개 텍스트 및 프로필 영역 */
 .hero-profile-container {
-  max-width: 900px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
   text-align: left;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid var(--gray-200);
-  border-radius: 24px;
-  padding: 4rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
+/* ---------- 이미지 영역 ---------- */
+.hero-profile-visual {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.hero-profile-visual img {
+  position: absolute;
+  display: block;
+  height: auto;
+  user-select: none;
+}
+
+.hero-profile-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 바깥 원: 아주 옅은 파스텔 라벤더 + 은은한 발광 */
+.hero-profile-ring--outer {
+  width: 82%;
+  height: 82%;
+  border: 1px solid rgba(196, 207, 240, .55);
+  box-shadow:
+    0 0 20px rgba(196, 207, 240, .35),
+    inset 0 0 20px rgba(196, 207, 240, .22);
+}
+
+/* 안쪽 원: 아주 옅은 파스텔 스카이 + 은은한 발광 */
+.hero-profile-ring--inner {
+  width: 64%;
+  height: 64%;
+  border: 1px solid rgba(186, 220, 240, .60);
+  background: radial-gradient(closest-side, rgba(186, 220, 240, .05), rgba(186, 220, 240, .14));
+  box-shadow:
+    0 0 16px rgba(186, 220, 240, .40),
+    inset 0 0 16px rgba(186, 220, 240, .26);
+}
+
+/* 사진: 원/궤도와 같은 정중앙 */
+.hero-profile-photo {
+  left: 50%;
+  top: 50%;
+  width: 47%;
+  transform: translate(-50%, -50%);
+}
+
+/* 궤도: 바깥 원과 같은 크기/중심. 천천히 회전하고, 소품은 반대로 돌아 똑바로 서 있습니다. */
+.hero-profile-orbit {
+  position: absolute;
+  left: 9%;
+  top: 9%;
+  width: 82%;
+  height: 82%;
+  animation: orbit-spin 40s linear infinite;
+}
+
+.hero-profile-orbit .orbit-item {
+  position: absolute;
+  translate: -50% -50%;
+  animation: orbit-spin 40s linear infinite reverse;
+}
+
+.hero-profile-orbit .orbit-item img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- 텍스트 영역 ---------- */
 .hero-profile-subtitle {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .02em;
   color: var(--main-color);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
 }
 
 .hero-profile-desc-top {
-  font-size: 1.25rem;
-  color: var(--text-secondray-color);
-  margin-bottom: 2rem;
+  margin-top: .5rem;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-tertiary-color);
+  word-break: keep-all;
 }
 
 .hero-profile-name {
-  font-size: 3.5rem;
+  margin: 1.6rem 0 1.2rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 700;
+  letter-spacing: -.03em;
   color: var(--text-primary-color);
-  margin: 0 0 1.5rem 0;
-  letter-spacing: -0.03em;
 }
 
 .hero-profile-desc-main {
-  font-size: 1.15rem;
+  margin: 0;
+  max-width: 34em;
+  font-size: 14px;
   line-height: 1.7;
-  color: var(--text-secondray-color);
-  margin-bottom: 2.5rem;
+  color: var(--text-tertiary-color);
+  word-break: keep-all;
 }
 
 .hero-profile-meta {
   display: flex;
-  gap: 2rem;
-  font-size: 1rem;
-  color: var(--text-tertiary-color);
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.hero-profile-meta span strong {
-  color: var(--text-primary-color);
-}
-
-/* 3. 하단 기술 스택 칩 리스트 */
-.hero-tech-chips {
-  display: flex;
-  gap: 0.75rem;
   flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.6rem;
+  font-size: 14px;
+  color: var(--text-tertiary-color);
 }
 
-.tech-chip {
-  padding: 0.5rem 1.25rem;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--gray-300);
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondray-color);
+.hero-profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--main-color);
 }
 
-/* 반응형 디자인 */
 @media (max-width: 768px) {
   .hero-bottom-section {
-    padding: 20px 1.5rem 60px;
-  }
-
-  .hero-pill-tag {
-    font-size: 1.2rem;
-    padding: 0.8rem 1.8rem;
-  }
-
-  .hero-pill-row .hero-pill-tag {
-    font-size: 1rem;
-    padding: 0.7rem 1.5rem;
+    padding: 80px 1.5rem;
   }
 
   .hero-profile-container {
-    padding: 2rem;
+    grid-template-columns: 1fr;
   }
 
-  .hero-profile-name {
-    font-size: 2.5rem;
-  }
-
-  .hero-profile-meta {
-    flex-direction: column;
-    gap: 0.5rem;
+  .hero-profile-visual {
+    max-width: 360px;
   }
 }
 
@@ -236,6 +247,12 @@
 
 .hero-homepage__title span {
   display: block;
+}
+
+/* 인트로 타이틀은 화면(뷰포트) 정중앙에 고정. 인트로 후엔 title-out 으로 사라집니다. */
+.is-ready .hero-homepage__title {
+  position: fixed;
+  top: 50%;
 }
 
 /* JS 사용 시에만 인트로를 적용해 로딩 실패 때도 제목을 보여줍니다. */
@@ -648,7 +665,9 @@ html {
 
 .section-head__desc {
   margin: 0;
-  line-height: 1.7;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
   color: var(--text-secondray-color);
   white-space: pre-line;
 }
@@ -676,10 +695,7 @@ html {
   max-width: 900px;
   margin: 0 auto;
   padding: 2.5rem;
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, .04);
+  background: none;
 }
 
 .skills-card__label {
@@ -696,8 +712,9 @@ html {
 
 .skills-group__title {
   margin: 0 0 .9rem;
-  font-size: .95rem;
-  font-weight: 600;
+  font-family: 'Pretendard', 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
   color: var(--text-secondray-color);
 }
 
@@ -741,9 +758,10 @@ html {
   height: 22px;
 }
 
+/* 강조(is-strong) 스킬도 다른 스킬과 같은 일반 테두리를 씁니다 */
 .skill.is-strong {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 1px var(--primary-color);
+  border: 1px solid var(--gray-200);
+  box-shadow: none;
 }
 
 /* ---------- Education ---------- */
@@ -751,9 +769,6 @@ html {
   max-width: 1100px;
   margin: 0 auto;
   padding: 3rem;
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  border-radius: 24px;
 }
 
 .edu-card__org {
@@ -773,7 +788,8 @@ html {
 
 .edu-card__course {
   margin: .75rem 0 .5rem;
-  font-size: 1.5rem;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .edu-card__meta {
@@ -802,20 +818,62 @@ html {
 }
 
 .edu-card__list li {
-  position: relative;
-  padding: 0 0 .6rem 1.4rem;
-  line-height: 1.6;
-  color: var(--text-secondray-color);
+  margin: 0 0 .6rem;
+  padding: 0;
+  line-height: 2;
 }
 
-.edu-card__list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: .5em;
-  width: 8px;
-  height: 8px;
-  background: var(--main-color);
+/* 불릿 대신: 글자 뒤에 메인 컬러 배경 + 흰 글자 (사방 4px)
+   스크롤로 보이면(.is-on) 배경이 왼쪽 0 에서 시작해 글자 끝까지 펼쳐집니다. */
+.edu-hl {
+  padding: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  color: #fff;
+  background: linear-gradient(var(--main-color), var(--main-color)) no-repeat 0 0 / 100% 100%;
+}
+
+/* 기본(구형 브라우저용): 배경이 펼쳐진 뒤 글자색이 흰색으로 바뀜 */
+.edu-card__list.is-armed .edu-hl {
+  color: var(--text-primary-color);
+  background-size: 0% 100%;
+  transition: background-size .8s cubic-bezier(.2, .8, .2, 1), color .3s ease .45s;
+}
+
+.edu-card__list.is-armed .edu-hl.is-on {
+  color: #fff;
+  background-size: 100% 100%;
+}
+
+/* 권장: 배경이 지나간 부분만 글자가 흰색이 되도록 레이어를 겹침
+   (위: 흰 글자 / 중간: 어두운 글자 / 아래: 파란 배경) */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .edu-card__list.is-armed .edu-hl {
+    color: transparent;
+    background-image:
+      linear-gradient(#fff, #fff),
+      linear-gradient(var(--text-primary-color), var(--text-primary-color)),
+      linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 0, 0 0;
+    background-size: 0% 100%, 100% 100%, 0% 100%;
+    -webkit-background-clip: text, text, border-box;
+    background-clip: text, text, border-box;
+    transition: background-size .8s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .edu-card__list.is-armed .edu-hl.is-on {
+    color: transparent;
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-card__list.is-armed .edu-hl {
+    transition: none;
+  }
 }
 
 /* ---------- Project (full-bleed 50/50) ---------- */

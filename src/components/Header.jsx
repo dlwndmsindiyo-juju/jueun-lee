@@ -4,7 +4,7 @@ import hamIcon from '../assets/ham.svg';
 
 const MENUS = [
   ['home', 'Home'],
-  ['skills', 'Skills Ability'],
+  ['skills', 'Skills'],
   ['education', 'Education'],
   ['project', 'Project'],
   ['connect', 'Connect'],

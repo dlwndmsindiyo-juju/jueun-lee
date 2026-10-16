@@ -28,8 +28,8 @@
   margin: 0 0 1.5rem;
   padding: 0 0 .9rem;
   border-bottom: 1px solid var(--gray-200, #e5e0dc);
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   letter-spacing: -.01em;
   color: var(--text-tertiary-color, #8a8580);
 }
@@ -49,7 +49,6 @@
   overflow: hidden;
   color: var(--text-primary-color, #1a1a1a);
   background: transparent;
-  border: 1.5px solid var(--pc-main);
   scroll-margin-top: 110px;
 }
 

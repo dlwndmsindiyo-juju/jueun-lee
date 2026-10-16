@@ -1,48 +1,66 @@
 import { delay } from '../hooks/reveal';
+import profileImg from '../assets/profile-img.png';
+import capImg from '../assets/cap.svg';
+import headphoneImg from '../assets/headphone.svg';
+import swimImg from '../assets/swim.svg';
 
-const CHIPS = ['HTML', 'CSS', 'Scss ', 'Tailwind css', 'JavaScript', 'React', 'Open AI'];
+// 소품은 바깥 원(궤도) 위에 각도(deg)로 배치합니다. w는 궤도 폭 대비 %.
+const ORBIT = [
+  { key: 'cap', src: capImg, deg: -58, w: 27 },
+  { key: 'swim', src: swimImg, deg: 183, w: 22 },
+  { key: 'phone', src: headphoneImg, deg: 23, w: 17 },
+].map((o) => ({
+  ...o,
+  left: 50 + 50 * Math.cos((o.deg * Math.PI) / 180),
+  top: 50 + 50 * Math.sin((o.deg * Math.PI) / 180),
+}));
 
-// 키워드 알약: 스크롤로 보이면 d초 간격으로 하나씩 등장
-const Pill = ({ d, children }) => (
-  <div data-reveal style={delay(d)}>
-    <div className="hero-pill-tag">{children}</div>
-  </div>
-);
+const TAGS = ['관찰력', '성실함', '집요함', '꼼꼼함', '유연한사고', '추진력', '집중력'];
 
 export default function HeroProfile() {
   return (
     <section className="hero-bottom-section">
-      <div className="hero-bottom-tags">
-        <Pill d={0}>Frontend Developer</Pill>
-        <div className="hero-pill-row">
-          <Pill d={0.2}>UI Design</Pill>
-          <Pill d={0.4}>UX Research</Pill>
-        </div>
-        <Pill d={0.6}>Publishing</Pill>
-      </div>
-
       <div className="hero-profile-container" data-reveal style={delay(0)}>
-        <div className="hero-profile-subtitle">PORTFOLIO / 2026</div>
-        <div className="hero-profile-desc-top">
-          관찰하고 분석하여 사용자의 니즈를 파악합니다.
+        {/* 왼쪽: 프로필 + 궤도 + 소품 */}
+        <div className="hero-profile-visual" aria-hidden="true">
+          <span className="hero-profile-ring hero-profile-ring--outer" />
+          <span className="hero-profile-ring hero-profile-ring--inner" />
+          <img className="hero-profile-photo" src={profileImg} alt="" draggable={false} />
+          <div className="hero-profile-orbit">
+            {ORBIT.map((o) => (
+              <span
+                key={o.key}
+                className="orbit-item"
+                style={{ left: `${o.left}%`, top: `${o.top}%`, width: `${o.w}%` }}
+              >
+                <img src={o.src} alt="" draggable={false} />
+              </span>
+            ))}
+          </div>
         </div>
 
-        <h2 className="hero-profile-name">이주은</h2>
+        {/* 오른쪽: 소개 텍스트 */}
+        <div className="hero-profile-info">
+          <div className="hero-profile-subtitle">PORTFOLIO / 2026</div>
+          <div className="hero-profile-desc-top">관찰하고 분석하여 문제점을 끝까지 해결합니다.</div>
 
-        <p className="hero-profile-desc-main">
-          흐름을 읽어내는 관찰력과, 마주한 문제를 끝까지 해결하는 집요함으로
-          서비스의 성장을 뒷받침하는 프론트엔드 개발자입니다.
-        </p>
+          <h2 className="hero-profile-name">이주은</h2>
 
-        <div className="hero-profile-meta">
-          <span>1998/11/23</span>
-          <span>Seoul</span>
-        </div>
+          <p className="hero-profile-desc-main">
+            변화를 두려워하지 않는 개방적인 태도와 지속적인 성장에 대한 열망을 가지고 있습니다.
+            <br />
+            새로운 지식과 경험에 언제나 열려있고, 매일 조금씩 성장하는 삶을 지향합니다.
+          </p>
 
-        <div className="hero-tech-chips">
-          {CHIPS.map((chip) => (
-            <span className="tech-chip" key={chip}>{chip}</span>
-          ))}
+          <div className="hero-profile-meta">
+            <span>1998/11/23</span>
+            <span>Seoul</span>
+            <span>INTJ</span>
+          </div>
+
+          <ul className="hero-profile-tags">
+            {TAGS.map((t) => <li key={t}>#{t}</li>)}
+          </ul>
         </div>
       </div>
     </section>
