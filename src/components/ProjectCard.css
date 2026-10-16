@@ -20,7 +20,7 @@
 }
 
 /* ---------- 그룹 제목 (1. TEAM PROJECT / 2. PERSONAL PROJECT) ---------- */
-.section.project.project--cards .project-group + .project-group {
+.section.project.project--cards .project-group+.project-group {
   margin-top: 5rem;
 }
 
@@ -37,7 +37,8 @@
 /* ---------- 카드 ---------- */
 .pcard {
   --ease: cubic-bezier(.2, .8, .2, 1);
-  --pc-main: #0043c4;   /* 메인 컬러 */
+  --pc-main: #0043c4;
+  /* 메인 컬러 */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -117,7 +118,7 @@
 
 .pcard__sum {
   margin: 10px 0 0;
-  font-size: 15px;
+  font-size: 24px;
   line-height: 1.55;
   font-weight: 600;
   word-break: keep-all;
@@ -239,6 +240,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .pcard,
   .pcard * {
     transition-duration: .001ms !important;

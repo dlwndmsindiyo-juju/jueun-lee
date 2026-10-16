@@ -179,7 +179,7 @@
 .hero-profile-desc-main {
   margin: 0;
   max-width: 34em;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.7;
   color: var(--text-tertiary-color);
   word-break: keep-all;
@@ -786,10 +786,15 @@ html {
   font-weight: 600;
 }
 
+.edu-card__org strong {
+  font-size: 24px;
+}
+
 .edu-card__course {
   margin: .75rem 0 .5rem;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
+  color: var(--text-secondray-color);
 }
 
 .edu-card__meta {
@@ -808,7 +813,7 @@ html {
 
 .edu-card__heading {
   margin: 0 0 1rem;
-  font-size: 1rem;
+  font-size: 20px;
 }
 
 .edu-card__list {
