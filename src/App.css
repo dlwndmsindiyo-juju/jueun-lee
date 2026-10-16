@@ -190,7 +190,7 @@
   flex-wrap: wrap;
   gap: 1.4rem;
   margin-top: 1.6rem;
-  font-size: 14px;
+  font-size: 18px;
   color: var(--text-tertiary-color);
 }
 
@@ -201,7 +201,7 @@
   margin: 1.4rem 0 0;
   padding: 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--main-color);
 }

@@ -37,8 +37,16 @@
   border: 1px solid #ececec;
   transform: translate(-50%, -50%);
 }
-.hero-profile-ring--outer { width: 82%; height: 82%; }
-.hero-profile-ring--inner { width: 64%; height: 64%; }
+
+.hero-profile-ring--outer {
+  width: 82%;
+  height: 82%;
+}
+
+.hero-profile-ring--inner {
+  width: 64%;
+  height: 64%;
+}
 
 .hero-profile-photo {
   left: 53%;
@@ -47,9 +55,23 @@
   transform: translate(-50%, -50%);
 }
 
-.hero-profile-prop--cap   { left: 63%; top: 4%;  width: 22%; }
-.hero-profile-prop--swim  { left: 1%;  top: 41%; width: 18%; }
-.hero-profile-prop--phone { left: 84%; top: 59%; width: 14%; }
+.hero-profile-prop--cap {
+  left: 63%;
+  top: 4%;
+  width: 22%;
+}
+
+.hero-profile-prop--swim {
+  left: 1%;
+  top: 41%;
+  width: 18%;
+}
+
+.hero-profile-prop--phone {
+  left: 84%;
+  top: 59%;
+  width: 14%;
+}
 
 /* ---------- 텍스트 영역 ---------- */
 .hero-profile-subtitle {
@@ -87,7 +109,7 @@
   flex-wrap: wrap;
   gap: 1.4rem;
   margin-top: 1.6rem;
-  font-size: 14px;
+  font-size: 18px;
   color: var(--text-tertiary-color, #8a8580);
 }
 
@@ -97,14 +119,22 @@
   gap: .4rem 1rem;
   margin: 1.4rem 0 0;
   padding: 0;
-  list-style: none;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--main-color, #0043c4);
 }
 
+
 @media (max-width: 768px) {
-  .hero-bottom-section { padding: 80px 1.5rem; }
-  .hero-profile-container { grid-template-columns: 1fr; }
-  .hero-profile-visual { max-width: 360px; }
+  .hero-bottom-section {
+    padding: 80px 1.5rem;
+  }
+
+  .hero-profile-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-profile-visual {
+    max-width: 360px;
+  }
 }
