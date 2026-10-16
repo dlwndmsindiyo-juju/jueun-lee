@@ -19,6 +19,7 @@ import notionIcon from '../assets/skills/notion.svg';
 import slackIcon from '../assets/skills/slack.svg';
 import firebaseIcon from '../assets/skills/firebase.svg';
 import zustandIcon from '../assets/skills/zustand.svg';
+import vercelIcon from '../assets/skills/vercel.svg';
 import balenciagaCard from '../assets/balenciaga-card.jpg';
 import { balenciaga } from './balenciaga';
 
@@ -27,7 +28,7 @@ export const skills = {
   description: '숫자로 된 숙련도 대신, 실제로 프로젝트에서 사용해본 기술을 정리했습니다.',
   groups: [
     {
-      label: 'Language/Framework/Library',
+      label: 'Language / Framework / Library',
       items: [
         { name: 'HTML', icon: htmlIcon, strong: true },
         { name: 'CSS', icon: cssIcon, strong: true },
@@ -44,12 +45,13 @@ export const skills = {
       ],
     },
     {
-      label: 'Tools/Analytics/Plugins',
+      label: 'Tools / Analytics / Plugins',
       items: [
         { name: 'Figma', icon: figmaIcon },
         { name: 'Photoshop', icon: psIcon },
         { name: 'Illustrator', icon: aiIcon },
         { name: 'GitHub', icon: ghIcon },
+        { name: 'Vercel', icon: vercelIcon },
         { name: 'GSAP', icon: gsapIcon },
         { name: 'Swiper', icon: swiperIcon },
         { name: 'OpenAI', icon: openaiIcon, strong: true },
@@ -108,10 +110,10 @@ export const projects = {
           link: balenciaga.link,
         },
         {
-          subtitle: 'OTT 리뉴얼 프로젝트',
+          subtitle: 'Apple TV+ OTT 사이트 리뉴얼',
           id: 'apple-tv',
           title: 'Apple TV',
-          period: '2026.10 - 2026.12',
+          period: '2026.09 - 2026.10',
           members: '6인',
           stack: ['React', 'CSS', 'Scss', 'JavaScript', 'Figma', 'Open AI', 'Git', 'GitHub', 'GSAP', 'Swiper'],
           image: null,
@@ -125,10 +127,10 @@ export const projects = {
       label: '02 / PERSONAL PROJECT',
       items: [
         {
-          subtitle: '나의 모든 것이 담긴 포트폴리오',
+          subtitle: '개인 프로젝트',
           id: 'portfolio',
           title: 'PORTFOLIO',
-          period: '2026.09 - 2026.10',
+          period: '2026.10 - 2026.11',
           members: '1인',
           stack: ['React', 'CSS', 'Scss', 'Figma', 'JavaScript', 'Open AI', 'Git', 'GitHub'],
           image: null,
@@ -153,8 +155,8 @@ export const footer = {
   menu: [
     { label: 'Home', href: '#home' },
     { label: 'Project', href: '#project' },
-    { label: 'Skill', href: '#skills' },
-    { label: 'About', href: '#education' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Education', href: '#education' },
   ],
   connectTitle: 'CONNECT',
   connect: [

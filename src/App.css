@@ -1037,6 +1037,7 @@ html {
   padding: 0;
   list-style: none;
   display: grid;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -1049,7 +1050,8 @@ html {
   content: "";
   position: absolute;
   left: 0;
-  top: .45em;
+  top: 50%;
+  transform: translateY(-50%);
   width: 12px;
   height: 12px;
   background: var(--main-color);
