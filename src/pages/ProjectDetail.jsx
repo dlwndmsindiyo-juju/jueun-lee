@@ -88,7 +88,7 @@ export default function ProjectDetail({ slug }) {
         <section className="dsec facts" id="detail-facts">
           <div data-reveal>
             <h2 className='dh dh--lg is-revealed'>역할</h2>
-            <h2 className="dh">기획에서 구현까지</h2><p>{d.role}</p></div>
+            <p>{d.role}</p></div>
           <div data-reveal style={delay(0.1)}><h2 className="dh">담당 파트</h2><ul>{d.parts.map((p) => <li key={p}>{p}</li>)}</ul></div>
         </section>
 
