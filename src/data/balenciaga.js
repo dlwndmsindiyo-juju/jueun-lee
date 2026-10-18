@@ -9,7 +9,7 @@ export const balenciaga = {
   cardImage: '/images/balenciaga-card.jpg', // 홈 프로젝트 카드용 이미지 (public/images/)
   role: 'UI/UX 기획 및 프론트엔드 개발',
   parts: ['메인페이지 헤더, SNS 배너', '서브페이지: 여성 상의 전체보기', '캠페인 메뉴: 뉴욕(New York) 페이지'],
-  featuresTitle: '주요 UI 개선 및 기능 개발',
+  featuresTitle: '주요 기능',
   features: [
     { title: '메인페이지 헤더 및 네비게이션', en: 'Header & Navigation', items: [
       ['검색 UI 단순화', '검색 아이콘과 검색바의 중복 노출 구조를 아이콘 단독형으로 통합해 시각적 노이즈를 제거하고 직관성을 높였습니다.'],
@@ -32,7 +32,7 @@ export const balenciaga = {
     ] },
   ],
   trouble: {
-    title: '트러블 슈팅 경험',
+    title: '트러블 슈팅',
     subtitle: '이커머스 필터 시스템 구조화 및 동적 필터링 최적화 · 여성 상의 전체보기',
     problemTitle: '문제 정의 (AS-IS)',
     problem: '필터 레이어와 정렬 레이어가 분리된 독립 컴포넌트로 동작해, 조건을 바꿀 때마다 각각 열고 닫아야 했고 상태가 파편화되어 불필요한 DOM 조작이 빈번했습니다.',
