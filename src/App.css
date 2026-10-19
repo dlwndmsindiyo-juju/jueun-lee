@@ -692,9 +692,9 @@ html {
 
 /* ---------- Skills ---------- */
 .skills-card {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1em;
   background: none;
 }
 
@@ -708,6 +708,7 @@ html {
 
 .skills-group {
   margin: 20px 0;
+  width: 100%;
 }
 
 .skills-group__title {
@@ -722,7 +723,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
-  margin: 0 0 2rem;
+  margin: 0;
   padding: 4px 0;
   list-style: none;
 }
