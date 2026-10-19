@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import ToTop from '../components/ToTop';
 import DetailNav from '../components/DetailNav';
 import Icon from '../components/Icon';
-import useReveal from '../hooks/useReveal';
+import useReveal from '../hooks/usereveal';
 import { delay } from '../hooks/reveal';
 import { projectDetails } from '../data/balenciaga';
 

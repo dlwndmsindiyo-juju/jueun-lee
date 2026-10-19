@@ -12,7 +12,7 @@ import ToTop from "./components/ToTop";
 import Footer from "./components/Footer";
 import ProjectDetail from "./pages/ProjectDetail";
 import useIntro from "./hooks/useIntro";
-import useReveal from "./hooks/useReveal";
+import useReveal from "./hooks/usereveal";
 
 function Home() {
   const introDone = useIntro();
