@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import appleTvImage from '../assets/projects/apple-tv.jpeg';
-import tenpercentImage from '../assets/projects/tenpercent.jpeg';
+import appleTvImage from '/images/carousel/apple-tv.jpg';
+import tenpercentImage from '/images/carousel/tenpercent.jpg';
 
 // 이미지는 public/images/carousel/ 에 넣고, href는 이동할 섹션의 id(#...)로 지정하세요.
 const SERVICES = [

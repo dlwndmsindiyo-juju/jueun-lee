@@ -1,6 +1,6 @@
-import balenciagaImage from '../assets/projects/balenciaga.jpeg';
-import appleTvImage from '../assets/projects/apple-tv.jpeg';
-import tenpercentImage from '../assets/projects/tenpercent.jpeg';
+import balenciagaImage from '/images/carousel/balenciaga.jpg';
+import appleTvImage from '/images/carousel/apple-tv.jpg';
+import tenpercentImage from '/images/carousel/tenpercent.jpg';
 
 // 상세 내용만 바꾸면 모든 프로젝트에 같은 레이아웃이 적용됩니다.
 export const projectDetails = {
