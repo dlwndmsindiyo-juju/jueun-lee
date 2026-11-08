@@ -318,7 +318,7 @@
 .pcard__ext { border: 0; background: transparent; color: #73767d; box-shadow: none; }
 .pcard__ext:hover, .pcard__ext:focus-visible, .pcard__ext:active { color: var(--main-color); background: transparent; }
 @media (max-width: 768px) {
-  .pcard__chips li { background: #f0f1f3; color: #656a73; }
-  .pcard__ext { background: #eff0f2; color: #656a73; }
+  .pcard__chips li { border:1px solid #f0f1f3; color: #656a73; }
+  .pcard__ext { background: var(--main-color); color: #eee; }
   .pcard__ext:hover, .pcard__ext:focus-visible, .pcard__ext:active { background: #e8efff; color: var(--main-color); }
 }
