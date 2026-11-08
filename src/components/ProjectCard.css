@@ -245,3 +245,15 @@
     transition-delay: 0s !important;
   }
 }
+/* 메인 시안의 문구와 프로젝트 이미지, 기존 카드 구조 유지 */
+.section.project.project--cards .project-group__title { color: var(--main-color); font-size: 16px; font-weight: 700; }
+.pcard__k { color: var(--main-color); font-size: 14px; font-weight: 500; }
+.pcard__sum { font-size: 20px; font-weight: 400; color: var(--text-secondray-color); }
+.pcard__note { color: var(--text-tertiary-color); font-size: 14px; margin-top: 12px; }
+.pcard__ghost { color: var(--main-color); top: 32px; bottom: auto; font-size: clamp(32px, 4vw, 64px); line-height: 1.5; }
+.pcard__ghost small { display: block; font-size: 18px; font-weight: 400; letter-spacing: 0; margin-top: 20px; color: var(--text-secondray-color); }
+@media (max-width: 768px) {
+  .pcard { height: auto; min-height: 600px; }
+  .pcard__art { flex: none; aspect-ratio: 16 / 10; }
+  .pcard__sum { font-size: 17px; }
+}

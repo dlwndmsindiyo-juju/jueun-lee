@@ -81,7 +81,7 @@ export default function DetailNav({ items }) {
     // 섹션 제목이 목차 바로 아래(16px)에 오도록 위치 계산 (섹션 위쪽 padding만큼 보정)
     const padTop = parseFloat(getComputedStyle(el).paddingTop) || 0;
     const top = el.getBoundingClientRect().top + window.scrollY - (HEADER_H + nav.offsetHeight + 16 - padTop);
-    window.scrollTo({ top, left: 0, behavior: reduced ? 'auto' : 'smooth' });
+    window.scrollTo({ top, left: 0, behavior: reduced ? 'instant' : 'smooth' });
   };
 
   const done = pct >= 99;
