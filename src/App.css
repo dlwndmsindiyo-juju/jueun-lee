@@ -831,7 +831,8 @@ html {
 
 /* 불릿 대신: 글자 뒤에 메인 컬러 배경 + 흰 글자 (사방 4px)
    스크롤로 보이면(.is-on) 배경이 왼쪽 0 에서 시작해 글자 끝까지 펼쳐집니다. */
-.edu-hl {
+.edu-hl,
+.profile-highlight {
   padding: 4px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -842,13 +843,15 @@ html {
 }
 
 /* 기본(구형 브라우저용): 배경이 펼쳐진 뒤 글자색이 흰색으로 바뀜 */
-.edu-card__list.is-armed .edu-hl {
+.edu-card__list.is-armed .edu-hl,
+.profile-highlight {
   color: var(--text-primary-color);
   background-size: 0% 100%;
   transition: background-size .8s cubic-bezier(.2, .8, .2, 1), color .3s ease .45s;
 }
 
-.edu-card__list.is-armed .edu-hl.is-on {
+.edu-card__list.is-armed .edu-hl.is-on,
+.profile-highlight.is-on {
   color: #fff;
   background-size: 100% 100%;
 }
@@ -856,7 +859,8 @@ html {
 /* 권장: 배경이 지나간 부분만 글자가 흰색이 되도록 레이어를 겹침
    (위: 흰 글자 / 중간: 어두운 글자 / 아래: 파란 배경) */
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .edu-card__list.is-armed .edu-hl {
+  .edu-card__list.is-armed .edu-hl,
+.profile-highlight {
     color: transparent;
     background-image:
       linear-gradient(#fff, #fff),
@@ -870,14 +874,16 @@ html {
     transition: background-size .8s cubic-bezier(.2, .8, .2, 1);
   }
 
-  .edu-card__list.is-armed .edu-hl.is-on {
+  .edu-card__list.is-armed .edu-hl.is-on,
+.profile-highlight.is-on {
     color: transparent;
     background-size: 100% 100%, 100% 100%, 100% 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .edu-card__list.is-armed .edu-hl {
+  .edu-card__list.is-armed .edu-hl,
+.profile-highlight {
     transition: none;
   }
 }
@@ -1685,4 +1691,7 @@ html {
 .site-header__nav a { padding: 8px 12px; border-radius: 8px; transition: color .2s, background-color .2s; }
 .site-header__nav a.is-active { color: #fff; background: var(--main-color); }
 .section-head__title, .connect__title { font-size: clamp(2.6rem, 3.8vw, 3.5rem); }
-.profile-highlight { color: #fff; background: var(--main-color); padding: .05em .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+
+/* 자기소개는 기존 글자 크기를 유지하고 Education과 같은 하이라이트를 사용합니다. */
+.profile-highlight { font-size: inherit; letter-spacing: inherit; }

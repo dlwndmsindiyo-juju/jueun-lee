@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { delay } from '../hooks/reveal';
 import profileImg from '../assets/profile-img.png';
 import capImg from '../assets/cap.svg';
@@ -18,8 +19,28 @@ const ORBIT = [
 const TAGS = ['관찰력', '성실함', '집요함', '꼼꼼함', '유연한사고', '추진력', '집중력'];
 
 export default function HeroProfile() {
+  const profileRef = useRef(null);
+
+  useEffect(() => {
+    const words = profileRef.current?.querySelectorAll('.profile-highlight') ?? [];
+    if (!('IntersectionObserver' in window)) {
+      words.forEach((word) => word.classList.add('is-on'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-on');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    words.forEach((word) => observer.observe(word));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="hero-bottom-section">
+    <section className="hero-bottom-section" ref={profileRef}>
       <div className="hero-profile-container" data-reveal style={delay(0)}>
         {/* 왼쪽: 프로필 + 궤도 + 소품 */}
         <div className="hero-profile-visual" aria-hidden="true">
