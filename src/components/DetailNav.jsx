@@ -103,7 +103,8 @@ export default function DetailNav({ items }) {
               aria-current={i === active ? 'true' : undefined}
               onClick={() => go(it.id)}
             >
-              {it.label}
+              <span className="detail-nav__label-full">{it.label}</span>
+              <span className="detail-nav__label-short">{it.mobileLabel || it.label}</span>
             </button>
           ))}
         </div>

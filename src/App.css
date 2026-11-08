@@ -1744,3 +1744,11 @@ html {
   .hero-profile-meta { font-size: 11px; gap: 6px 10px; margin-top: 12px; }
   .hero-profile-tags { font-size: 12px; gap: 4px 8px; margin-top: 12px; }
 }
+
+/* 모바일 히어로: 이미지 크기는 유지하고 이미지 아래 빈 공간을 줄입니다. */
+@media (max-width: 768px) {
+  .hero-homepage { padding: 110px 0 16px; }
+  .hero-homepage__stage { height: clamp(210px, 58vw, 340px); }
+  .hero-homepage__controls { margin-top: 12px; }
+  .hero-bottom-section { padding-top: 24px; }
+}

@@ -151,3 +151,9 @@
   .detail-nav { width: calc(100% - 40px); margin-top: 12px; }
   .detail-nav__inner { padding: .5rem 0; }
 }
+
+.detail-nav__label-short { display: none; }
+@media (max-width: 768px) {
+  .detail-nav__label-full { display: none; }
+  .detail-nav__label-short { display: inline; }
+}

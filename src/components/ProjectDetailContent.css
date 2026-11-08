@@ -42,8 +42,8 @@
   .case-study__step dd, .case-study__lesson p, .case-study__summary, .case-study__process-intro p, .case-study__next p { font-size: 16px; }
   .case-study__process-intro, .case-study__case, .case-study__next { padding-block: 64px; }
   .case-study__lesson { padding: 24px; }
-  .case-study .detail-nav__tabs { overflow-x: auto; }
-  .case-study .detail-nav__tabs button { flex-shrink: 0; padding-inline: 10px; }
+  .case-study .detail-nav__tabs { overflow: visible; gap: 0; }
+  .case-study .detail-nav__tabs button { flex: 1 1 0; min-width: 0; padding-inline: 3px; font-size: 12px; }
 }
 
 @media (max-width: 768px) {
@@ -63,3 +63,10 @@
   .case-study__lesson { padding: 20px; margin-top: 24px; }
   .case-study__lesson h4 { font-size: 18px; margin-bottom: 12px; }
 }
+
+.case-study__website {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px; margin-bottom: 24px; border: 1px solid var(--main-color);
+  border-radius: 999px; color: var(--main-color); font-size: 14px; text-decoration: none;
+}
+.case-study__website:hover { background: var(--main-color); color: #fff; }
