@@ -1695,3 +1695,15 @@ html {
 
 /* 자기소개는 기존 글자 크기를 유지하고 Education과 같은 하이라이트를 사용합니다. */
 .profile-highlight { font-size: inherit; letter-spacing: inherit; }
+
+/* 이미 본 인트로는 재생하지 않고 메인 화면을 즉시 표시합니다. */
+.intro-skip .hero-homepage__title { visibility: hidden; }
+.intro-skip .hero-homepage__title span { animation: none; }
+.intro-skip .site-header,
+.intro-skip .is-ready .hero-homepage__canvas,
+.intro-skip .is-ready .hero-homepage__labels,
+.intro-skip .is-ready .hero-homepage__controls {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
