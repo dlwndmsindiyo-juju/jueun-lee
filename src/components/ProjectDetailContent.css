@@ -70,3 +70,10 @@
   border-radius: 999px; color: var(--main-color); font-size: 14px; text-decoration: none;
 }
 .case-study__website:hover { background: var(--main-color); color: #fff; }
+
+.case-study__website { border: 0; color: #73767d; background: transparent; }
+.case-study__website:hover, .case-study__website:focus-visible, .case-study__website:active { color: var(--main-color); background: transparent; }
+@media (max-width: 768px) {
+  .case-study__website { background: #eff0f2; color: #656a73; }
+  .case-study__website:hover, .case-study__website:focus-visible, .case-study__website:active { background: #e8efff; color: var(--main-color); }
+}
