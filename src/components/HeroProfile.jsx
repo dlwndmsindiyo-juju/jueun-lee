@@ -42,7 +42,7 @@ export default function HeroProfile() {
         {/* 오른쪽: 소개 텍스트 */}
         <div className="hero-profile-info">
           <div className="hero-profile-subtitle">PORTFOLIO / 2026</div>
-          <div className="hero-profile-desc-top">관찰하고 분석하여 문제점을 끝까지 해결합니다.</div>
+          <div className="hero-profile-desc-top"><mark className="profile-highlight">관찰</mark>하고 분석하여 <mark className="profile-highlight">문제점</mark>을 끝까지 <mark className="profile-highlight">해결</mark>합니다.</div>
 
           <h2 className="hero-profile-name">이주은</h2>
 

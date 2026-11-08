@@ -319,9 +319,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: var(--card-size, 240px);
+  width: var(--card-width, var(--card-size, 240px));
   height: var(--card-size, 240px);
-  margin-left: calc(var(--card-size, 240px) / -2);
+  margin-left: calc(var(--card-width, var(--card-size, 240px)) / -2);
   margin-top: calc(var(--card-size, 240px) / -2);
   border-radius: 5%;
   overflow: hidden;
@@ -1680,3 +1680,9 @@ html {
 /* 주제 미정 프로젝트도 히어로에서 하나의 카드로 표시 */
 .hero-homepage__card--pending { background: #edf1ff; }
 .hero-homepage__card--pending .fallback { color: var(--main-color); opacity: 1; }
+
+/* 현재 위치를 색상과 배경으로 함께 구분합니다. */
+.site-header__nav a { padding: 8px 12px; border-radius: 8px; transition: color .2s, background-color .2s; }
+.site-header__nav a.is-active { color: #fff; background: var(--main-color); }
+.section-head__title, .connect__title { font-size: clamp(2.6rem, 3.8vw, 3.5rem); }
+.profile-highlight { color: #fff; background: var(--main-color); padding: .05em .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
