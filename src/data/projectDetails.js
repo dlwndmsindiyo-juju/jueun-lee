@@ -141,7 +141,8 @@ export const projectDetails = {
     "summary": "공식 콘텐츠를 바탕으로 4개 페이지와 3개 화면 크기의 UI, 공통 컴포넌트와 에셋을 정리한 개인 프로젝트.",
     "stack": [
       "Figma",
-      "반응형 UI 설계 / React",
+      "반응형 UI 설계",
+      "React",
       "Zustand",
       "Sass",
       "GSAP"
