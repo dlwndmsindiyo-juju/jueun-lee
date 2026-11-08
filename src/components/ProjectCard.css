@@ -270,3 +270,24 @@
   .pcard { height: auto; min-height: 0; }
   .pcard__art { aspect-ratio: 16 / 9; }
 }
+
+/* 모바일도 같은 2열 카드 구성, 콘텐츠 크기와 간격만 조정합니다. */
+@media (max-width: 768px) {
+  .section.project.project--cards { padding: 40px 16px; }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .pcard { height: 100%; padding: 8px 0; border-radius: 0; }
+  .pcard__title { font-size: clamp(16px, 4.5vw, 25px); min-height: 2.3em; line-height: 1.15; }
+  .pcard__art { margin-top: 8px; }
+  .pcard__body { margin-top: 12px; }
+  .pcard__k { font-size: 12px; line-height: 1.5; }
+  .pcard__sum { font-size: 13px; line-height: 1.6; margin-top: 8px; word-break: normal; }
+  .pcard__chips { gap: 4px; margin-top: 8px; }
+  .pcard__chips li { font-size: 11px; padding: 2px 6px; }
+  .pcard__foot { margin-top: 12px; gap: 4px; }
+  .pcard__cta { padding: 6px 0; font-size: 12px; gap: 3px; }
+  .pcard__cta svg { width: 12px; flex-shrink: 0; }
+  .pcard__soon, .pcard__note { font-size: 12px; }
+  .pcard__ghost { top: 10px; left: 10px; right: 10px; font-size: clamp(16px, 4.5vw, 24px); line-height: 1.2; }
+  .pcard__ghost small { font-size: 12px; margin-top: 8px; }
+  .section.project.project--cards .project-group + .project-group { margin-top: 36px; }
+}
