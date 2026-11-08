@@ -61,7 +61,9 @@ export default function HeroCarousel({ children }) {
     function resize() {
       const mobile = innerWidth <= 768;
       const fov = mobile ? 49 : innerWidth <= 1024 ? 40 : 24;
-      const unit = stage.clientHeight / (2 * 8.6 * Math.tan((fov * Math.PI) / 360));
+      // 모바일은 무대 높이를 줄여도 이미지 크기는 유지합니다.
+      const visualHeight = mobile ? Math.min(440, Math.max(280, innerWidth * .76)) : stage.clientHeight;
+      const unit = visualHeight / (2 * 8.6 * Math.tan((fov * Math.PI) / 360));
       const radius = (mobile ? 4 : 4.3) * unit;
       root.style.setProperty('--perspective', `${8.6 * unit}px`);
       root.style.setProperty('--card-size', `${1.6 * unit}px`);
