@@ -20,9 +20,9 @@ import slackIcon from '../assets/skills/slack.svg';
 import firebaseIcon from '../assets/skills/firebase.svg';
 import zustandIcon from '../assets/skills/zustand.svg';
 import vercelIcon from '../assets/skills/vercel.svg';
-import balenciagaCard from '../assets/projects/balenciaga.jpeg';
-import appleTvImage from '../assets/projects/apple-tv.jpeg';
-import tenpercentImage from '../assets/projects/tenpercent.jpeg';
+import balenciagaCard from '/images/carousel/balenciaga.jpg';
+import appleTvImage from '/images/carousel/apple-tv.jpg';
+import tenpercentImage from '/images/carousel/tenpercent.jpg';
 import { projectDetails } from './projectDetails';
 
 export const skills = {
