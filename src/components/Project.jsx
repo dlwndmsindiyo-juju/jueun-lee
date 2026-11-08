@@ -14,14 +14,10 @@ function getSlug(item) {
   return match ? match[1] : null;
 }
 
-const MAX_CHIPS = 6;
-
 function ProjectCard({ item, order }) {
   const slug = getSlug(item);
   const hasLink = Boolean(item.link?.href) && item.link.href !== '#';
   const stack = item.stack || [];
-  const shown = stack.slice(0, MAX_CHIPS);
-  const rest = stack.length - shown.length;
 
   return (
     <div className="pcard-wrap" data-reveal style={delay((order % 2) * 0.12)}>
@@ -41,14 +37,14 @@ function ProjectCard({ item, order }) {
           <p className="pcard__k">{item.subtitle}</p>
           <p className="pcard__sum">{item.summary}</p>
 
-          {shown.length > 0 && (
-            <ul className="pcard__chips">
-              {shown.map((s) => <li key={s}>{s}</li>)}
-              {rest > 0 && <li className="is-more">+{rest}</li>}
-            </ul>
-          )}
-
-          {item.stackNote && <p className="pcard__note">{item.stackNote}</p>}
+          <div className="pcard__stack">
+            {stack.length > 0 && (
+              <ul className="pcard__chips">
+                {stack.map((tech) => <li key={tech}>{tech}</li>)}
+              </ul>
+            )}
+            {item.stackNote && <p className="pcard__note">{item.stackNote}</p>}
+          </div>
           <div className="pcard__foot">
             {hasLink && (
               <a className="pcard__ext" href={item.link.href} target="_blank" rel="noreferrer">

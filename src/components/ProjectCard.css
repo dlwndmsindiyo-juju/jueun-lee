@@ -299,3 +299,26 @@
   .pcard__foot { gap: 8px; }
   .pcard__ext { height: 34px; padding-inline: 8px; font-size: 12px; gap: 4px; }
 }
+
+/* 행별 콘텐츠 높이만 공유해 설명·스택·버튼 기준선을 맞춥니다. */
+@supports (grid-template-rows: subgrid) {
+  .pcard-wrap { display: grid; grid-template-rows: subgrid; grid-row: span 6; row-gap: 0; }
+  .pcard { display: grid; grid-template-rows: subgrid; grid-row: span 6; row-gap: 0; height: auto; }
+  .pcard__body { display: contents; }
+  .pcard__k { margin-top: 18px; }
+  .pcard__stack { margin-top: 12px; }
+  .pcard__chips { margin-top: 0; }
+  .pcard__foot { align-self: start; }
+  @media (max-width: 768px) {
+    .pcard__k { margin-top: 12px; }
+    .pcard__stack { margin-top: 8px; }
+  }
+}
+.pcard__chips li { border: 0; background: transparent; color: #73767d; font-weight: 500; }
+.pcard__ext { border: 0; background: transparent; color: #73767d; box-shadow: none; }
+.pcard__ext:hover, .pcard__ext:focus-visible, .pcard__ext:active { color: var(--main-color); background: transparent; }
+@media (max-width: 768px) {
+  .pcard__chips li { background: #f0f1f3; color: #656a73; }
+  .pcard__ext { background: #eff0f2; color: #656a73; }
+  .pcard__ext:hover, .pcard__ext:focus-visible, .pcard__ext:active { background: #e8efff; color: var(--main-color); }
+}
