@@ -291,3 +291,11 @@
   .pcard__ghost small { font-size: 12px; margin-top: 8px; }
   .section.project.project--cards .project-group + .project-group { margin-top: 36px; }
 }
+
+/* 버튼 두 개도 카드 안에서 자연스럽게 줄바꿈합니다. */
+.pcard__foot { flex-wrap: wrap; }
+.pcard__ext { max-width: 100%; }
+@media (max-width: 768px) {
+  .pcard__foot { gap: 8px; }
+  .pcard__ext { height: 34px; padding-inline: 8px; font-size: 12px; gap: 4px; }
+}

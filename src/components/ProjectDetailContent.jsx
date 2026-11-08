@@ -3,10 +3,10 @@ import DetailNav from './DetailNav';
 import './ProjectDetailContent.css';
 
 const NAV_ITEMS = [
-  { id: 'detail-intro', label: '프로젝트 소개' },
-  { id: 'detail-role', label: '역할과 범위' },
-  { id: 'detail-process', label: '문제 해결 과정' },
-  { id: 'detail-next', label: '다음 작업에 적용할 기준' },
+  { id: 'detail-intro', label: '프로젝트 소개', mobileLabel: '소개' },
+  { id: 'detail-role', label: '역할과 범위', mobileLabel: '역할' },
+  { id: 'detail-process', label: '문제 해결 과정', mobileLabel: '문제 해결' },
+  { id: 'detail-next', label: '다음 작업에 적용할 기준', mobileLabel: '회고' },
 ];
 
 // 모든 프로젝트가 공유하는 상세 레이아웃. 프로젝트별 내용은 data에서 전달합니다.
@@ -21,6 +21,7 @@ export default function ProjectDetailContent({ project }) {
         <ul className="case-study__stack" aria-label="사용 기술">
           {project.stack.map((tech) => <li key={tech}>{tech}</li>)}
         </ul>
+        {project.link && <a className="case-study__website" href={project.link.href} target="_blank" rel="noreferrer">{project.link.label} ↗</a>}
         <img className="case-study__image" src={project.image} alt={`${project.title} 대표 이미지`} />
       </section>
       <section className="case-study__role case-study__inner" id="detail-role">

@@ -100,6 +100,7 @@ export const projects = {
           stack: projectDetails.balenciaga.stack,
           image: balenciagaCard,
           detailHref: '/project/balenciaga',
+          link: projectDetails.balenciaga.link,
         },
         {
           id: 'apple-tv', title: 'Apple TV',
@@ -108,6 +109,7 @@ export const projects = {
           stack: ['React', 'Zustand', 'Firebase', 'TMDB'],
           image: appleTvImage,
           detailHref: '/project/apple-tv',
+          link: projectDetails['apple-tv'].link,
         },
         {
           id: 'shopping-mall', title: 'SHOPPING MALL',

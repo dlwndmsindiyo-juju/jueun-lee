@@ -16,6 +16,7 @@ export const projectDetails = {
       "GSAP"
     ],
     "image": balenciagaImage,
+    "link": { "label": "홈페이지 바로가기", "href": "https://pagliaccoi.github.io/balenciaga/" },
     "role": "메인 헤더·SNS 배너, 여성 상의 목록·캠페인 뉴욕 화면을 중심으로 작업.",
     "duties": [],
     "cases": [
@@ -80,6 +81,7 @@ export const projectDetails = {
       "OpenAI"
     ],
     "image": appleTvImage,
+    "link": { "label": "홈페이지 바로가기", "href": "https://apple-tv-khaki.vercel.app/" },
     "role": "프론트엔드 개발 (메인 개발 / 기여도 90% 이상)",
     "duties": [
       "UI/UX 컴포넌트 아키텍처 및 구현: React 기반의 재사용 가능한 컴포넌트 설계 및 전체 UI 구현",
