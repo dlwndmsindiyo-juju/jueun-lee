@@ -20,8 +20,10 @@ import slackIcon from '../assets/skills/slack.svg';
 import firebaseIcon from '../assets/skills/firebase.svg';
 import zustandIcon from '../assets/skills/zustand.svg';
 import vercelIcon from '../assets/skills/vercel.svg';
-import balenciagaCard from '../assets/balenciaga-card.jpg';
-import { balenciaga } from './balenciaga';
+import balenciagaCard from '../assets/projects/balenciaga.jpeg';
+import appleTvImage from '../assets/projects/apple-tv.jpeg';
+import tenpercentImage from '../assets/projects/tenpercent.jpeg';
+import { projectDetails } from './projectDetails';
 
 export const skills = {
   title: 'Skills',
@@ -65,7 +67,7 @@ export const skills = {
 export const education = {
   title: 'Education',
   description: '부트캠프를 통해 짧지만 다양한 경험을 가지고 빠르게 성장하였습니다.',
-  org: '이젠아카데미 부트캠프 수료',
+  org: '이젠아카데미 부트캠프',
   badge: '수료',
   course: 'UXUI디자인 웹 프론트엔드개발 부트캠프',
   location: '서울',
@@ -84,12 +86,7 @@ export const education = {
     'README와 Markdown 문서를 작성해 프로젝트의 주요 기능, 개발 과정 및 실행 방법 정리',
   ],
 };
-/*
- * 프로젝트별로 stack(사용 기술)과 link(홈페이지 보러가기)를 각각 수정하세요.
- *  - stack : 칩으로 표시될 기술 이름 배열
- *  - link  : { label: '버튼 글자', href: '주소' }  (href가 비어 있거나 '#'이면 버튼이 숨겨집니다)
- *  - detailHref : '?project=슬러그' (상세 데이터가 있는 프로젝트만. 없으면 '#')
- */
+// 카드 데이터. 상세 페이지는 같은 id의 projectDetails 데이터를 사용합니다.
 export const projects = {
   title: 'Project',
   groups: [
@@ -97,29 +94,27 @@ export const projects = {
       label: '01 / TEAM PROJECT',
       items: [
         {
-          subtitle: 'BALENCIAGA 브랜드 공식 온라인 사이트 리뉴얼',
-          id: 'balenciaga',
-          video: '/videos/balenciaga.mp4',
-          title: 'BALENCIAGA',
-          period: '2026.07 - 2026.09',
-          members: '4인',
-          stack: balenciaga.stack,
+          id: 'balenciaga', title: 'BALENCIAGA',
+          subtitle: 'TEAM PROJECT 01 / 브랜드 웹사이트',
+          summary: projectDetails.balenciaga.summary,
+          stack: projectDetails.balenciaga.stack,
           image: balenciagaCard,
-          imageAlt: 'BALENCIAGA 공식 온라인 사이트 메인 화면',
-          detailHref: '?project=balenciaga',
-          link: balenciaga.link,
+          detailHref: '/project/balenciaga',
         },
         {
-          subtitle: 'Apple TV+ OTT 사이트 리뉴얼',
-          id: 'apple-tv',
-          title: 'Apple TV',
-          period: '2026.09 - 2026.10',
-          members: '6인',
-          stack: ['React', 'CSS', 'Scss', 'JavaScript', 'Figma', 'Open AI', 'Git', 'GitHub', 'GSAP', 'Swiper'],
-          image: null,
-          imageAlt: '',
-          detailHref: '#',
-          link: { label: '홈페이지 보러가기', href: '#' },
+          id: 'apple-tv', title: 'Apple TV',
+          subtitle: 'TEAM PROJECT 02 / OTT 리뉴얼',
+          summary: projectDetails['apple-tv'].summary,
+          stack: ['React', 'Zustand', 'Firebase', 'TMDB'],
+          image: appleTvImage,
+          detailHref: '/project/apple-tv',
+        },
+        {
+          id: 'shopping-mall', title: 'SHOPPING MALL',
+          subtitle: 'TEAM PROJECT 03 / 쇼핑몰 · 주제 미정',
+          summary: '세 번째 팀 프로젝트를 위한 독립된 프로젝트 슬롯. 프로젝트 주제와 구현 범위가 확정되면 내용을 추가합니다.',
+          stack: [], stackNote: '기술 및 상세 범위 미정',
+          placeholder: 'NEXT TEAM PROJECT', placeholderCaption: '쇼핑몰 · 주제 미정',
         },
       ],
     },
@@ -127,15 +122,12 @@ export const projects = {
       label: '02 / PERSONAL PROJECT',
       items: [
         {
-          subtitle: '개인 프로젝트',
-          id: 'portfolio',
-          title: 'PORTFOLIO',
-          period: '2026.10 - 2026.11',
-          members: '1인',
-          stack: ['React', 'CSS', 'Scss', 'Figma', 'JavaScript', 'Open AI', 'Git', 'GitHub'],
-          image: null,
-          imageAlt: '',
-          detailHref: '#',
+          id: 'tenpercent', title: 'TENPERCENT',
+          subtitle: 'PERSONAL PROJECT 01 / 커피 브랜드 클론 코딩',
+          summary: '공식 콘텐츠를 바탕으로 4개 페이지와 3개 화면 크기의 UI, 공통 컴포넌트와 에셋을 React로 구현한 클론 코딩 프로젝트.',
+          stack: ['Figma', '반응형 UI 설계 / React 활용'],
+          image: tenpercentImage,
+          detailHref: '/project/tenpercent',
         },
       ],
     },

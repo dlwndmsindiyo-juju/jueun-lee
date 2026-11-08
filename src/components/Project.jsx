@@ -33,13 +33,13 @@ function ProjectCard({ item, order }) {
           {item.image ? (
             <img src={item.image} alt="" loading="lazy" draggable={false} />
           ) : (
-            <span className="pcard__ghost">{item.title}</span>
+            <span className="pcard__ghost">{item.placeholder || item.title}{item.placeholderCaption && <small>{item.placeholderCaption}</small>}</span>
           )}
         </div>
 
         <div className="pcard__body">
-          <p className="pcard__k">{item.period} · {item.members}</p>
-          <p className="pcard__sum">{item.subtitle}</p>
+          <p className="pcard__k">{item.subtitle}</p>
+          <p className="pcard__sum">{item.summary}</p>
 
           {shown.length > 0 && (
             <ul className="pcard__chips">
@@ -48,6 +48,7 @@ function ProjectCard({ item, order }) {
             </ul>
           )}
 
+          {item.stackNote && <p className="pcard__note">{item.stackNote}</p>}
           <div className="pcard__foot">
             {hasLink && (
               <a className="pcard__ext" href={item.link.href} target="_blank" rel="noreferrer">
@@ -56,7 +57,7 @@ function ProjectCard({ item, order }) {
             )}
             {slug ? (
               <Link className="pcard__cta" to={`/project/${slug}`}>
-                Detail
+                문제 해결 과정 보기
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
               </Link>
             ) : (
@@ -69,12 +70,6 @@ function ProjectCard({ item, order }) {
   );
 }
 
-// '01 / TEAM PROJECT' → '1. TEAM PROJECT'
-function groupTitle(label) {
-  const m = label.match(/^0*(\d+)\s*\/\s*(.+)$/);
-  return m ? `${m[1]}. ${m[2]}` : label;
-}
-
 export default function Project() {
   return (
     <section className="section project project--cards" id="project" aria-labelledby="project-title">
@@ -83,7 +78,7 @@ export default function Project() {
       {projects.groups.map((group) => (
         <div className="project-group" key={group.label}>
           <h3 className="project-group__title" data-reveal style={delay(0)}>
-            {groupTitle(group.label)}
+            {group.label}
           </h3>
           <div className="project-grid">
             {group.items.map((item, i) => (

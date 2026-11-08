@@ -1,0 +1,47 @@
+/* PDF 공통 상세 레이아웃. 기존 헤더/푸터/목차 버튼 스타일은 유지합니다. */
+.case-study { padding-top: 90px; background: #f9f8f5; }
+.case-study__inner { width: min(100% - 64px, 1440px); margin-inline: auto; }
+.case-study section { scroll-margin-top: 172px; }
+.case-study__intro { padding-top: 64px; }
+.case-study__kicker { margin: 0 0 48px; color: var(--main-color); font-size: 16px; font-weight: 700; }
+.case-study h1 { margin: 0 0 40px; font-size: clamp(32px, 4vw, 64px); line-height: 1.3; letter-spacing: -.035em; }
+.case-study__summary { color: var(--text-secondray-color); font-size: 20px; line-height: 1.8; margin: 0 0 30px; }
+.case-study__stack { display: flex; flex-wrap: wrap; gap: 0; list-style: none; padding: 0; margin: 0 0 32px; color: var(--main-color); font-size: 16px; }
+.case-study__stack li:not(:last-child)::after { content: ' · '; white-space: pre; }
+.case-study__image { display: block; width: 100%; aspect-ratio: 1440 / 520; object-fit: cover; object-position: center; }
+.case-study__role { border-top: 1px solid var(--gray-200); margin-top: 30px; padding-block: 40px 60px; }
+.case-study__role h2, .case-study__role h3 { font-size: 28px; margin: 0 0 30px; }
+.case-study__role h3 { margin-top: 36px; }
+.case-study__role p, .case-study__role li { color: var(--text-secondray-color); font-size: 16px; line-height: 2; }
+.case-study__role ul { list-style: none; padding: 0; margin: 0; }
+.case-study__role li + li { margin-top: 6px; }
+.case-study__process-intro { padding-block: 100px; }
+.case-study__process-intro h2, .case-study__next h2 { font-size: clamp(28px, 3vw, 44px); margin: 0 0 36px; line-height: 1.4; }
+.case-study__process-intro p, .case-study__next p { font-size: 20px; line-height: 1.8; color: var(--text-secondray-color); }
+.case-study__process-intro p + p { margin-top: 32px; }
+.case-study__case { background: #fff; padding-block: 140px; }
+.case-study__case + .case-study__case { border-top: 1px solid #fafafa; }
+.case-study__case h3 { margin: 0 0 48px; font-size: clamp(26px, 3vw, 42px); line-height: 1.5; letter-spacing: -.03em; }
+.case-study__case h3 span { margin-right: 8px; }
+.case-study__case dl { margin: 0; }
+.case-study__step { display: grid; grid-template-columns: 240px 1fr; gap: 48px; margin-bottom: 36px; }
+.case-study__step dt, .case-study__lesson h4 { color: var(--main-color); font-size: 28px; font-weight: 700; line-height: 1.5; }
+.case-study__step dd, .case-study__lesson p { font-size: 20px; line-height: 1.8; margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.case-study__lesson { background: #edf1ff; padding: 36px 40px; margin-top: 44px; }
+.case-study__lesson h4 { margin: 0 0 20px; }
+.case-study__next { padding-block: 140px; }
+.case-study__next a { display: inline-block; color: var(--main-color); font-size: 16px; margin-top: 24px; text-decoration: none; }
+.case-study a:focus-visible { outline: 2px solid var(--main-color); outline-offset: 6px; }
+@media (max-width: 768px) {
+  .case-study__inner { width: calc(100% - 40px); }
+  .case-study__intro { padding-top: 40px; }
+  .case-study__kicker { margin-bottom: 28px; }
+  .case-study__image { aspect-ratio: 16 / 9; }
+  .case-study__step { grid-template-columns: 1fr; gap: 10px; margin-bottom: 28px; }
+  .case-study__step dt, .case-study__lesson h4 { font-size: 22px; }
+  .case-study__step dd, .case-study__lesson p, .case-study__summary, .case-study__process-intro p, .case-study__next p { font-size: 16px; }
+  .case-study__process-intro, .case-study__case, .case-study__next { padding-block: 64px; }
+  .case-study__lesson { padding: 24px; }
+  .case-study .detail-nav__tabs { overflow-x: auto; }
+  .case-study .detail-nav__tabs button { flex-shrink: 0; padding-inline: 10px; }
+}

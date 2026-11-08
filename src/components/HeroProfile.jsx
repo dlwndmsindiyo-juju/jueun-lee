@@ -47,7 +47,7 @@ export default function HeroProfile() {
           <h2 className="hero-profile-name">이주은</h2>
 
           <p className="hero-profile-desc-main">
-            변화를 두려워하지 않는 개방적인 태도와 지속적인 성장에 대한 열망을 가지고 있습니다.
+            변화를 두려워하지 않는 개방적인 태도와 지속적인 성장에 대한 열정을 가지고 있습니다.
             <br />
             새로운 지식과 경험에 언제나 열려있고, 매일 조금씩 성장하는 삶을 지향합니다.
           </p>

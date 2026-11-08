@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import appleTvImage from '../assets/projects/apple-tv.jpeg';
+import tenpercentImage from '../assets/projects/tenpercent.jpeg';
 
 // 이미지는 public/images/carousel/ 에 넣고, href는 이동할 섹션의 id(#...)로 지정하세요.
 const SERVICES = [
   { name: 'Balenciaga', href: '#balenciaga', image: '/images/carousel/balenciaga.jpg' },
   { name: 'Balenciaga-women', href: '#balenciaga', image: '/images/carousel/balenciaga-women.jpg' },
-  { name: 'Apple-TV', href: '#apple-tv', image: '/images/carousel/apple-tv.jpg' },
-  { name: 'Apple-TV-Sports', href: '#apple-tv', image: '/images/carousel/apple-tv-sports.jpg' },
-  { name: 'Mypage', href: '#portfolio', image: '/images/carousel/mypage.jpg' },
+  { name: 'Apple-TV', href: '#apple-tv', image: appleTvImage },
+  { name: 'Apple-TV-Sports', href: '#apple-tv', image: appleTvImage },
+  { name: 'TENPERCENT', href: '#tenpercent', image: tenpercentImage },
 ];
 const COUNT = SERVICES.length * 3; // 5개 서비스를 3번 반복해 원형으로 배치
 const CARDS = Array.from({ length: COUNT }, (_, i) => SERVICES[i % SERVICES.length]);
@@ -32,7 +34,8 @@ export default function HeroCarousel({ children }) {
     const root = rootRef.current;
     const stage = stageRef.current;
     const ring = ringRef.current;
-    const cards = cardRefs.current;
+    // 언마운트 시 React가 ref 배열을 비워도 예약된 resize 콜백은 안전하게 처리합니다.
+    const cards = [...cardRefs.current];
     const labels = [...root.querySelectorAll('[data-index]')];
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -331,8 +334,8 @@ export default function HeroCarousel({ children }) {
 
         <div className="hero-homepage__controls">
           <button type="button" aria-label="이전 서비스" onClick={() => apiRef.current?.prev()}>←</button>
-          <button type="button" aria-pressed={pausedUi} onClick={() => apiRef.current?.togglePause()}>
-            {pausedUi ? '자동 회전 재생' : '자동 회전 정지'}
+          <button type="button" aria-pressed={pausedUi} aria-label={pausedUi ? '자동 회전 재생' : '자동 회전 정지'} onClick={() => apiRef.current?.togglePause()}>
+            {pausedUi ? '자동 회전 재생' : '다른 작업 보기'}
           </button>
           <button type="button" aria-label="다음 서비스" onClick={() => apiRef.current?.next()}>→</button>
         </div>
