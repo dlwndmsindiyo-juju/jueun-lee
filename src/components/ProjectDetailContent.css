@@ -8,7 +8,7 @@
 .case-study__summary { color: var(--text-secondray-color); font-size: 20px; line-height: 1.8; margin: 0 0 30px; }
 .case-study__stack { display: flex; flex-wrap: wrap; gap: 0; list-style: none; padding: 0; margin: 0 0 32px; color: var(--main-color); font-size: 16px; }
 .case-study__stack li:not(:last-child)::after { content: ' · '; white-space: pre; }
-.case-study__image { display: block; width: 100%; aspect-ratio: 1440 / 520; object-fit: cover; object-position: center; }
+.case-study__image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
 .case-study__role { border-top: 1px solid var(--gray-200); margin-top: 30px; padding-block: 40px 60px; }
 .case-study__role h2, .case-study__role h3 { font-size: 28px; margin: 0 0 30px; }
 .case-study__role h3 { margin-top: 36px; }
@@ -36,7 +36,7 @@
   .case-study__inner { width: calc(100% - 40px); }
   .case-study__intro { padding-top: 40px; }
   .case-study__kicker { margin-bottom: 28px; }
-  .case-study__image { aspect-ratio: 16 / 9; }
+  .case-study__image { aspect-ratio: 4 / 3; }
   .case-study__step { grid-template-columns: 1fr; gap: 10px; margin-bottom: 28px; }
   .case-study__step dt, .case-study__lesson h4 { font-size: 22px; }
   .case-study__step dd, .case-study__lesson p, .case-study__summary, .case-study__process-intro p, .case-study__next p { font-size: 16px; }
