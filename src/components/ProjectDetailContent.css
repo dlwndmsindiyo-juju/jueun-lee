@@ -45,3 +45,21 @@
   .case-study .detail-nav__tabs { overflow-x: auto; }
   .case-study .detail-nav__tabs button { flex-shrink: 0; padding-inline: 10px; }
 }
+
+@media (max-width: 768px) {
+  .case-study__intro { padding-top: 28px; }
+  .case-study__kicker { margin-bottom: 20px; font-size: 12px; }
+  .case-study h1 { font-size: 28px; margin-bottom: 20px; }
+  .case-study__summary { margin-bottom: 16px; }
+  .case-study__stack { font-size: 12px; margin-bottom: 20px; }
+  .case-study__role { padding-block: 24px 32px; }
+  .case-study__role h2, .case-study__role h3 { font-size: 22px; margin-bottom: 16px; }
+  .case-study__role p, .case-study__role li { font-size: 13px; line-height: 1.7; }
+  .case-study__process-intro, .case-study__case, .case-study__next { padding-block: 40px; }
+  .case-study__process-intro h2, .case-study__next h2, .case-study__case h3 { font-size: 24px; margin-bottom: 24px; }
+  .case-study__step { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; margin-bottom: 24px; }
+  .case-study__step dt { font-size: 15px; }
+  .case-study__step dd, .case-study__lesson p { font-size: 13px; line-height: 1.7; word-break: normal; }
+  .case-study__lesson { padding: 20px; margin-top: 24px; }
+  .case-study__lesson h4 { font-size: 18px; margin-bottom: 12px; }
+}

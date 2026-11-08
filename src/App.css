@@ -1707,3 +1707,40 @@ html {
   opacity: 1;
   transform: none;
 }
+
+/* 모바일에서 섹션을 세로로 늘리지 않고 PC 구성을 촘촘하게 유지합니다. */
+@media (max-width: 768px) {
+  .section { padding: 40px 16px; }
+  .section-head { margin-bottom: 28px; }
+  .section-head__title, .connect__title { font-size: 32px; margin-bottom: 16px; }
+  .section-head__desc { font-size: 16px; line-height: 1.6; }
+  .skills-card, .edu-card { padding: 0; }
+  .skills-group { margin: 20px 0; }
+  .skills-group__title { font-size: 16px; margin-bottom: 12px; }
+  .skill-list { gap: 8px; }
+  .skill { font-size: 12px; gap: 6px; padding: 4px 8px; }
+  .skill img { width: 16px; height: 16px; }
+  .edu-card__org { flex-wrap: wrap; gap: 8px; font-size: 14px; }
+  .edu-card__course { font-size: 18px; }
+  .edu-card__meta { gap: 8px; font-size: 12px; }
+  .edu-card__heading { margin-top: 24px; font-size: 14px; }
+  .edu-card__list { font-size: 13px; }
+  .edu-hl { font-size: 13px; line-height: 1.9; padding: 2px; }
+  .section.connect { padding: 40px 16px 64px; }
+  .connect__list { gap: 12px; font-size: 14px; }
+  .connect__list a { overflow-wrap: anywhere; }
+  .hero-homepage__stage { height: clamp(280px, 76vw, 440px); }
+}
+
+/* 작은 화면에서도 PC와 같은 이미지 / 소개의 좌우 구성을 유지합니다. */
+@media (max-width: 768px) {
+  .hero-bottom-section { padding: 40px 16px; }
+  .hero-profile-container { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 16px; }
+  .hero-profile-info { min-width: 0; }
+  .hero-profile-subtitle { font-size: 11px; }
+  .hero-profile-desc-top { font-size: 14px; line-height: 1.6; }
+  .hero-profile-name { font-size: 24px; margin: 16px 0 12px; }
+  .hero-profile-desc-main { font-size: 12px; line-height: 1.6; word-break: normal; }
+  .hero-profile-meta { font-size: 11px; gap: 6px 10px; margin-top: 12px; }
+  .hero-profile-tags { font-size: 12px; gap: 4px 8px; margin-top: 12px; }
+}
