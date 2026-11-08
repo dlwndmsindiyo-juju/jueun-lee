@@ -22,12 +22,26 @@ export default function Header() {
     if (!isHome) return;
     const sections = MENUS.map(([id]) => document.getElementById(id)).filter(Boolean);
     if (!sections.length) return;
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActiveId(e.target.id)),
-      { rootMargin: '-45% 0px -50% 0px' }
-    );
-    sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const line = 140;
+      let current = 'home';
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= line) current = section.id;
+      });
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) current = 'connect';
+      setActiveId(current);
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
   }, [isHome]);
 
   return (
@@ -45,7 +59,8 @@ export default function Header() {
               <li key={id}>
                 <Link
                   to={id === 'home' ? '/' : `/#${id}`}
-                  className={activeId === id ? 'is-active' : undefined}
+                  className={(isHome ? activeId : 'project') === id ? 'is-active' : undefined}
+                  aria-current={(isHome ? activeId : 'project') === id ? 'location' : undefined}
                   onClick={() => setOpen(false)}
                 >
                   {label}

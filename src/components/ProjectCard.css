@@ -257,3 +257,14 @@
   .pcard__art { flex: none; aspect-ratio: 16 / 10; }
   .pcard__sum { font-size: 17px; }
 }
+
+/* 카드와 이미지 프레임을 프로젝트 내용 길이에 관계없이 통일합니다. */
+.pcard { height: 800px; min-height: 0; aspect-ratio: auto; }
+.pcard__title { min-height: 2.1em; flex: none; }
+.pcard__art { flex: none; aspect-ratio: 16 / 9; min-height: 0; }
+.pcard__body { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.pcard__foot { margin-top: auto; padding-top: 16px; }
+@media (max-width: 768px) {
+  .pcard { height: 700px; min-height: 0; }
+  .pcard__art { aspect-ratio: 16 / 9; }
+}

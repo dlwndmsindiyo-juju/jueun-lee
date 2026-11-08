@@ -65,6 +65,7 @@ export default function HeroCarousel({ children }) {
       const radius = (mobile ? 4 : 4.3) * unit;
       root.style.setProperty('--perspective', `${8.6 * unit}px`);
       root.style.setProperty('--card-size', `${1.6 * unit}px`);
+      root.style.setProperty('--card-width', `${(mobile ? 1.9 : 2.15) * unit}px`);
       root.style.setProperty('--drop', `${radius * Math.sin((13 * Math.PI) / 180)}px`);
       cards.forEach((card, i) => {
         card.style.transform = `rotateY(${i * step}rad) translateZ(${radius}px)`;
