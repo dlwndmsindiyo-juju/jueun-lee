@@ -5,13 +5,12 @@ import tenpercentImage from '../assets/projects/tenpercent.jpeg';
 
 // 이미지는 public/images/carousel/ 에 넣고, href는 이동할 섹션의 id(#...)로 지정하세요.
 const SERVICES = [
-  { name: 'Balenciaga', href: '#balenciaga', image: '/images/carousel/balenciaga.jpg' },
-  { name: 'Balenciaga-women', href: '#balenciaga', image: '/images/carousel/balenciaga-women.jpg' },
-  { name: 'Apple-TV', href: '#apple-tv', image: appleTvImage },
-  { name: 'Apple-TV-Sports', href: '#apple-tv', image: appleTvImage },
-  { name: 'TENPERCENT', href: '#tenpercent', image: tenpercentImage },
+  { name: 'BALENCIAGA', href: '#balenciaga', image: '/images/carousel/balenciaga.jpg' },
+  { name: 'Apple TV', href: '#apple-tv', image: appleTvImage },
+  { name: 'SHOPPING MALL · 미정', href: '#shopping-mall', image: null },
+  { name: 'TENPERCENT · 개인 프로젝트', href: '#tenpercent', image: tenpercentImage },
 ];
-const COUNT = SERVICES.length * 3; // 5개 서비스를 3번 반복해 원형으로 배치
+const COUNT = SERVICES.length * 3; // 네 프로젝트를 3번 반복해 원형으로 배치
 const CARDS = Array.from({ length: COUNT }, (_, i) => SERVICES[i % SERVICES.length]);
 
 /**
@@ -312,19 +311,19 @@ export default function HeroCarousel({ children }) {
                   <a
                     key={i}
                     ref={(el) => (cardRefs.current[i] = el)}
-                    className="hero-homepage__card"
+                    className={`hero-homepage__card${service.image ? '' : ' hero-homepage__card--pending'}`}
                     href={service.href}
                     aria-label={service.name}
                     draggable={false}
                     tabIndex={-1}
                   >
                     <span className="fallback" aria-hidden="true">{service.name}</span>
-                    <img
+                    {service.image && <img
                       src={service.image}
                       alt=""
                       draggable={false}
                       onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
+                    />}
                   </a>
                 ))}
               </div>

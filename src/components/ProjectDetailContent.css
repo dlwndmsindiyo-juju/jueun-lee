@@ -1,6 +1,6 @@
 /* PDF 공통 상세 레이아웃. 기존 헤더/푸터/목차 버튼 스타일은 유지합니다. */
 .case-study { padding-top: 90px; background: #f9f8f5; }
-.case-study__inner { width: min(100% - 64px, 1440px); margin-inline: auto; }
+.case-study__inner { width: min(100% - 64px, var(--inner-width)); margin-inline: auto; }
 .case-study section { scroll-margin-top: 172px; }
 .case-study__intro { padding-top: 64px; }
 .case-study__kicker { margin: 0 0 48px; color: var(--main-color); font-size: 16px; font-weight: 700; }

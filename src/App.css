@@ -1677,3 +1677,6 @@ html {
   object-fit: cover;
   display: block;
 }
+/* 주제 미정 프로젝트도 히어로에서 하나의 카드로 표시 */
+.hero-homepage__card--pending { background: #edf1ff; }
+.hero-homepage__card--pending .fallback { color: var(--main-color); opacity: 1; }
