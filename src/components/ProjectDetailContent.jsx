@@ -35,8 +35,8 @@ export default function ProjectDetailContent({ project }) {
       <section id="detail-process" className="case-study__process">
         <div className="case-study__process-intro case-study__inner">
           <h2>문제 해결 과정</h2>
-          <p>문제 → 원인 분석 → 해결 방법 → 검증 → 배운 점</p>
-          <p>역할 설명보다 원인을 좁혀간 판단과 해결 과정, 배운 점을 중심으로 읽을 수 있도록 구성했습니다.</p>
+          <p>{project.processFlow || '문제 → 원인 분석 → 해결 방법 → 검증 → 배운 점'}</p>
+          <p>{project.processDescription || '역할 설명보다 원인을 좁혀간 판단과 해결 과정, 배운 점을 중심으로 읽을 수 있도록 구성했습니다.'}</p>
         </div>
         {project.cases.map((item, index) => (
           <article className="case-study__case" key={item.title}>
@@ -46,16 +46,22 @@ export default function ProjectDetailContent({ project }) {
                 <div className="case-study__step" key={label}><dt>{label}</dt><dd>{body}</dd></div>
               ))}</dl>
               <aside className="case-study__lesson">
-                <h4>이 경험에서 배운 점</h4>
+                <h4>{project.lessonLabel || '이 경험에서 배운 점'}</h4>
                 <p>{item.lesson}</p>
               </aside>
+              {item.details?.length > 0 && <details className="case-study__details">
+                <summary>코드와 확인할 내용</summary>
+                <dl>{item.details.map(([label, body]) => (
+                  <div className="case-study__step" key={label}><dt>{label}</dt><dd>{body}</dd></div>
+                ))}</dl>
+              </details>}
             </div>
           </article>
         ))}
       </section>
       <section className="case-study__next case-study__inner" id="detail-next">
         <h2>다음 작업에 적용할 기준</h2>
-        <p>증상을 재현하고, 원인을 분리해서 확인하고, 선택한 해결 방법을 검증하는 순서로 기록합니다. 같은 문제가 반복되지 않도록 공통 구조와 확인 기준을 남깁니다.</p>
+        <p>{project.nextSummary || '증상을 재현하고, 원인을 분리해서 확인하고, 선택한 해결 방법을 검증하는 순서로 기록합니다. 같은 문제가 반복되지 않도록 공통 구조와 확인 기준을 남깁니다.'}</p>
         <Link to="/#project">전체 프로젝트로 돌아가기 ↗</Link>
       </section>
     </main>
