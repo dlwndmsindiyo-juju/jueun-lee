@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import useScrollHighlight from '../hooks/useScrollHighlight';
 import SectionHead from './SectionHead';
 import Icon from './Icon';
 import { delay } from '../hooks/reveal';
@@ -7,22 +8,7 @@ import { education as edu } from '../data/portfolio';
 export default function Education() {
   const listRef = useRef(null);
 
-  // 스크롤로 각 줄이 화면에 들어오면 is-on 을 붙여 배경이 왼쪽 → 텍스트 끝으로 펼쳐집니다.
-  useEffect(() => {
-    const items = listRef.current?.querySelectorAll('.edu-hl') ?? [];
-    if (!('IntersectionObserver' in window)) {
-      items.forEach((el) => el.classList.add('is-on'));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('is-on'); io.unobserve(e.target); }
-      }),
-      { rootMargin: '0px 0px -12% 0px' }
-    );
-    items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
+  useScrollHighlight(listRef, '.edu-hl');
 
   return (
     <section className="section education" id="education" aria-labelledby="education-title">

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Icon from './Icon';
+import WebsiteLink from './WebsiteLink';
 import SectionHead from './SectionHead';
 import { delay } from '../hooks/reveal';
 import { projects } from '../data/portfolio';
@@ -16,7 +16,6 @@ function getSlug(item) {
 
 function ProjectCard({ item, order }) {
   const slug = getSlug(item);
-  const hasLink = Boolean(item.link?.href) && item.link.href !== '#';
   const stack = item.stack || [];
 
   return (
@@ -46,18 +45,14 @@ function ProjectCard({ item, order }) {
             {item.stackNote && <p className="pcard__note">{item.stackNote}</p>}
           </div>
           <div className="pcard__foot">
-            {hasLink && (
-              <a className="pcard__ext" href={item.link.href} target="_blank" rel="noreferrer">
-                <Icon name="link" size={15} />{item.link.label}
-              </a>
-            )}
+            <WebsiteLink link={item.link} />
             {slug ? (
               <Link className="pcard__cta" to={`/project/${slug}`}>
-                문제 해결 과정 보기
+                작업 과정 보기
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
               </Link>
             ) : (
-              <span className="pcard__soon">상세 페이지 준비 중</span>
+              <span className="pcard__soon">준비 중</span>
             )}
           </div>
         </div>

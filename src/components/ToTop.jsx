@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Icon from './Icon';
+import { getRootFontSize } from '../utils/layout';
 
 /**
  * <main>의 마지막 자식으로 두세요.
@@ -10,7 +11,7 @@ export default function ToTop() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 400);
+    const onScroll = () => setShow(window.scrollY > 25 * getRootFontSize());
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);

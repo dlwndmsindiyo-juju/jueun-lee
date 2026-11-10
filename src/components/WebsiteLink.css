@@ -1,0 +1,25 @@
+/* 메인·상세, PC·모바일 모두 같은 버튼을 사용합니다. */
+.website-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .375rem;
+  max-width: 100%;
+  min-height: 2.5rem;
+  padding: .625rem 1rem;
+  border: 0;
+  border-radius: 999rem;
+  background: #eff0f2;
+  color: #555b65;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background-color .2s, color .2s;
+}
+.website-link svg { flex-shrink: 0; }
+.website-link:hover, .website-link:focus-visible, .website-link:active { background: #e8efff; color: var(--main-color); }
+.case-study__website-link { margin-bottom: 1.5rem; }
+@media (max-width: 48rem) {
+  .website-link { font-size: .8125rem; padding: .5rem .625rem; }
+}

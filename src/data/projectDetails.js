@@ -18,7 +18,7 @@ export const projectDetails = {
     ],
     "image": balenciagaImage,
     "link": {
-      "label": "홈페이지 바로가기",
+      "label": "홈페이지 보기",
       "href": "https://pagliaccoi.github.io/balenciaga/"
     },
     "role": "메인 헤더·SNS 배너, 여성 상의 목록과 뉴욕 캠페인 화면을 맡았습니다.",
@@ -97,10 +97,11 @@ export const projectDetails = {
         ]
       }
     ],
-    "processFlow": "메뉴가 가려지는 문제부터 애니메이션과 반응형 글자 크기까지, 화면을 만들며 수정한 내용입니다.",
-    "processDescription": "각 문제가 생긴 이유와 바꾼 방식, 그 과정에서 세운 작업 기준을 정리했습니다.",
+    "processFlow": "문제 → 원인 → 해결",
+    "processDescription": "메뉴가 가려지는 문제, 글자 애니메이션, 화면별 글자 크기를 다뤘습니다.",
     "nextSummary": "화면이 예상과 다르게 보이면 요소의 크기나 숫자부터 바꾸기보다 부모 구조와 설정을 먼저 확인하겠습니다. 수정한 뒤에는 메뉴 클릭과 작은 화면에서의 표시도 함께 점검하겠습니다.",
-    "lessonLabel": "알게 된 점과 적용"
+    "lessonLabel": "알게 된 점과 적용",
+    "breadcrumb": "발렌시아가"
   },
   "apple-tv": {
     "title": "Apple TV / OTT 리뉴얼",
@@ -118,7 +119,7 @@ export const projectDetails = {
     ],
     "image": appleTvImage,
     "link": {
-      "label": "홈페이지 바로가기",
+      "label": "홈페이지 보기",
       "href": "https://apple-4hnpn0vau-leejueuns-projects.vercel.app"
     },
     "role": "프론트엔드 개발 팀장 (메인 개발 / 기여도 90% 이상)",
@@ -127,8 +128,8 @@ export const projectDetails = {
       "TMDB 콘텐츠 데이터와 Firebase 로그인·회원 정보·저장 데이터를 연결했습니다.",
       "GitHub로 팀 코드를 관리하고 Vercel에 배포했습니다."
     ],
-    "processFlow": "어떤 문제였는지, 왜 생겼는지, 어떻게 바꿨는지 정리했습니다.",
-    "processDescription": "로그인부터 검색, 찜 목록, 이어보기까지 사용 흐름을 다듬으며 고민한 내용입니다.",
+    "processFlow": "문제 → 원인 → 해결",
+    "processDescription": "로그인, 찜 목록, 검색, 이어보기에서 수정한 내용을 정리했습니다.",
     "lessonLabel": "알게 된 점과 적용",
     "nextSummary": "인증 정보는 applySession에서 정리하고, 검색 응답은 요청 번호로 구분하는 기준을 적용했습니다. 다음에는 저장 도중 프로필이 바뀌는 경우에도 같은 기준을 넓혀, 요청 시작 시점의 계정·프로필을 확인하도록 보완하겠습니다.",
     "cases": [
@@ -316,7 +317,8 @@ export const projectDetails = {
           ]
         ]
       }
-    ]
+    ],
+    "breadcrumb": "Apple TV"
   },
   "tenpercent": {
     "title": "TENPERCENT / 커피 브랜드 클론 코딩",
@@ -382,9 +384,10 @@ export const projectDetails = {
         ]
       }
     ],
-    "processFlow": "작은 화면의 배치와 반복되는 UI를 어떻게 정리할지 고민했습니다.",
-    "processDescription": "Figma에서 화면 크기별 레이아웃과 공통 요소를 정리한 과정을 담았습니다.",
+    "processFlow": "문제 → 원인 → 해결",
+    "processDescription": "화면 크기별 배치와 공통 UI를 Figma에서 정리한 과정입니다.",
     "nextSummary": "공통 요소와 이미지 분류를 먼저 정리한 뒤 화면을 만들겠습니다. Figma에서 확인한 배치가 실제 브라우저에서도 유지되는지는 구현 후 따로 점검하겠습니다.",
-    "lessonLabel": "알게 된 점과 적용"
+    "lessonLabel": "알게 된 점과 적용",
+    "breadcrumb": "텐퍼센트"
   }
 };

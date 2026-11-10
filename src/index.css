@@ -20,7 +20,7 @@
     --gray-800: #2E2E2E;
 
     /* layout */
-    --inner-width: 1400px;
+    --inner-width: 87.5rem;
     /* spacing */
 
     /* border */
@@ -56,6 +56,6 @@ button {
 button:focus-visible,
 a:focus-visible,
 [tabindex]:focus-visible {
-    outline: 3px solid #0043C4;
-    outline-offset: 5px;
+    outline: 0.1875rem solid #0043C4;
+    outline-offset: 0.3125rem;
 }
