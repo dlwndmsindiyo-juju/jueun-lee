@@ -77,3 +77,15 @@
   .case-study__website { background: #eff0f2; color: #656a73; }
   .case-study__website:hover, .case-study__website:focus-visible, .case-study__website:active { background: #e8efff; color: var(--main-color); }
 }
+
+.case-study__step dd { white-space: pre-line; }
+.case-study__details { margin-top: 24px; }
+.case-study__details summary { width: fit-content; color: var(--text-secondray-color); font-size: 16px; cursor: pointer; padding: 12px 0; }
+.case-study__details summary:focus-visible { outline: 2px solid var(--main-color); outline-offset: 4px; }
+.case-study__details[open] summary { margin-bottom: 20px; }
+.case-study__details .case-study__step dt { font-size: 18px; color: var(--text-secondray-color); }
+.case-study__details .case-study__step dd { font-size: 16px; color: var(--text-secondray-color); }
+@media (max-width: 768px) {
+  .case-study__details summary { font-size: 14px; }
+  .case-study__details .case-study__step dt, .case-study__details .case-study__step dd { font-size: 13px; }
+}
