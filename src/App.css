@@ -836,7 +836,7 @@ html {
   padding: 0.25rem;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  font-size: 1rem;
+  font-size: 1.25rem;
   letter-spacing: .01em;
   color: #fff;
   background: linear-gradient(var(--main-color), var(--main-color)) no-repeat 0 0 / 100% 100%;
