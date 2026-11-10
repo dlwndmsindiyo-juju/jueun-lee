@@ -1,0 +1,154 @@
+/* 읽기 영역의 위계와 간격. 히어로·프로필·헤더 스타일은 변경하지 않습니다. */
+.section,
+.section.project.project--cards,
+.section.connect {
+  max-width: var(--inner-width);
+  margin-inline: auto;
+  padding: 2.5rem 3rem;
+}
+.section-head { margin-bottom: 3rem; }
+.section-head__title,
+.connect__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+  margin-bottom: 1rem;
+}
+.section-head__desc {
+  max-width: 42rem;
+  margin-inline: auto;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #555b65;
+  white-space: normal;
+  word-break: keep-all;
+  text-wrap: pretty;
+}
+.skills-card,
+.edu-card,
+.connect__inner {
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: 0;
+}
+.skills-group { margin: 0; }
+.skills-group + .skills-group { margin-top: 2rem; }
+.skills-group__title { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
+.skill-list { gap: .75rem; }
+.skill { font-size: .875rem; font-weight: 400; padding: .5rem .75rem; border-color: #e3e5e9; }
+.skill img { width: 1.125rem; height: 1.125rem; }
+.edu-card__org { gap: .75rem; }
+.edu-card__org strong { font-size: 1.25rem; font-weight: 600; }
+.edu-card__course { margin-top: .75rem; font-size: 1.125rem; line-height: 1.6; word-break: keep-all; }
+.edu-card__meta { margin-bottom: 2rem; font-size: .875rem; color: #656a73; }
+.edu-card__heading { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
+.education .edu-card__list { margin: 0; font-size: 1.125rem; color: #343a43; }
+.education .edu-card__list li { line-height: 1.8; margin-bottom: .75rem; word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
+.education .edu-hl { font-size: inherit; font-weight: 600; line-height: inherit; padding: .125rem .25rem; }
+
+/* 카드의 같은 정보끼리 행을 맞추되, 고정 높이로 빈 공간을 만들지 않습니다. */
+.project-grid { gap: 2.5rem 2rem; }
+.section.project.project--cards .project-group + .project-group { margin-top: 3rem; }
+.section.project.project--cards .project-group__title { font-size: .875rem; line-height: 1.5; font-weight: 600; margin-bottom: 1.5rem; }
+.pcard { padding: 0; }
+.pcard__title { font-size: 1.5rem; line-height: 1.35; font-weight: 700; min-height: 0; letter-spacing: -.025em; }
+.pcard__art { margin-top: 1rem; }
+.pcard__k { margin-top: .75rem; font-size: .875rem; line-height: 1.6; font-weight: 500; color: #656a73; }
+.pcard__sum { margin-top: .5rem; font-size: 1.125rem; line-height: 1.8; font-weight: 400; color: #343a43; word-break: keep-all; text-wrap: pretty; }
+.pcard__stack { margin-top: .75rem; }
+.pcard__chips { gap: .375rem .5rem; }
+.pcard__chips li { padding: .25rem .5rem; font-size: .875rem; line-height: 1.5; border: 0; color: #555b65; }
+.pcard__note { font-size: .875rem; line-height: 1.7; color: #656a73; }
+.pcard__foot { justify-content: flex-start; align-items: center; gap: .5rem 1.25rem; margin-top: 1rem; }
+.pcard__cta { margin-left: 0; min-height: 2.5rem; padding: .625rem 0; font-size: .875rem; line-height: 1.5; }
+.pcard__soon { margin-left: 0; font-size: .875rem; color: #656a73; }
+.pcard__ghost { font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.3; }
+.pcard__ghost small { font-size: .875rem; }
+.connect__title { margin-bottom: 1.5rem; }
+.connect__list { gap: 1rem; font-size: 1rem; line-height: 1.7; }
+
+/* 이미지용 너비와 긴 설명을 읽는 너비를 분리합니다. */
+.case-study__inner,
+.case-study > .detail-nav {
+  width: min(calc(100% - 6rem), calc(var(--inner-width) - 6rem));
+}
+.case-study h1 { font-size: 3rem; line-height: 1.25; margin-bottom: 1.5rem; }
+.case-study__kicker { font-size: .875rem; font-weight: 600; margin-bottom: 1rem; }
+.case-study__summary { max-width: 44rem; font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem; word-break: keep-all; text-wrap: pretty; }
+.case-study__stack { font-size: .875rem; line-height: 1.7; margin-bottom: 1.5rem; color: #656a73; }
+.case-study__role,
+.case-study__process-intro,
+.case-study__case .case-study__inner,
+.case-study__next { max-width: 52rem; }
+.case-study__role { margin-top: 2rem; padding-block: 2rem 2.5rem; }
+.case-study__role h2,
+.case-study__process-intro h2,
+.case-study__next h2 { font-size: 2.5rem; line-height: 1.25; margin-bottom: 1.5rem; letter-spacing: -.025em; }
+.case-study__role h3 { font-size: 1.25rem; margin: 1.5rem 0 1rem; }
+.case-study__role p,
+.case-study__role li,
+.case-study__process-intro p,
+.case-study__next p { font-size: 1.125rem; line-height: 1.8; color: #343a43; word-break: keep-all; text-wrap: pretty; }
+.case-study__process-intro { padding-block: 2.5rem; }
+.case-study__process-intro p + p { margin-top: .75rem; }
+.case-study__case { padding-block: 2.5rem; }
+.case-study__case h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.4; margin-bottom: 1.5rem; }
+.case-study__step { grid-template-columns: 6rem minmax(0, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+.case-study__step dt { font-size: 1rem; font-weight: 600; line-height: 1.8; color: #555b65; }
+.case-study__step dd,
+.case-study__lesson p { max-width: 44rem; font-size: 1.125rem; line-height: 1.8; color: #343a43; }
+.case-study__lesson { margin-top: 1.5rem; padding: 1.5rem; background: #f3f6fd; }
+.case-study__lesson h4 { font-size: 1.125rem; line-height: 1.5; margin-bottom: .75rem; }
+.case-study__details { margin-top: 1.5rem; }
+.case-study__details summary { font-size: .875rem; }
+.case-study__details .case-study__step dt { font-size: .875rem; }
+.case-study__details .case-study__step dd { font-size: 1rem; line-height: 1.8; }
+.case-study__next { padding-block: 2.5rem; }
+.case-study__next a { margin-top: 1rem; font-size: .875rem; }
+
+@media (max-width: 64rem) {
+  .section,
+  .section.project.project--cards,
+  .section.connect { padding-inline: 1.5rem; }
+  .case-study__inner,
+  .case-study > .detail-nav { width: calc(100% - 3rem); }
+}
+@media (max-width: 48rem) {
+  .section,
+  .section.project.project--cards,
+  .section.connect { padding-block: 1.75rem; }
+  .section-head { margin-bottom: 2rem; }
+  .section-head__title,
+  .connect__title { font-size: 1.75rem; }
+  .section-head__desc { font-size: 1rem; }
+  .skills-group__title { font-size: 1rem; }
+  .edu-card__org { flex-wrap: wrap; }
+  .edu-card__org strong { font-size: 1.125rem; }
+  .edu-card__course { font-size: 1rem; }
+  .edu-card__meta { flex-wrap: wrap; gap: .5rem 1rem; }
+  .education .edu-card__list { font-size: 1rem; }
+  .project-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .pcard__title { font-size: 1.25rem; min-height: 0; }
+  .pcard__sum { font-size: 1rem; }
+  .pcard__chips li { background: #f2f4f7; }
+  .section.project.project--cards .project-group + .project-group { margin-top: 2.5rem; }
+  .case-study h1 { font-size: 2rem; }
+  .case-study__role h2,
+  .case-study__process-intro h2,
+  .case-study__next h2 { font-size: 1.75rem; }
+  .case-study__case h3 { font-size: 1.25rem; }
+  .case-study__role p,
+  .case-study__role li,
+  .case-study__process-intro p,
+  .case-study__next p,
+  .case-study__step dd,
+  .case-study__lesson p { font-size: 1rem; }
+  .case-study__step { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .case-study__step dt { font-size: .875rem; }
+  .case-study__lesson { padding: 1.25rem; }
+  .case-study__lesson h4 { font-size: 1rem; }
+  .case-study__details .case-study__step dd { font-size: .9375rem; }
+}
