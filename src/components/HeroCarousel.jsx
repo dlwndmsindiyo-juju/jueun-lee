@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { getRootFontSize, toRem } from '../utils/layout';
 import appleTvImage from '/images/carousel/apple-tv.jpg';
 import tenpercentImage from '/images/carousel/tenpercent.jpg';
 
@@ -43,7 +44,7 @@ export default function HeroCarousel({ children }) {
     const step = TAU / count;
     const n = SERVICES.length;
 
-    // 회전 속도(rad/초), 드래그 감도(rad/px)를 여기서 조절하세요.
+    // 회전 속도(rad/초), 드래그 감도(브라우저 좌표 기준)를 여기서 조절하세요.
     const AUTO_SPEED = -0.1;
     const DRAG_SENSITIVITY = 0.0035;
 
@@ -59,18 +60,19 @@ export default function HeroCarousel({ children }) {
     const dragTo = gsap.quickTo(state, 'angle', { duration: 0.18, ease: 'power3.out' });
 
     function resize() {
-      const mobile = innerWidth <= 768;
-      const fov = mobile ? 49 : innerWidth <= 1024 ? 40 : 24;
+      const mobile = matchMedia('(max-width: 48rem)').matches;
+      const rootSize = getRootFontSize();
+      const fov = mobile ? 49 : matchMedia('(max-width: 64rem)').matches ? 40 : 24;
       // 모바일은 무대 높이를 줄여도 이미지 크기는 유지합니다.
-      const visualHeight = mobile ? Math.min(440, Math.max(280, innerWidth * .76)) : stage.clientHeight;
+      const visualHeight = mobile ? Math.min(27.5 * rootSize, Math.max(17.5 * rootSize, innerWidth * .76)) : stage.clientHeight;
       const unit = visualHeight / (2 * 8.6 * Math.tan((fov * Math.PI) / 360));
       const radius = (mobile ? 4 : 4.3) * unit;
-      root.style.setProperty('--perspective', `${8.6 * unit}px`);
-      root.style.setProperty('--card-size', `${1.6 * unit}px`);
-      root.style.setProperty('--card-width', `${(mobile ? 1.9 : 2.15) * unit}px`);
-      root.style.setProperty('--drop', `${radius * Math.sin((13 * Math.PI) / 180)}px`);
+      root.style.setProperty('--perspective', toRem(8.6 * unit));
+      root.style.setProperty('--card-size', toRem(1.6 * unit));
+      root.style.setProperty('--card-width', toRem((mobile ? 1.9 : 2.15) * unit));
+      root.style.setProperty('--drop', toRem(radius * Math.sin((13 * Math.PI) / 180)));
       cards.forEach((card, i) => {
-        card.style.transform = `rotateY(${i * step}rad) translateZ(${radius}px)`;
+        card.style.transform = `rotateY(${i * step}rad) translateZ(${toRem(radius)})`;
       });
     }
 

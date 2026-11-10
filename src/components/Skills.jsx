@@ -18,7 +18,7 @@ export default function Skills() {
                   className={`skill${it.strong ? ' is-strong' : ''}`}
                   style={delay(0.25 + i * 0.05)}
                 >
-                  <img src={it.icon} alt="" width="22" height="22" />
+                  <img src={it.icon} alt="" />
                   {it.name}
                 </li>
               ))}

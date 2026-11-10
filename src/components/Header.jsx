@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import hamIcon from '../assets/ham.svg';
+import { getHeaderHeight, getRootFontSize } from '../utils/layout';
 
 const MENUS = [
   ['home', 'Home'],
@@ -25,7 +26,7 @@ export default function Header() {
     let frame = 0;
     const update = () => {
       frame = 0;
-      const line = 140;
+      const line = getHeaderHeight() + 3.125 * getRootFontSize();
       let current = 'home';
       sections.forEach((section) => {
         if (section.getBoundingClientRect().top <= line) current = section.id;

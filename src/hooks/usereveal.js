@@ -17,7 +17,7 @@ export default function useReveal(enabled, startDelay = 1800) {
             entry.target.classList.add("is-revealed");
             io.unobserve(entry.target);
           }),
-        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+        { threshold: 0.15, rootMargin: "0% 0% -8% 0%" },
       );
       document
         .querySelectorAll("[data-reveal]")

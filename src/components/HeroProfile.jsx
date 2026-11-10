@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import useScrollHighlight from '../hooks/useScrollHighlight';
 import { delay } from '../hooks/reveal';
 import profileImg from '../assets/profile-img.png';
 import capImg from '../assets/cap.svg';
@@ -21,23 +22,7 @@ const TAGS = ['관찰력', '성실함', '집요함', '꼼꼼함', '유연한사�
 export default function HeroProfile() {
   const profileRef = useRef(null);
 
-  useEffect(() => {
-    const words = profileRef.current?.querySelectorAll('.profile-highlight') ?? [];
-    if (!('IntersectionObserver' in window)) {
-      words.forEach((word) => word.classList.add('is-on'));
-      return;
-    }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-on');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -12% 0px' });
-    words.forEach((word) => observer.observe(word));
-    return () => observer.disconnect();
-  }, []);
+  useScrollHighlight(profileRef, '.profile-highlight');
 
   return (
     <section className="hero-bottom-section" ref={profileRef}>
@@ -62,15 +47,15 @@ export default function HeroProfile() {
 
         {/* 오른쪽: 소개 텍스트 */}
         <div className="hero-profile-info">
-          <div className="hero-profile-subtitle">PORTFOLIO / 2026</div>
-          <div className="hero-profile-desc-top"><mark className="profile-highlight">관찰</mark>하고 분석하여 <mark className="profile-highlight">문제점</mark>을 끝까지 <mark className="profile-highlight">해결</mark>합니다.</div>
+          <div className="hero-profile-subtitle">FRONTEND DEVELOPER / 2026</div>
+          <div className="hero-profile-desc-top">화면을 <mark className="profile-highlight">관찰</mark>하고, 원인을 <mark className="profile-highlight">분석</mark>해 문제를 <mark className="profile-highlight">해결</mark>합니다.</div>
 
           <h2 className="hero-profile-name">이주은</h2>
 
           <p className="hero-profile-desc-main">
-            변화를 두려워하지 않는 개방적인 태도와 지속적인 성장에 대한 열정을 가지고 있습니다.
+            새로운 기술을 배우고 프로젝트에 적용하며 성장하고 있습니다.
             <br />
-            새로운 지식과 경험에 언제나 열려있고, 매일 조금씩 성장하는 삶을 지향합니다.
+            화면을 만든 뒤에도 사용 흐름과 동작을 확인하며 수정합니다.
           </p>
 
           <div className="hero-profile-meta">

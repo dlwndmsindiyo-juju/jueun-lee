@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './DetailNav.css';
-
-const HEADER_H = 90; // 고정 헤더 높이 (App.css의 .site-header__inner height)
+import { getHeaderHeight, getRootFontSize, toRem } from '../utils/layout';
 
 /**
  * 프로젝트 상세 페이지 섹션 목차 + 읽기 진행률.
@@ -15,7 +14,7 @@ export default function DetailNav({ items }) {
   const btnRefs = useRef([]);
   const [active, setActive] = useState(0);
   const [pct, setPct] = useState(0);
-  const [pill, setPill] = useState({ x: 4, w: 0 });
+  const [pill, setPill] = useState({ x: '0.25rem', w: null });
 
   // 스크롤 → 진행률(%) 과 현재 섹션 계산
   useEffect(() => {
@@ -27,19 +26,20 @@ export default function DetailNav({ items }) {
       if (!nav || !sections.length) return;
 
       const navH = nav.offsetHeight;
+      const headerHeight = getHeaderHeight();
       const y = window.scrollY;
       const top = (el) => el.getBoundingClientRect().top + y;
       const padTop = (el) => parseFloat(getComputedStyle(el).paddingTop) || 0;
 
       // 진행률: 첫 섹션이 목차 아래에 닿을 때 0%, 마지막 섹션 끝이 화면 하단에 닿을 때 100%
-      const start = top(sections[0]) - (HEADER_H + navH);
+      const start = top(sections[0]) - (headerHeight + navH);
       const end = sections[sections.length - 1].getBoundingClientRect().bottom + y - window.innerHeight;
       const p = end > start ? Math.min(1, Math.max(0, (y - start) / (end - start))) : 0;
       navRef.current.style.setProperty('--p', p.toFixed(4));
       setPct(Math.round(p * 100));
 
       // 현재 섹션: 내용 시작점이 목차 바로 아래 기준선을 지난 마지막 섹션
-      const line = HEADER_H + navH + 60;
+      const line = headerHeight + navH + getRootFontSize() * 3.75;
       let idx = 0;
       sections.forEach((s, i) => {
         if (top(s) + padTop(s) - y <= line) idx = i;
@@ -63,7 +63,7 @@ export default function DetailNav({ items }) {
   useEffect(() => {
     const measure = () => {
       const b = btnRefs.current[active];
-      if (b) setPill({ x: b.offsetLeft, w: b.offsetWidth });
+      if (b) setPill({ x: toRem(b.offsetLeft), w: toRem(b.offsetWidth) });
     };
     measure();
     if (!window.ResizeObserver) return;
@@ -78,9 +78,9 @@ export default function DetailNav({ items }) {
     const nav = navRef.current;
     if (!el || !nav) return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // 섹션 제목이 목차 바로 아래(16px)에 오도록 위치 계산 (섹션 위쪽 padding만큼 보정)
-    const padTop = parseFloat(getComputedStyle(el).paddingTop) || 0;
-    const top = el.getBoundingClientRect().top + window.scrollY - (HEADER_H + nav.offsetHeight + 16 - padTop);
+    // 글자 크기가 바뀌어도 실제 헤더·메뉴 높이 아래에 제목을 맞춥니다.
+    const heading = el.querySelector('h1, h2') || el;
+    const top = heading.getBoundingClientRect().top + window.scrollY - getHeaderHeight() - nav.offsetHeight - getRootFontSize();
     window.scrollTo({ top, left: 0, behavior: reduced ? 'instant' : 'smooth' });
   };
 
@@ -93,7 +93,7 @@ export default function DetailNav({ items }) {
           <span
             className="detail-nav__pill"
             aria-hidden="true"
-            style={{ width: pill.w, opacity: pill.w ? 1 : 0, transform: `translateX(${pill.x}px)` }}
+            style={{ width: pill.w, opacity: pill.w ? 1 : 0, transform: `translateX(${pill.x})` }}
           />
           {items.map((it, i) => (
             <button
