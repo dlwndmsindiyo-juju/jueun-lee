@@ -66,7 +66,7 @@ export const skills = {
 
 export const education = {
   title: 'Education',
-  description: '웹 개발과 UI 디자인을 배우고 팀 프로젝트에 적용했습니다.',
+  description: '웹 개발과 UI 디자인을 배우고, 팀 프로젝트에서 구조 설계와 메인 개발을 맡았습니다.',
   org: '이젠아카데미 부트캠프',
   badge: '수료',
   course: 'UXUI디자인 웹 프론트엔드개발 부트캠프',
@@ -74,6 +74,8 @@ export const education = {
   period: '2026.06.30 ~ 2026.12.15',
   achievementsTitle: '주요 활동 및 성과',
   achievements: [
+    '2·3차 팀 프로젝트에서 팀장과 프론트엔드 메인 개발 담당',
+    '프론트엔드 구조와 컴포넌트를 직접 설계하고, AI를 구현 보조 도구로 활용',
     'HTML·CSS·JavaScript·React·TypeScript로 웹 화면 구현',
     'Figma와 OpenAI를 활용한 UI 디자인과 서비스 기획',
     '사용성 테스트 결과를 바탕으로 메뉴 구조와 카테고리 개선',
@@ -148,6 +150,7 @@ export const footer = {
     { label: 'Project', href: '#project' },
     { label: 'Skills', href: '#skills' },
     { label: 'Education', href: '#education' },
+    { label: 'Resume', href: '#resume' },
   ],
   connectTitle: 'CONNECT',
   connect: [
@@ -156,4 +159,15 @@ export const footer = {
   ],
   bigText: ['Frontend', 'Developer'],
   copyright: '©2026 LeeJuEun. All Rights Reserved.',
+};
+
+// 이력서 PDF가 준비되면 fileUrl에 공개 경로나 파일 주소를 지정합니다.
+// 예: /resume/lee-jueun.pdf (파일은 public/resume/에 보관)
+export const resume = {
+  title: 'Resume',
+  description: '담당한 작업과 사용 기술을 이력서에서 확인할 수 있습니다.',
+  name: '이주은',
+  jobTitle: '프론트엔드 개발자',
+  summary: '2·3차 팀 프로젝트에서 팀장과 프론트엔드 메인 개발을 맡았습니다. 프론트엔드 구조와 컴포넌트를 직접 설계하고, 이를 바탕으로 AI를 활용해 구현했습니다.',
+  fileUrl: null,
 };
