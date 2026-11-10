@@ -1,4 +1,5 @@
-.section.resume { max-width: var(--inner-width); }
+.section.resume { max-width: var(--inner-width); height: 40rem; display: flex;
+flex-direction: column; align-items: center; justify-content: center;}
 .resume__action { display: flex; justify-content: center; }
 .resume__open {
   display: inline-flex;

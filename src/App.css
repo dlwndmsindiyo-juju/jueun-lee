@@ -1030,7 +1030,12 @@ html {
 
 .connect__inner {
   max-width: 56.25rem;
+  height: 40rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .connect__title {
