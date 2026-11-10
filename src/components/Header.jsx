@@ -8,6 +8,7 @@ const MENUS = [
   ['skills', 'Skills'],
   ['education', 'Education'],
   ['project', 'Project'],
+  ['resume', 'Resume'],
   ['connect', 'Connect'],
 ];
 

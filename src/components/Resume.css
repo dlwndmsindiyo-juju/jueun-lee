@@ -1,0 +1,71 @@
+.section.resume { max-width: var(--inner-width); }
+.resume__action { display: flex; justify-content: center; }
+.resume__open {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .875rem 1.5rem;
+  border: 0;
+  border-radius: 999rem;
+  background: #e8efff;
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.resume__open:hover { background: var(--main-color); color: #fff; }
+.resume-dialog {
+  width: min(calc(100% - 2rem), 60rem);
+  max-width: calc(100% - 2rem);
+  height: min(85dvh, 56rem);
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  color: var(--text-primary-color);
+  background: #fff;
+  box-shadow: 0 1rem 4rem #0003;
+  overflow: hidden;
+}
+.resume-dialog[open] { display: flex; flex-direction: column; }
+.resume-dialog::backdrop { background: #151b2b99; backdrop-filter: blur(.1875rem); }
+.resume-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: .0625rem solid var(--gray-200);
+  flex-shrink: 0;
+}
+.resume-dialog__header h2 { margin: 0; font-size: 1.25rem; }
+.resume-dialog__actions { display: flex; align-items: center; gap: 1rem; }
+.resume-dialog__actions a { color: var(--main-color); font-size: .875rem; }
+.resume-dialog__close { border: 0; border-radius: 999rem; padding: .5rem .875rem; background: #eff0f2; }
+.resume-dialog__body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.resume-dialog__pdf { width: 100%; height: 100%; border: 0; display: block; }
+.resume-document { overflow-wrap: anywhere; max-width: 48rem; padding: 2rem; margin: 0 auto; font-size: 1rem; line-height: 1.8; }
+.resume-document__draft { padding: .25rem .625rem; border-radius: 999rem; background: #f2f4f7; color: #656a73; font-size: .8125rem; }
+.resume-document__job { margin: 1.5rem 0 0; color: var(--main-color); font-weight: 600; }
+.resume-document h3 { margin: .25rem 0 1rem; font-size: 2rem; }
+.resume-document p { margin: .75rem 0; }
+.resume-document section { padding-top: 1.5rem; margin-top: 1.5rem; border-top: .0625rem solid var(--gray-200); }
+.resume-document h4 { color: var(--main-color); font-size: 1.25rem; margin: 0 0 1rem; }
+.resume-document h5 { font-size: 1.0625rem; margin: 0; }
+.resume-document ul { padding-left: 1.25rem; }
+.resume-document__contact { list-style: none; padding: 0 !important; }
+.resume-document__contact a { color: #555b65; overflow-wrap: anywhere; }
+.resume-document__project + .resume-document__project { margin-top: 1.5rem; }
+.resume-document__role { color: #656a73; font-size: .9375rem; }
+@media (max-width: 48rem) {
+  .resume-dialog { width: calc(100% - 1rem); max-width: calc(100% - 1rem); height: 90dvh; max-height: calc(100dvh - 1rem); }
+  .resume-dialog__header { padding: .875rem 1rem; }
+  .resume-dialog__header h2 { font-size: 1rem; }
+  .resume-dialog__actions { gap: .5rem; }
+  .resume-dialog__actions a { font-size: .75rem; }
+  .resume-document { padding: 1.25rem; font-size: .9375rem; }
+}
+@media (min-width: 48.001rem) and (max-width: 64rem) {
+  .site-header__inner { padding-inline: 1.5rem; }
+  .site-header__nav ul { gap: .375rem; }
+  .site-header__nav a { padding-inline: .5rem; }
+}

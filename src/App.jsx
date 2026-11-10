@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Project from "./components/Project";
 import Connect from "./components/Connect";
+import Resume from "./components/Resume";
 import ToTop from "./components/ToTop";
 import Footer from "./components/Footer";
 import ProjectDetail from "./pages/ProjectDetail";
@@ -25,6 +26,7 @@ function Home() {
         <Skills />
         <Education />
         <Project />
+        <Resume />
         <Connect />
         <ToTop />
       </main>
