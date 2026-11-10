@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   { id: 'detail-intro', label: '프로젝트 소개', mobileLabel: '소개' },
   { id: 'detail-role', label: '역할과 범위', mobileLabel: '역할' },
   { id: 'detail-process', label: '문제 해결 과정', mobileLabel: '문제 해결' },
-  { id: 'detail-next', label: '다음 작업에 적용할 기준', mobileLabel: '회고' },
+  { id: 'detail-next', label: '배운 점', mobileLabel: '배운 점' },
 ];
 
 // 모든 프로젝트가 공유하는 상세 레이아웃. 프로젝트별 내용은 data에서 전달합니다.
