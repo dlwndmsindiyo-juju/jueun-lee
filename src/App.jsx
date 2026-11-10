@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import ProjectDetail from "./pages/ProjectDetail";
 import useIntro from "./hooks/useIntro";
 import useReveal from "./hooks/usereveal";
+import "./ReadingLayout.css";
 
 function Home() {
   const introDone = useIntro();

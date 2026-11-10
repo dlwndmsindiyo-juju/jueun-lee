@@ -30,13 +30,21 @@ export default function Education() {
           <Icon name="trend" size={18} />{edu.achievementsTitle}
         </h4>
 
-        {/* 불릿 없이, 스크롤로 보이면 텍스트 뒤에 색 배경이 깔립니다 */}
+        {/* 핵심 두 구절에만 기존 스크롤 하이라이트를 적용합니다. */}
         <ul className="edu-card__list is-armed" ref={listRef}>
-          {edu.achievements.map((text, i) => (
-            <li key={i}>
-              <span className="edu-hl" style={{ transitionDelay: `${i * 0.06}s` }}>{text}</span>
-            </li>
-          ))}
+          {edu.achievements.map((text, i) => {
+            const phrase = edu.highlightPhrases?.find((value) => text.includes(value));
+            const start = phrase ? text.indexOf(phrase) : -1;
+            return (
+              <li key={text}>
+                {phrase ? <span>
+                  {text.slice(0, start)}
+                  <mark className="edu-hl" style={{ transitionDelay: `${i * 0.06}s` }}>{phrase}</mark>
+                  {text.slice(start + phrase.length)}
+                </span> : <span>{text}</span>}
+              </li>
+            );
+          })}
         </ul>
       </article>
     </section>

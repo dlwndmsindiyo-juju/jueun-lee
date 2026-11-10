@@ -33,8 +33,8 @@ function ProjectCard({ item, order }) {
         </div>
 
         <div className="pcard__body">
-          <p className="pcard__k">{item.subtitle}</p>
-          <p className="pcard__sum">{item.summary}</p>
+          <p className="pcard__k">{item.roleLabel || item.subtitle}</p>
+          <p className="pcard__sum">{item.cardSummary || item.summary}</p>
 
           <div className="pcard__stack">
             {stack.length > 0 && (
