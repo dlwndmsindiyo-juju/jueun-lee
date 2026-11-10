@@ -8,6 +8,14 @@
 .case-study__summary { color: var(--text-secondray-color); font-size: 20px; line-height: 1.8; margin: 0 0 30px; }
 .case-study__stack { display: flex; flex-wrap: wrap; gap: 0; list-style: none; padding: 0; margin: 0 0 32px; color: var(--main-color); font-size: 16px; }
 .case-study__stack li:not(:last-child)::after { content: ' · '; white-space: pre; }
+.case-study__website {
+  background: #eff0f2; color: #656a73;
+  display: inline-flex; 
+  align-items: center; gap: 6px;
+  padding: 10px 18px; margin-bottom: 24px; border: 1px solid var(--main-color);
+  border-radius: 999px; color: var(--main-color); font-size: 14px; text-decoration: none;
+}
+.case-study__website:hover { background: var(--main-color); color: #fff; }
 .case-study__image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
 .case-study__role { border-top: 1px solid var(--gray-200); margin-top: 30px; padding-block: 40px 60px; }
 .case-study__role h2, .case-study__role h3 { font-size: 28px; margin: 0 0 30px; }
@@ -64,12 +72,7 @@
   .case-study__lesson h4 { font-size: 18px; margin-bottom: 12px; }
 }
 
-.case-study__website {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 10px 18px; margin-bottom: 24px; border: 1px solid var(--main-color);
-  border-radius: 999px; color: var(--main-color); font-size: 14px; text-decoration: none;
-}
-.case-study__website:hover { background: var(--main-color); color: #fff; }
+
 
 .case-study__website { border: 0; color: #73767d; background: transparent; }
 .case-study__website:hover, .case-study__website:focus-visible, .case-study__website:active { color: var(--main-color); background: transparent; }

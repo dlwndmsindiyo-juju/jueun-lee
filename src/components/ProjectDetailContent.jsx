@@ -60,9 +60,9 @@ export default function ProjectDetailContent({ project }) {
         ))}
       </section>
       <section className="case-study__next case-study__inner" id="detail-next">
-        <h2>다음 작업에 적용할 기준</h2>
+        <h2>앞으로 보완할 점</h2>
         <p>{project.nextSummary || '증상을 재현하고, 원인을 분리해서 확인하고, 선택한 해결 방법을 검증하는 순서로 기록합니다. 같은 문제가 반복되지 않도록 공통 구조와 확인 기준을 남깁니다.'}</p>
-        <Link to="/#project">전체 프로젝트로 돌아가기 ↗</Link>
+        <Link to="/#project">프로젝트 섹션으로 돌아가기</Link>
       </section>
     </main>
   );
