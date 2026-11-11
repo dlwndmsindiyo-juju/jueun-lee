@@ -1,40 +1,69 @@
 import { useEffect, useRef, useState } from 'react';
 import SectionHead from './SectionHead';
 import Icon from './Icon';
-import { connect, education, projects, resume, skills } from '../data/portfolio';
-import { projectDetails } from '../data/projectDetails';
+import { resume } from '../data/portfolio';
+import { resumeDocument } from '../data/resumeDocument';
 import './Resume.css';
 
-function ResumeDraft() {
-  const completedProjects = projects.groups.flatMap((group) => group.items).filter((item) => item.detailHref);
+function ResumeDocument() {
+  const content = resumeDocument;
   return (
     <article className="resume-document">
       <header>
-        <span className="resume-document__draft">이력서 초안</span>
-        <p className="resume-document__job">{resume.jobTitle}</p>
-        <h3>{resume.name}</h3>
-        <p>{resume.summary}</p>
-        <ul className="resume-document__contact">
-          {connect.items.map((item) => <li key={item.href}>
-            <a href={item.href} {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}>{item.label}</a>
-          </li>)}
-        </ul>
+        <span className="resume-document__label">이력서</span>
+        <p className="resume-document__job">지원 직무 · {content.jobTitle}</p>
+        <h3>{content.name}</h3>
+        <dl className="resume-document__info">
+          {content.contacts.map((item) => <div key={item.label}>
+            <dt>{item.label}</dt>
+            <dd><a href={item.href} {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}>{item.value}</a></dd>
+          </div>)}
+          {content.personal.map((item) => <div key={item.label}>
+            <dt>{item.label}</dt><dd>{item.value}</dd>
+          </div>)}
+        </dl>
       </header>
       <section aria-labelledby="resume-skills">
-        <h4 id="resume-skills">사용 기술</h4>
-        {skills.groups.map((group) => <p key={group.label}><strong>{group.label}</strong><br />{group.items.map((item) => item.name).join(' · ')}</p>)}
+        <h4 id="resume-skills">보유 스킬</h4>
+        <ul className="resume-document__skills">
+          {content.skills.map((item) => <li key={item.name}>
+            <span>{item.name}</span><span className="resume-document__level">{item.level}</span>
+          </li>)}
+        </ul>
+      </section>
+      <section aria-labelledby="resume-introduction">
+        <h4 id="resume-introduction">자기소개</h4>
+        {content.introductions.map((item) => <div className="resume-document__entry" key={item.title}>
+          <h5>{item.title}</h5>
+          {item.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>)}
+      </section>
+      <section aria-labelledby="resume-experience">
+        <h4 id="resume-experience">프로젝트 경험</h4>
+        {content.experiences.map((item) => <div className="resume-document__entry" key={item.title}>
+          <div className="resume-document__entry-heading">
+            <h5>{item.title}</h5><span className="resume-document__period">{item.period}</span>
+          </div>
+          <p className="resume-document__organization">{item.organization}</p>
+          <ul>{item.items.map((text, index) => <li key={`${item.title}-${index}`}>{text}</li>)}</ul>
+        </div>)}
       </section>
       <section aria-labelledby="resume-education">
-        <h4 id="resume-education">교육 · 팀 프로젝트</h4>
-        <p><strong>{education.org}</strong><br />{education.course}<br />{education.period}</p>
-        <ul>{education.achievements.map((item) => <li key={item}>{item}</li>)}</ul>
+        <h4 id="resume-education">교육사항</h4>
+        {content.education.map((item) => <div className="resume-document__entry" key={item.school}>
+          <div className="resume-document__entry-heading">
+            <h5>{item.school}</h5><span className="resume-document__period">{item.period}</span>
+          </div>
+          <p>{item.major} · {item.degree}</p>
+        </div>)}
       </section>
-      <section aria-labelledby="resume-projects">
-        <h4 id="resume-projects">주요 프로젝트</h4>
-        {completedProjects.map((project) => <div className="resume-document__project" key={project.id}>
-          <h5>{project.title}</h5>
-          <p>{project.summary}</p>
-          <p className="resume-document__role">{projectDetails[project.id]?.role}</p>
+      <section aria-labelledby="resume-certifications">
+        <h4 id="resume-certifications">자격증 및 어학</h4>
+        {content.certifications.map((item) => <div className="resume-document__entry" key={item.name}>
+          <div className="resume-document__entry-heading">
+            <h5>{item.name} · {item.grade}</h5><span className="resume-document__period">{item.date}</span>
+          </div>
+          <p>{item.issuer}</p>
         </div>)}
       </section>
     </article>
@@ -97,7 +126,7 @@ export default function Resume() {
         <div className="resume-dialog__body">
           {isOpen && (resume.fileUrl
             ? <iframe className="resume-dialog__pdf" title={`${resume.name} 이력서 PDF`} src={resume.fileUrl} />
-            : <ResumeDraft />)}
+            : <ResumeDocument />)}
         </div>
       </dialog>
     </section>

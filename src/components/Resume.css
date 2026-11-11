@@ -44,7 +44,6 @@
 .resume-dialog__body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 .resume-dialog__pdf { width: 100%; height: 100%; border: 0; display: block; }
 .resume-document { overflow-wrap: anywhere; max-width: 48rem; padding: 2rem; margin: 0 auto; font-size: 1rem; line-height: 1.8; }
-.resume-document__draft { padding: .25rem .625rem; border-radius: 999rem; background: #f2f4f7; color: #656a73; font-size: .8125rem; }
 .resume-document__job { margin: 1.5rem 0 0; color: var(--main-color); font-weight: 600; }
 .resume-document h3 { margin: .25rem 0 1rem; font-size: 2rem; }
 .resume-document p { margin: .75rem 0; }
@@ -52,10 +51,6 @@
 .resume-document h4 { color: var(--main-color); font-size: 1.25rem; margin: 0 0 1rem; }
 .resume-document h5 { font-size: 1.0625rem; margin: 0; }
 .resume-document ul { padding-left: 1.25rem; }
-.resume-document__contact { list-style: none; padding: 0 !important; }
-.resume-document__contact a { color: #555b65; overflow-wrap: anywhere; }
-.resume-document__project + .resume-document__project { margin-top: 1.5rem; }
-.resume-document__role { color: #656a73; font-size: .9375rem; }
 @media (max-width: 48rem) {
   .resume-dialog { width: calc(100% - 1rem); max-width: calc(100% - 1rem); height: 90dvh; max-height: calc(100dvh - 1rem); }
   .resume-dialog__header { padding: .875rem 1rem; }
@@ -68,4 +63,29 @@
   .site-header__inner { padding-inline: 1.5rem; }
   .site-header__nav ul { gap: .375rem; }
   .site-header__nav a { padding-inline: .5rem; }
+}
+
+/* 워드 이력서 내용도 기존 문서의 색상·글자 크기·여백 규칙으로 표시합니다. */
+.resume-document__label { display: inline-block; padding: .25rem .625rem; border-radius: 999rem; background: #f2f4f7; color: #656a73; font-size: .8125rem; }
+.resume-document__info { display: grid; gap: .625rem; margin: 1.5rem 0 0; font-size: .9375rem; }
+.resume-document__info > div { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 1rem; }
+.resume-document__info dt { color: #656a73; }
+.resume-document__info dd { margin: 0; }
+.resume-document__info a { color: #343a43; text-decoration-color: #c5cbd5; text-underline-offset: .2em; }
+.resume-document__info a:hover { color: var(--main-color); }
+.resume-document ul.resume-document__skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .625rem 1rem; list-style: none; padding: 0; margin: 0; }
+.resume-document__skills li { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding: .5rem .75rem; background: #f5f6f8; border-radius: .5rem; }
+.resume-document__level { color: #656a73; font-size: .875rem; align-self: center; }
+.resume-document__entry + .resume-document__entry { margin-top: 1.75rem; }
+.resume-document__entry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; flex-wrap: wrap; }
+.resume-document__period { color: #656a73; font-size: .875rem; }
+.resume-document__organization { color: #656a73; font-size: .9375rem; }
+.resume-document__entry p { color: #343a43; word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
+.resume-document__entry li + li { margin-top: .5rem; }
+@media (max-width: 48rem) {
+  .resume-document__info { font-size: .875rem; }
+  .resume-document__info > div { grid-template-columns: 4.5rem minmax(0, 1fr); gap: .625rem; }
+  .resume-document ul.resume-document__skills { gap: .5rem; }
+  .resume-document__skills li { padding: .5rem; }
+  .resume-document__level { font-size: .8125rem; }
 }
