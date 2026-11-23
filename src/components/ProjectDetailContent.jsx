@@ -59,7 +59,7 @@ export default function ProjectDetailContent({ project }) {
               <div className="case-study__inner">
                 <h3><span>{String(index + 1).padStart(2, '0')}</span> {item.title}</h3>
                 <dl>{item.steps.map(([label, body]) => (
-                  <div className="case-study__step" key={label}><dt>{label}</dt><dd>{body}</dd></div>
+                  <div className="case-study__step" key={label}><dt><span className="case-study__step-label">{label}</span></dt><dd>{body}</dd></div>
                 ))}</dl>
                 <aside className="case-study__lesson">
                   <h4>{project.lessonLabel || '이 경험에서 배운 점'}</h4>
