@@ -76,7 +76,6 @@ flex-direction: column; align-items: center; justify-content: center;}
 .resume-document__info a:hover { color: var(--main-color); }
 .resume-document ul.resume-document__skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .625rem 1rem; list-style: none; padding: 0; margin: 0; }
 .resume-document__skills li { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding: .5rem .75rem; background: #f5f6f8; border-radius: .5rem; }
-.resume-document__level { color: #656a73; font-size: .875rem; align-self: center; }
 .resume-document__entry + .resume-document__entry { margin-top: 1.75rem; }
 .resume-document__entry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; flex-wrap: wrap; }
 .resume-document__period { color: #656a73; font-size: .875rem; }
@@ -88,5 +87,4 @@ flex-direction: column; align-items: center; justify-content: center;}
   .resume-document__info > div { grid-template-columns: 4.5rem minmax(0, 1fr); gap: .625rem; }
   .resume-document ul.resume-document__skills { gap: .5rem; }
   .resume-document__skills li { padding: .5rem; }
-  .resume-document__level { font-size: .8125rem; }
 }

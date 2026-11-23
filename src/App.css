@@ -1082,14 +1082,16 @@ html {
 .to-top-rail {
   position: sticky;
   bottom: 0;
+  max-width: var(--inner-width);
   height: 0;
+  margin-inline: auto;
   z-index: 900;
   pointer-events: none;
 }
 
 .to-top {
   position: absolute;
-  right: 2rem;
+  right: 1.5rem;
   bottom: 2rem;
   width: 3rem;
   height: 3rem;

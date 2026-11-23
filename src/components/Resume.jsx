@@ -26,9 +26,7 @@ function ResumeDocument() {
       <section aria-labelledby="resume-skills">
         <h4 id="resume-skills">보유 스킬</h4>
         <ul className="resume-document__skills">
-          {content.skills.map((item) => <li key={item.name}>
-            <span>{item.name}</span><span className="resume-document__level">{item.level}</span>
-          </li>)}
+          {content.skills.map((skill) => <li key={skill}>{skill}</li>)}
         </ul>
       </section>
       <section aria-labelledby="resume-introduction">
@@ -39,7 +37,7 @@ function ResumeDocument() {
         </div>)}
       </section>
       <section aria-labelledby="resume-experience">
-        <h4 id="resume-experience">프로젝트 경험</h4>
+        <h4 id="resume-experience">경력사항</h4>
         {content.experiences.map((item) => <div className="resume-document__entry" key={item.title}>
           <div className="resume-document__entry-heading">
             <h5>{item.title}</h5><span className="resume-document__period">{item.period}</span>
@@ -54,7 +52,7 @@ function ResumeDocument() {
           <div className="resume-document__entry-heading">
             <h5>{item.school}</h5><span className="resume-document__period">{item.period}</span>
           </div>
-          <p>{item.major} · {item.degree}</p>
+          <p>{item.description}</p>
         </div>)}
       </section>
       <section aria-labelledby="resume-certifications">
