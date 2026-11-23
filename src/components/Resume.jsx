@@ -13,15 +13,15 @@ function ResumeDocument() {
         <span className="resume-document__label">이력서</span>
         <p className="resume-document__job">지원 직무 · {content.jobTitle}</p>
         <h3>{content.name}</h3>
-        <dl className="resume-document__info">
-          {content.contacts.map((item) => <div key={item.label}>
-            <dt>{item.label}</dt>
-            <dd><a href={item.href} {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}>{item.value}</a></dd>
-          </div>)}
-          {content.personal.map((item) => <div key={item.label}>
-            <dt>{item.label}</dt><dd>{item.value}</dd>
-          </div>)}
-        </dl>
+        <ul className="resume-document__info" role="list">
+          {content.contacts.map((item) => <li key={item.label}>
+            <span className="resume-document__info-label">{item.label}</span>
+            <span><a href={item.href} {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}>{item.value}</a></span>
+          </li>)}
+          {content.personal.map((item) => <li key={item.label}>
+            <span className="resume-document__info-label">{item.label}</span><span>{item.value}</span>
+          </li>)}
+        </ul>
       </header>
       <section aria-labelledby="resume-skills">
         <h4 id="resume-skills">보유 스킬</h4>

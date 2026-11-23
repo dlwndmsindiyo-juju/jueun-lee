@@ -965,15 +965,6 @@ html {
   gap: 1rem;
 }
 
-.project-row__meta dt {
-  font-weight: 600;
-}
-
-.project-row__meta dd {
-  margin: 0;
-  color: var(--text-secondray-color);
-}
-
 .project-row__link {
   display: inline-flex;
   transition: 0.3s;
@@ -1375,24 +1366,6 @@ html {
   background: var(--main-color);
   color: #fff;
   font-size: .8rem;
-}
-
-.feat dl {
-  margin: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.feat dt {
-  font-weight: 600;
-  margin-bottom: .25rem;
-}
-
-.feat dd {
-  margin: 0;
-  font-size: .92rem;
-  line-height: 1.65;
-  color: var(--text-secondray-color);
 }
 
 /* KPI */

@@ -192,10 +192,9 @@
 
 /* 워드 이력서 내용도 기존 문서의 색상·글자 크기·여백 규칙으로 표시합니다. */
 .resume-document__label { display: inline-block; padding: .25rem .625rem; border-radius: 999rem; background: #f2f4f7; color: #656a73; font-size: .8125rem; }
-.resume-document__info { display: grid; gap: .625rem; margin: 1.5rem 0 0; font-size: .9375rem; }
-.resume-document__info > div { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 1rem; }
-.resume-document__info dt { color: #656a73; }
-.resume-document__info dd { margin: 0; }
+.resume-document ul.resume-document__info { display: grid; list-style: none; padding: 0; gap: .625rem; margin: 1.5rem 0 0; font-size: .9375rem; }
+.resume-document__info > li { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 1rem; }
+.resume-document__info-label { color: #656a73; }
 .resume-document__info a { color: #343a43; text-decoration-color: #c5cbd5; text-underline-offset: .2em; }
 .resume-document__info a:hover { color: var(--main-color); }
 .resume-document ul.resume-document__skills {
@@ -224,8 +223,8 @@
 .resume-document__entry p { color: #343a43; word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
 .resume-document__entry li + li { margin-top: .5rem; }
 @media (max-width: 48rem) {
-  .resume-document__info { font-size: .875rem; }
-  .resume-document__info > div { grid-template-columns: 4.5rem minmax(0, 1fr); gap: .625rem; }
+  .resume-document ul.resume-document__info { font-size: .875rem; }
+  .resume-document__info > li { grid-template-columns: 4.5rem minmax(0, 1fr); gap: .625rem; }
   .resume-document__skills li { font-size: .8125rem; padding-inline: .5rem; }
 }
 
@@ -289,11 +288,11 @@
 }
 
 @media (max-width: 48rem) {
-  .resume-document__info {
+  .resume-document ul.resume-document__info {
     font-size: .875rem;
   }
 
-  .resume-document__info>div {
+  .resume-document__info > li {
     grid-template-columns: 4.5rem minmax(0, 1fr);
     gap: .625rem;
   }

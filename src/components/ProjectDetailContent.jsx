@@ -58,18 +58,24 @@ export default function ProjectDetailContent({ project }) {
             <section className="case-study__case" key={item.title}>
               <div className="case-study__inner">
                 <h3><span>{String(index + 1).padStart(2, '0')}</span> {item.title}</h3>
-                <dl>{item.steps.map(([label, body]) => (
-                  <div className="case-study__step" key={label}><dt><span className="case-study__step-label">{label}</span></dt><dd>{body}</dd></div>
-                ))}</dl>
+                <ul className="case-study__steps" role="list">{item.steps.map(([label, body]) => (
+                  <li className="case-study__step" key={label}>
+                    <span className="case-study__step-term"><span className="case-study__step-label">{label}</span></span>
+                    <p className="case-study__step-body">{body}</p>
+                  </li>
+                ))}</ul>
                 <aside className="case-study__lesson">
                   <h4>{project.lessonLabel || '이 경험에서 배운 점'}</h4>
                   <p>{item.lesson}</p>
                 </aside>
                 {item.details?.length > 0 && <details className="case-study__details">
                   <summary>관련 코드와 확인 항목</summary>
-                  <dl>{item.details.map(([label, body]) => (
-                    <div className="case-study__step" key={label}><dt>{label}</dt><dd>{body}</dd></div>
-                  ))}</dl>
+                  <ul className="case-study__steps" role="list">{item.details.map(([label, body]) => (
+                    <li className="case-study__step" key={label}>
+                      <span className="case-study__step-term">{label}</span>
+                      <p className="case-study__step-body">{body}</p>
+                    </li>
+                  ))}</ul>
                 </details>}
               </div>
             </section>
