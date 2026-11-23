@@ -97,15 +97,15 @@
 .case-study__case { padding-block: 3rem; }
 .case-study__case h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.4; margin-bottom: 1.5rem; }
 .case-study__step { grid-template-columns: 6rem minmax(0, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
-.case-study__step dt { font-size: 1rem; font-weight: 600; line-height: 1.8; color: #555b65; }
-.case-study__step dd,
+.case-study__step-term { font-size: 1rem; font-weight: 600; line-height: 1.8; color: #555b65; }
+.case-study__step-body,
 .case-study__lesson p { max-width: 44rem; font-size: 1.125rem; line-height: 1.8; color: #343a43; }
 .case-study__lesson { margin-top: 1.5rem; padding-inline-start: 1.5rem; }
 .case-study__lesson h4 { font-size: 1.125rem; line-height: 1.5; margin-bottom: .75rem; }
 .case-study__details { margin-top: 1.5rem; }
 .case-study__details summary { font-size: .875rem; }
-.case-study__details .case-study__step dt { font-size: .875rem; }
-.case-study__details .case-study__step dd { font-size: 1rem; line-height: 1.8; }
+.case-study__details .case-study__step-term { font-size: .875rem; }
+.case-study__details .case-study__step-body { font-size: 1rem; line-height: 1.8; }
 .case-study__next { padding-block: 2.5rem; }
 .case-study__next a { margin-top: 1rem; font-size: .875rem; }
 
@@ -144,11 +144,11 @@
   .case-study__role li,
   .case-study__process-intro p,
   .case-study__next p,
-  .case-study__step dd,
+  .case-study__step-body,
   .case-study__lesson p { font-size: 1rem; }
   .case-study__step { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
-  .case-study__step dt { font-size: .875rem; }
+  .case-study__step-term { font-size: .875rem; }
   .case-study__lesson { padding-inline-start: 1.25rem; }
   .case-study__lesson h4 { font-size: 1rem; }
-  .case-study__details .case-study__step dd { font-size: .9375rem; }
+  .case-study__details .case-study__step-body { font-size: .9375rem; }
 }
