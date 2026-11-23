@@ -20,7 +20,7 @@ function ProjectCard({ item, order }) {
 
   return (
     <div className="pcard-wrap" data-reveal style={delay((order % 2) * 0.12)}>
-      <article id={item.id} className="pcard">
+      <div id={item.id} className="pcard">
         <h4 className="pcard__title">{item.title}</h4>
 
         {/* 호버하면 이미지만 살짝 커집니다 */}
@@ -48,7 +48,7 @@ function ProjectCard({ item, order }) {
             <WebsiteLink link={item.link} />
             {slug ? (
               <Link className="pcard__cta" to={`/project/${slug}`}>
-                작업 과정 보기
+                {item.detailLabel || '작업 과정 보기'}
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
               </Link>
             ) : (
@@ -56,7 +56,7 @@ function ProjectCard({ item, order }) {
             )}
           </div>
         </div>
-      </article>
+      </div>
     </div>
   );
 }

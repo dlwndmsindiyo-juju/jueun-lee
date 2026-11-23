@@ -19,7 +19,16 @@
 }
 .website-link svg { flex-shrink: 0; }
 .website-link:hover, .website-link:focus-visible, .website-link:active { background: #e8efff; color: var(--main-color); }
-.case-study__website-link { margin-bottom: 1.5rem; }
+.case-study__website-link {
+  margin-bottom: 1.5rem;
+  border: 0.0625rem solid currentColor;
+  background: transparent;
+  color: var(--main-color);
+}
+
+.case-study__website-link:hover,
+.case-study__website-link:focus-visible,
+.case-study__website-link:active { background: transparent; text-decoration: underline; }
 @media (max-width: 48rem) {
   .website-link { font-size: .8125rem; padding: .5rem .625rem; }
 }

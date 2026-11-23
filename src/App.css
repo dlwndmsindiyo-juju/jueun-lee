@@ -1614,13 +1614,6 @@ html {
   margin-top: 1.5rem;
 }
 
-.steps article {
-  padding: 1.5rem;
-  border: 0.0625rem solid var(--gray-200);
-  border-radius: 1rem;
-  background: #fff;
-}
-
 .steps b {
   color: var(--main-color);
   font-size: 1.5rem;
