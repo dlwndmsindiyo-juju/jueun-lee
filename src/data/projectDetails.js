@@ -106,7 +106,7 @@ export const projectDetails = {
   "apple-tv": {
     "title": "Apple TV / OTT 리뉴얼",
     "kicker": "TEAM PROJECT 02",
-    "summary": "로그인부터 검색, 찜 목록과 이어보기까지 콘텐츠 탐색 흐름을 만든 Apple TV 리뉴얼 팀 프로젝트입니다.",
+    "summary": "로그인부터 검색, 찜 목록과 AI 추천까지 콘텐츠 탐색 흐름을 만든 Apple TV 리뉴얼 팀 프로젝트입니다.",
     "stack": [
       "React",
       "Zustand",
@@ -319,6 +319,20 @@ export const projectDetails = {
       }
     ],
     "breadcrumb": "Apple TV"
+  },
+  "razer": {
+    "title": "Razer / 게이밍 기어 사이트 리뉴얼",
+    "kicker": "TEAM PROJECT 03",
+    "summary": "게이밍 기어 사이트의 복잡함을 덜어내고, 필요한 정보에 3D 모델링을 적용하여 시각적 구매욕구를 높이는 쇼핑몰 프로젝트입니다.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Zustand",
+      "Sass"
+    ],
+    "image": tenpercentImage,
+    "role": "메인·메뉴·브랜드·매장 찾기 UI를 구성하고 반응형 기준, 공통 컴포넌트와 이미지를 정리했습니다.",
+    "duties": [],
   },
   "tenpercent": {
     "title": "TENPERCENT / 커피 브랜드 클론 코딩",

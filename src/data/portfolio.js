@@ -107,7 +107,7 @@ export const projects = {
         {
           id: 'apple-tv', title: 'Apple TV',
           roleLabel: '팀장 · 프론트엔드 메인 개발',
-          cardSummary: '로그인·검색·프로필별 찜 목록과 이어보기를 구현한 OTT 리뉴얼입니다.',
+          cardSummary: '로그인·검색·프로필별 찜 목록과 AI 추천 기능을 구현한 OTT 리뉴얼입니다.',
           subtitle: 'TEAM PROJECT 02 / OTT 리뉴얼',
           summary: projectDetails['apple-tv'].summary,
           stack: projectDetails['apple-tv'].stack,
@@ -116,10 +116,10 @@ export const projects = {
           link: projectDetails['apple-tv'].link,
         },
         {
-          id: 'shopping-mall', title: 'SHOPPING MALL',
-          roleLabel: '팀 프로젝트 · 주제 미정',
-          cardSummary: '주제와 작업 범위를 정리 중인 다음 팀 프로젝트입니다.',
-          subtitle: 'TEAM PROJECT 03 / 쇼핑몰 · 주제 미정',
+          id: 'razer', title: 'Razer',
+          roleLabel: '팀장 · 프론트엔드 메인 개발',
+          cardSummary: '블렌더를 활용한 3D 모델링을 활용하여 UX로 도출된 문제를 리뉴얼한 프로젝트입니다.',
+          subtitle: 'TEAM PROJECT 03 / Razer 게이밍 기어 사이트 리뉴얼',
           summary: '다음 팀 프로젝트를 준비 중입니다. 주제와 작업 범위가 정해지면 추가하겠습니다.',
           stack: [], stackNote: '사용 기술과 작업 범위는 미정입니다.',
           placeholder: 'NEXT TEAM PROJECT', placeholderCaption: '쇼핑몰 · 주제 미정',
