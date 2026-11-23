@@ -33,7 +33,7 @@
   bottom: 0.25rem;
   left: 0;
   border-radius: 0.625rem;
-  border: 0.0625rem solid var(--main-color);
+  background: var(--main-color);
   transition: transform .45s cubic-bezier(.34, 1.45, .64, 1), width .45s cubic-bezier(.34, 1.45, .64, 1);
 }
 
@@ -52,7 +52,7 @@
 }
 
 .detail-nav__tabs button[aria-current="true"] {
-  color: var(--text-primary-color);
+  color: var(--secondary-color);
 }
 
 /* 하단 진행 바 */

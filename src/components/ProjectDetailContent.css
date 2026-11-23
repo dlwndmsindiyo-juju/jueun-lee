@@ -94,3 +94,13 @@
   .case-study__step dd, .case-study__lesson p,
   .case-study__details .case-study__step dd, .case-study__role p, .case-study__role li { font-size: .9375rem; line-height: 1.8; }
 }
+
+.case-study__step-label {
+  padding: .125rem .375rem;
+  border-radius: .25rem;
+  background: var(--main-color);
+  color: var(--secondary-color);
+  font-weight: 700;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
