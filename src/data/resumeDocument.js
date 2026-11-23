@@ -23,7 +23,7 @@ export const resumeDocument = {
   "personal": [
     {
       "label": "주소",
-      "value": "송파구 잠실동 백제고분로11길"
+      "value": "송파구 잠실동"
     }
   ],
   "skills": [
@@ -131,16 +131,22 @@ export const resumeDocument = {
   ],
   "certifications": [
     {
-      "date": "2024.11",
-      "name": "컴퓨터활용능력",
-      "grade": "2급",
-      "issuer": "대한상공회의소"
+      "date": "2026.01",
+      "name": "웹디자인개발기능사",
+      "grade": "필기합격",
+      "issuer": "한국산업인력공단"
     },
     {
       "date": "2025.05",
       "name": "GTQ",
       "grade": "1급",
       "issuer": "한국생산성본부"
+    },
+    {
+      "date": "2024.11",
+      "name": "컴퓨터활용능력",
+      "grade": "2급",
+      "issuer": "대한상공회의소"
     }
   ]
 };
