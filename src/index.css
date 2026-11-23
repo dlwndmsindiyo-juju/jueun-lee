@@ -1,6 +1,7 @@
 /* Base */
 :root {
     /* color */
+    --body-background: #fcf9f7;
     --primary-color: #111;
     --secondary-color: #fff;
     --main-color: #0043C4;
@@ -35,7 +36,7 @@
 
 body {
     margin: 0;
-    background: #fcf9f7;
+    background: var(--body-background);
     color: var(--text-primary-color);
     font-family: 'Pretendard', sans-serif;
     margin: 0;

@@ -8,7 +8,7 @@ import './Resume.css';
 function ResumeDocument() {
   const content = resumeDocument;
   return (
-    <article className="resume-document">
+    <div className="resume-document">
       <header>
         <span className="resume-document__label">이력서</span>
         <p className="resume-document__job">지원 직무 · {content.jobTitle}</p>
@@ -66,7 +66,7 @@ function ResumeDocument() {
           <p>{item.issuer}</p>
         </div>)}
       </section>
-    </article>
+    </div>
   );
 }
 

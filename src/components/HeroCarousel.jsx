@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { projectDetails } from '../data/projectDetails';
 import { getRootFontSize, toRem } from '../utils/layout';
 
 // 이미지는 public/images/carousel/ 에 넣고, href는 이동할 섹션의 id(#...)로 지정하세요.
 const SERVICES = [
   { name: 'BALENCIAGA', href: '#balenciaga', image: '/images/carousel/balenciaga.jpg' },
   { name: 'Apple TV', href: '#apple-tv', image: '/images/carousel/apple-tv.jpg' },
-  { name: 'SHOPPING MALL · 미정', href: '#razer', image: '/images/carousel/razer.jpg' },
+  { name: 'Razer', href: '#razer', image: projectDetails.razer.image },
   { name: 'TENPERCENT · 개인 프로젝트', href: '#tenpercent', image: '/images/carousel/tenpercent.jpg' },
 ];
 const COUNT = SERVICES.length * 3; // 네 프로젝트를 3번 반복해 원형으로 배치

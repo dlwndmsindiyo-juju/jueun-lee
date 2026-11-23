@@ -3,9 +3,7 @@
   position: sticky;
   top: 5.625rem;            /* 고정 헤더 높이 */
   z-index: 800;         /* 헤더(1000)보다 아래, 본문보다 위 */
-  background: rgba(252, 249, 247, .9);
-  backdrop-filter: blur(0.75rem);
-  -webkit-backdrop-filter: blur(0.75rem);
+  background: var(--body-background);
   border-bottom: 0.0625rem solid var(--gray-200);
   width: min(100% - 4rem, var(--inner-width));
   margin: 1.25rem auto 0;
@@ -27,8 +25,6 @@
   display: flex;
   gap: 0.25rem;
   padding: 0.25rem;
-  border-radius: 0.875rem;
-  background: #f1ece8;
 }
 
 .detail-nav__pill {
@@ -37,8 +33,7 @@
   bottom: 0.25rem;
   left: 0;
   border-radius: 0.625rem;
-  background: #fff;
-  box-shadow: 0 0.125rem 0.5rem -0.25rem rgba(0, 0, 0, .3);
+  border: 0.0625rem solid var(--main-color);
   transition: transform .45s cubic-bezier(.34, 1.45, .64, 1), width .45s cubic-bezier(.34, 1.45, .64, 1);
 }
 

@@ -14,7 +14,7 @@ export default function Education() {
     <section className="section education" id="education" aria-labelledby="education-title">
       <SectionHead id="education-title" title={edu.title} description={edu.description} />
 
-      <article className="edu-card" data-reveal style={delay(0.2)}>
+      <section className="edu-card" data-reveal style={delay(0.2)}>
         <div className="edu-card__org" data-reveal style={delay(0.3)}>
           <Icon name="cap" size={22} />
           <strong>{edu.org}</strong>
@@ -46,7 +46,7 @@ export default function Education() {
             );
           })}
         </ul>
-      </article>
+      </section>
     </section>
   );
 }

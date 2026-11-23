@@ -1,6 +1,7 @@
 import balenciagaImage from '/images/carousel/balenciaga.jpg';
 import appleTvImage from '/images/carousel/apple-tv.jpg';
 import tenpercentImage from '/images/carousel/tenpercent.jpg';
+import razerImage from '/images/carousel/razer.webp';
 
 // 프로젝트별 내용은 이 파일에서 관리합니다.
 export const projectDetails = {
@@ -323,16 +324,26 @@ export const projectDetails = {
   "razer": {
     "title": "Razer / 게이밍 기어 사이트 리뉴얼",
     "kicker": "TEAM PROJECT 03",
-    "summary": "게이밍 기어 사이트의 복잡함을 덜어내고, 필요한 정보에 3D 모델링을 적용하여 시각적 구매욕구를 높이는 쇼핑몰 프로젝트입니다.",
+    "summary": "게이밍 기어 쇼핑몰에서 상품 정보를 더 쉽게 찾고, 구매 전에 제품을 3D로 살펴볼 수 있도록 구성한 팀 프로젝트입니다.",
     "stack": [
       "React",
       "TypeScript",
       "Zustand",
-      "Sass"
+      "Sass",
+      "Blender"
     ],
-    "image": tenpercentImage,
-    "role": "메인·메뉴·브랜드·매장 찾기 UI를 구성하고 반응형 기준, 공통 컴포넌트와 이미지를 정리했습니다.",
-    "duties": [],
+    "image": razerImage,
+    "showFullImage": true,
+    "link": {
+      "label": "홈페이지 보기",
+      "href": ""
+    },
+    "role": "팀장으로 프로젝트를 이끌고 프론트엔드 메인 개발을 맡았습니다.",
+    "duties": [
+      "사용자 경험 분석에서 파악한 상품 탐색의 복잡함을 줄이도록 화면을 구성했습니다.",
+      "Blender로 제작한 3D 모델을 활용해 제품을 시각적으로 살펴볼 수 있도록 구성했습니다."
+    ],
+    "breadcrumb": "Razer"
   },
   "tenpercent": {
     "title": "TENPERCENT / 커피 브랜드 클론 코딩",
